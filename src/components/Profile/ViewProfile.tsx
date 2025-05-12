@@ -3,7 +3,7 @@ import { Label } from "../ui/label";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { useQuery } from "@tanstack/react-query";
 import { fetcher } from "../../utils/helpers/api";
-
+import dayjs from "dayjs";
 import { useParams } from '@tanstack/react-router'
 
 interface User {
@@ -36,15 +36,23 @@ export function ViewProfile() {
   const { userId } = useParams({strict:false })
   const { data: user, isLoading, error } = useUserQuery(userId || "")
 
-  function formatDate(d: string) {
-    if (!d) return "N/A"; 
-    const date = new Date(d);
-    if (isNaN(date.getTime())) return "Invalid Date";
-    return new Intl.DateTimeFormat("en-GB", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    }).format(date);
+  
+  
+  // function formatDate(d: string) {
+  //   if (!d) return "N/A"; 
+  //   const date = new Date(d);
+  //   if (isNaN(date.getTime())) return "Invalid Date";
+  //   return new Intl.DateTimeFormat("en-GB", {
+  //     day: "2-digit",
+  //     month: "long",
+  //     year: "numeric",
+  //   }).format(date);
+  // }
+
+
+  function capital(string: string) {
+    return string.split('').map((char: string, index) =>
+      index === 0 ? char.toUpperCase() : char).join('')
   }
 
   if (isLoading) return <p>Loading..</p>;
@@ -63,7 +71,7 @@ export function ViewProfile() {
           <CardHeader>
             <div className="flex gap-5 items-start">
               <CardTitle className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-title-text-size) font-medium">
-                {`${user?.first_name} ${user?.last_name}`}
+                {capital(user?.first_name)}  {capital(user?.last_name)}
               </CardTitle>
               <div className="rounded-4xl bg-(--an-profile-active-bg) flex justify-center items-center px-4 py-1 h-6">
                 <span className="text-(--an-profile-active-color) font-[urbanist] text-(length:--an-profile-active-text-size) font-medium">
@@ -131,7 +139,7 @@ export function ViewProfile() {
                     id="email"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                   {formatDate(user?.dob || "")}
+                   {dayjs(user?.dob).format("DD MMM YYYY")}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 w-75 justify-center align-start">
@@ -145,7 +153,7 @@ export function ViewProfile() {
                     id="mobile"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                     {formatDate(user?.doj || "")}
+                     {dayjs(user?.doj).format("DD MMM YYYY")}
                   </p>
                 </div>
               </div>
