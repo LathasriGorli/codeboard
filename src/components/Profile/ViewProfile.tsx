@@ -1,8 +1,55 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Label } from "../ui/label";
 import { Avatar, AvatarImage } from "../ui/avatar";
+import { useQuery } from "@tanstack/react-query";
+import { fetcher } from "../../utils/helpers/api";
+
+import { useParams } from '@tanstack/react-router'
+
+interface User {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  designation: string;
+  dob: string;
+  doj: string;
+  status: string;
+}
+
+// function call(){
+//   const res=async fetch('http://192.168.1.37:3000/v1.0/test/Tejaswini')
+//   return res.json()
+  
+// }
+
+const useUserQuery = (userId: string) => {
+  return useQuery({
+    queryKey: ['user', userId],
+    queryFn: () => fetcher<User>(`user/${userId}`),
+    enabled: !!userId, 
+  });
+};
 
 export function ViewProfile() {
+  const { userId } = useParams({strict:false })
+  const { data: user, isLoading, error } = useUserQuery(userId || "")
+
+  function formatDate(d: string) {
+    if (!d) return "N/A"; 
+    const date = new Date(d);
+    if (isNaN(date.getTime())) return "Invalid Date";
+    return new Intl.DateTimeFormat("en-GB", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    }).format(date);
+  }
+
+  if (isLoading) return <p>Loading..</p>;
+  if (error instanceof Error) return <p>Error: {error.message}</p>;
+
   return (
     <Card className="w-300 h-45 p-4 items-start rounded-(--an-profile-border-radius) bg-(--an-profile-background) m-5 shadow-none border">
       <div className="flex">
@@ -16,11 +63,11 @@ export function ViewProfile() {
           <CardHeader>
             <div className="flex gap-5 items-start">
               <CardTitle className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-title-text-size) font-medium">
-                Riti Shan
+                {`${user?.first_name} ${user?.last_name}`}
               </CardTitle>
               <div className="rounded-4xl bg-(--an-profile-active-bg) flex justify-center items-center px-4 py-1 h-6">
                 <span className="text-(--an-profile-active-color) font-[urbanist] text-(length:--an-profile-active-text-size) font-medium">
-                  Active
+                  {user?.status}
                 </span>
               </div>
             </div>
@@ -40,7 +87,7 @@ export function ViewProfile() {
                     id="email"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    ritishan123@gmail.com
+                    {user?.email}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 w-75 justify-center align-start">
@@ -54,7 +101,7 @@ export function ViewProfile() {
                     id="mobile"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    9123456789
+                    {user?.phone}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 w-75 justify-center align-start">
@@ -68,7 +115,7 @@ export function ViewProfile() {
                     id="designation"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    Frontend Developer
+                  {user?.designation}
                   </p>
                 </div>
               </div>
@@ -78,13 +125,13 @@ export function ViewProfile() {
                     htmlFor="birth"
                     className="text-(--an-profile-label-color) font-[urbanist] text-(length:--an-profile-text-size) font-normal !important"
                   >
-                    Date Of Birth
+                    Date 
                   </Label>
                   <p
                     id="email"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    26 March 2003
+                   {formatDate(user?.dob || "")}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 w-75 justify-center align-start">
@@ -98,7 +145,7 @@ export function ViewProfile() {
                     id="mobile"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    03 April 2024
+                     {formatDate(user?.doj || "")}
                   </p>
                 </div>
               </div>
