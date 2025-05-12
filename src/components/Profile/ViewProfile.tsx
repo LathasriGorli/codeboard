@@ -3,7 +3,7 @@ import { Label } from "../ui/label";
 import { Avatar, AvatarImage } from "../ui/avatar";
 
 export function ViewProfile() {
-  console.log("klsjfhkjsj")
+
   return (
     <Card className="w-300 h-45 p-4 items-start rounded-(--an-profile-border-radius) bg-(--an-profile-background) m-5 shadow-none border">
       <div className="flex">
