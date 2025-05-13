@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 @plugin 'tailwindcss-animate';
-
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @custom-variant dark (&:is(.dark *));
 
@@ -179,10 +178,11 @@
 /*Add User*/
 @theme Add User{
   /*font family*/
- --an-card-font:"Urbanist";
+ --an-card-font:"urbanist";
   --an-color-text-cardtitlec:#000;
   --an-text-cardtitle-font-sizec:1.5rem;
   --an-text-cardtitle-font-weightc:400;
+
   --an-text-cardtitle-line-heightc:1.5rem;
   /*personal Details*/
   --an-text-cardD-font-size:1.125rem;
@@ -196,6 +196,9 @@
 --an-color-text-cardfooter:#0E0E0E;
 /*add user and bg color same*/
 --an-color-text-Adduser:#FFF;
+/*mm/dd/yyyy*/
+--an-text-doj-color: #0000004D;
+
 }
 
 @theme login{
