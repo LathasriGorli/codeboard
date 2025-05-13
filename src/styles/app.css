@@ -1,6 +1,9 @@
 @import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 @plugin 'tailwindcss-animate';
+
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @custom-variant dark (&:is(.dark *));
 
@@ -175,53 +178,7 @@
   --an-profile-active-text-size: 0.875rem;
 }
 
-/*Add User*/
-@theme Add User{
-  /*font family*/
- --an-card-font:"urbanist";
-  --an-color-text-cardtitlec:#000;
-  --an-text-cardtitle-font-sizec:1.5rem;
-  --an-text-cardtitle-font-weightc:400;
 
-  --an-text-cardtitle-line-heightc:1.5rem;
-  /*personal Details*/
-  --an-text-cardD-font-size:1.125rem;
-  --an-text-cardD-line-height:1.125rem;
-/*first name lastname email mobile Dob date of joining designation are same details*/
---an-color-text-firstN:#383838;
---an-text-firstN-font-size:1rem;
---an-text-firstN-font-weight:500;
---an-text-firstN-line-height:1rem;
-/*cancel*/
---an-color-text-cardfooter:#0E0E0E;
-/*add user and bg color same*/
---an-color-text-Adduser:#FFF;
-/*mm/dd/yyyy*/
---an-text-doj-color: #0000004D;
-
-}
-
-@theme login{
-  /*login*/
-  --an-login-card-font-family:"Raleway";
-  --an-login-cardtitle-text-color:#000;
-  --an-login-Cardtite-text-fontsize:2rem;
-  --an-login-cardtitle-text-weight:400;
-  --an-login-cardtitle-text-height:2rem;
-  /*Description*/
-   --an-login-CardDescription-text-color:#828282;
-   --an-login-CardDescription-text-fontsize:1.125rem;
-   /*font weight is same like cardtitle 400*/
-   --an-login-CardDescription-text-height:1.469rem;
-
-   /*user@mail.com and yourpassword*/
-   /*color &weight same as description*/
-   --an-login-CardContent-text-fontsize:1rem;
-    --an-login-CardContent-text-height:1.125rem; 
-
-    /*login remaining same as yourpassword*/
-     --an-login-button-text-color:#FFF;
-}
 @layer base {
   * {
     @apply border-border outline-ring/50;
