@@ -12,12 +12,11 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-<<<<<<< HEAD
+import { Route as ProfileIdImport } from './routes/profile/$id'
+import { Route as UserAddUserImport } from './routes/user/add-user'
 import { Route as TableUserTableImport } from './routes/table/user-table'
 import { Route as ProfileViewProfileImport } from './routes/profile/view-profile'
-=======
-import { Route as ProfileIdImport } from './routes/profile/$id'
->>>>>>> sat/codeboard
+import { Route as LoginLoginUserImport } from './routes/login/login-user'
 
 // Create/Update Routes
 
@@ -27,7 +26,12 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-<<<<<<< HEAD
+const UserAddUserRoute = UserAddUserImport.update({
+  id: '/user/add-user',
+  path: '/user/add-user',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const TableUserTableRoute = TableUserTableImport.update({
   id: '/table/user-table',
   path: '/table/user-table',
@@ -37,11 +41,17 @@ const TableUserTableRoute = TableUserTableImport.update({
 const ProfileViewProfileRoute = ProfileViewProfileImport.update({
   id: '/profile/view-profile',
   path: '/profile/view-profile',
-=======
+  getParentRoute: () => rootRoute,
+} as any)
 const ProfileIdRoute = ProfileIdImport.update({
   id: '/profile/$id',
   path: '/profile/$id',
->>>>>>> sat/codeboard
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LoginLoginUserRoute = LoginLoginUserImport.update({
+  id: '/login/login-user',
+  path: '/login/login-user',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -70,6 +80,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TableUserTableImport
       parentRoute: typeof rootRoute
     }
+    '/user/add-user': {
+      id: '/user/add-user'
+      path: '/user/add-user'
+      fullPath: '/user/add-user'
+      preLoaderRoute: typeof UserAddUserImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -77,69 +94,90 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-<<<<<<< HEAD
   '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/user-table': typeof TableUserTableRoute
-=======
   '/profile/$id': typeof ProfileIdRoute
->>>>>>> sat/codeboard
+  '/login/login-user': typeof LoginLoginUserRoute
+  '/profile/view-profile': typeof ProfileViewProfileRoute
+  '/table/user-table': typeof TableUserTableRoute
+  '/user/add-user': typeof UserAddUserRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-<<<<<<< HEAD
   '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/user-table': typeof TableUserTableRoute
-=======
   '/profile/$id': typeof ProfileIdRoute
->>>>>>> sat/codeboard
+  '/login/login-user': typeof LoginLoginUserRoute
+  '/profile/view-profile': typeof ProfileViewProfileRoute
+  '/table/user-table': typeof TableUserTableRoute
+  '/user/add-user': typeof UserAddUserRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-<<<<<<< HEAD
   '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/user-table': typeof TableUserTableRoute
-=======
   '/profile/$id': typeof ProfileIdRoute
->>>>>>> sat/codeboard
+  '/login/login-user': typeof LoginLoginUserRoute
+  '/profile/view-profile': typeof ProfileViewProfileRoute
+  '/table/user-table': typeof TableUserTableRoute
+  '/user/add-user': typeof UserAddUserRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-<<<<<<< HEAD
   fullPaths: '/' | '/profile/view-profile' | '/table/user-table'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/profile/view-profile' | '/table/user-table'
   id: '__root__' | '/' | '/profile/view-profile' | '/table/user-table'
-=======
   fullPaths: '/' | '/profile/$id'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/profile/$id'
   id: '__root__' | '/' | '/profile/$id'
->>>>>>> sat/codeboard
+  fullPaths:
+    | '/'
+    | '/login/login-user'
+    | '/profile/view-profile'
+    | '/table/user-table'
+    | '/user/add-user'
+  fileRoutesByTo: FileRoutesByTo
+  to:
+    | '/'
+    | '/login/login-user'
+    | '/profile/view-profile'
+    | '/table/user-table'
+    | '/user/add-user'
+  id:
+    | '__root__'
+    | '/'
+    | '/login/login-user'
+    | '/profile/view-profile'
+    | '/table/user-table'
+    | '/user/add-user'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-<<<<<<< HEAD
   ProfileViewProfileRoute: typeof ProfileViewProfileRoute
   TableUserTableRoute: typeof TableUserTableRoute
-=======
-  ProfileIdRoute: typeof ProfileIdRoute
->>>>>>> sat/codeboard
+  LoginLoginUserRoute: typeof LoginLoginUserRoute
+  ProfileViewProfileRoute: typeof ProfileViewProfileRoute
+  TableUserTableRoute: typeof TableUserTableRoute
+  UserAddUserRoute: typeof UserAddUserRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-<<<<<<< HEAD
   ProfileViewProfileRoute: ProfileViewProfileRoute,
   TableUserTableRoute: TableUserTableRoute,
-=======
   ProfileIdRoute: ProfileIdRoute,
->>>>>>> sat/codeboard
+  LoginLoginUserRoute: LoginLoginUserRoute,
+  ProfileViewProfileRoute: ProfileViewProfileRoute,
+  TableUserTableRoute: TableUserTableRoute,
+  UserAddUserRoute: UserAddUserRoute,
 }
 
 export const routeTree = rootRoute
@@ -154,26 +192,45 @@ export const routeTree = rootRoute
       "children": [
         "/",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "/profile/view-profile",
         "/table/user-table"
 =======
         "/profile/$id"
 >>>>>>> sat/codeboard
+=======
+        "/login/login-user",
+        "/profile/view-profile",
+        "/table/user-table",
+        "/user/add-user"
+>>>>>>> features/login
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "/login/login-user": {
+      "filePath": "login/login-user.tsx"
+    },
+>>>>>>> features/login
     "/profile/view-profile": {
       "filePath": "profile/view-profile.tsx"
     },
     "/table/user-table": {
       "filePath": "table/user-table.tsx"
+<<<<<<< HEAD
 =======
     "/profile/$id": {
       "filePath": "profile/$id.tsx"
 >>>>>>> sat/codeboard
+=======
+    },
+    "/user/add-user": {
+      "filePath": "user/add-user.tsx"
+>>>>>>> features/login
     }
   }
 }
