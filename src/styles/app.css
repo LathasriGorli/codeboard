@@ -177,9 +177,9 @@
   --an-profile-active-color: #05A155;
   --an-profile-active-text-size: 0.875rem;
 }
-@theme{
+@theme table{
   --an-table-header-text-color: #4F4F4F;
-  --an-table-text-size: 0.875rem;
+  --an-table-text-size: 0.8rem;
   --an-table-background: #fff;
   --an-table-body-text-color: #000;
   --an-table-body-number-color:rgba(0, 0, 0, 0.80);

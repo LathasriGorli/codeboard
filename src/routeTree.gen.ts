@@ -14,6 +14,8 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as UserAddUserImport } from './routes/user/add-user'
 import { Route as TableUserTableImport } from './routes/table/user-table'
+import { Route as TableRecentCommitTableImport } from './routes/table/recent-commit-table'
+import { Route as TableCommitTableImport } from './routes/table/commit-table'
 import { Route as ProfileIdImport } from './routes/profile/$id'
 import { Route as LoginLoginUserImport } from './routes/login/login-user'
 
@@ -34,6 +36,18 @@ const UserAddUserRoute = UserAddUserImport.update({
 const TableUserTableRoute = TableUserTableImport.update({
   id: '/table/user-table',
   path: '/table/user-table',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TableRecentCommitTableRoute = TableRecentCommitTableImport.update({
+  id: '/table/recent-commit-table',
+  path: '/table/recent-commit-table',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TableCommitTableRoute = TableCommitTableImport.update({
+  id: '/table/commit-table',
+  path: '/table/commit-table',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -74,6 +88,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProfileIdImport
       parentRoute: typeof rootRoute
     }
+    '/table/commit-table': {
+      id: '/table/commit-table'
+      path: '/table/commit-table'
+      fullPath: '/table/commit-table'
+      preLoaderRoute: typeof TableCommitTableImport
+      parentRoute: typeof rootRoute
+    }
+    '/table/recent-commit-table': {
+      id: '/table/recent-commit-table'
+      path: '/table/recent-commit-table'
+      fullPath: '/table/recent-commit-table'
+      preLoaderRoute: typeof TableRecentCommitTableImport
+      parentRoute: typeof rootRoute
+    }
     '/table/user-table': {
       id: '/table/user-table'
       path: '/table/user-table'
@@ -97,6 +125,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/login/login-user': typeof LoginLoginUserRoute
   '/profile/$id': typeof ProfileIdRoute
+  '/table/commit-table': typeof TableCommitTableRoute
+  '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
   '/user/add-user': typeof UserAddUserRoute
 }
@@ -105,6 +135,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login/login-user': typeof LoginLoginUserRoute
   '/profile/$id': typeof ProfileIdRoute
+  '/table/commit-table': typeof TableCommitTableRoute
+  '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
   '/user/add-user': typeof UserAddUserRoute
 }
@@ -114,6 +146,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/login/login-user': typeof LoginLoginUserRoute
   '/profile/$id': typeof ProfileIdRoute
+  '/table/commit-table': typeof TableCommitTableRoute
+  '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
   '/user/add-user': typeof UserAddUserRoute
 }
@@ -124,6 +158,8 @@ export interface FileRouteTypes {
     | '/'
     | '/login/login-user'
     | '/profile/$id'
+    | '/table/commit-table'
+    | '/table/recent-commit-table'
     | '/table/user-table'
     | '/user/add-user'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +167,8 @@ export interface FileRouteTypes {
     | '/'
     | '/login/login-user'
     | '/profile/$id'
+    | '/table/commit-table'
+    | '/table/recent-commit-table'
     | '/table/user-table'
     | '/user/add-user'
   id:
@@ -138,6 +176,8 @@ export interface FileRouteTypes {
     | '/'
     | '/login/login-user'
     | '/profile/$id'
+    | '/table/commit-table'
+    | '/table/recent-commit-table'
     | '/table/user-table'
     | '/user/add-user'
   fileRoutesById: FileRoutesById
@@ -147,6 +187,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LoginLoginUserRoute: typeof LoginLoginUserRoute
   ProfileIdRoute: typeof ProfileIdRoute
+  TableCommitTableRoute: typeof TableCommitTableRoute
+  TableRecentCommitTableRoute: typeof TableRecentCommitTableRoute
   TableUserTableRoute: typeof TableUserTableRoute
   UserAddUserRoute: typeof UserAddUserRoute
 }
@@ -155,6 +197,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LoginLoginUserRoute: LoginLoginUserRoute,
   ProfileIdRoute: ProfileIdRoute,
+  TableCommitTableRoute: TableCommitTableRoute,
+  TableRecentCommitTableRoute: TableRecentCommitTableRoute,
   TableUserTableRoute: TableUserTableRoute,
   UserAddUserRoute: UserAddUserRoute,
 }
@@ -172,6 +216,8 @@ export const routeTree = rootRoute
         "/",
         "/login/login-user",
         "/profile/$id",
+        "/table/commit-table",
+        "/table/recent-commit-table",
         "/table/user-table",
         "/user/add-user"
       ]
@@ -184,6 +230,12 @@ export const routeTree = rootRoute
     },
     "/profile/$id": {
       "filePath": "profile/$id.tsx"
+    },
+    "/table/commit-table": {
+      "filePath": "table/commit-table.tsx"
+    },
+    "/table/recent-commit-table": {
+      "filePath": "table/recent-commit-table.tsx"
     },
     "/table/user-table": {
       "filePath": "table/user-table.tsx"

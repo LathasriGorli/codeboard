@@ -91,7 +91,7 @@ export const columns: ColumnDef<Project>[] = [
     accessorKey: "project_name",
     header: () => <div>Project Name</div>,
     cell: ({ row }) => (
-      <div className="flex gap-2 items-center w-40">
+      <div className="flex gap-2 items-center w-40 px-3">
         <img
           src={row.original.imgUrl}
           className="w-8 h-8 rounded-2xl object-cover border"
@@ -161,7 +161,7 @@ export const columns: ColumnDef<Project>[] = [
     id: "commit_link",
     header: () => <div>Commit Links</div>,
     cell: () => (
-      <Button className="bg-(--an-table-header-background) rounded-lg text-(--an-table-body-text-color) text-sm hover:bg-blue-400 hover:text-white h-7 font-normal">
+      <Button className="bg-(--an-table-header-background) rounded-lg text-(--an-table-body-text-color) text-(length:--an-table-body-text-size) hover:bg-blue-400 hover:text-white h-7 font-normal">
         Open Link
       </Button>
     ),
@@ -218,7 +218,7 @@ export function UserTable() {
                   key={header.id}
                   className="text-(--an-table-header-text-color) font-[inter] text-(length:--an-table-text-size) font-medium last:pt-2 last:pb-2  last:pr-2 first:pt-2 first:pb-2 first:pl-2 bg-(--an-table-background) p-0 first:rounded-tl-lg first:rounded-bl-lg last:rounded-tr-lg last:rounded-br-lg"
                 >
-                  <span  className="p-1 w-full block bg-(--an-table-header-background) rounded">
+                  <span  className="p-2 w-full block bg-(--an-table-header-background) rounded">
                   {header.isPlaceholder
                     ? null
                     : flexRender(
