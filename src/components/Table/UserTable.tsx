@@ -238,7 +238,7 @@ export function UserTable() {
                 {row.getVisibleCells().map((cell) => (
                   <TableCell
                     key={cell.id}
-                    className="text-(length:--an-table-text-size) font-[inter] font-normal px-2 py-1 first:rounded-tl-lg first:rounded-bl-lg last:rounded-tr-lg last:rounded-br-lg"
+                    className="text-(length:--an-table-text-size) font-[inter] font-normal px-1 py-1 first:rounded-tl-lg first:rounded-bl-lg last:rounded-tr-lg last:rounded-br-lg"
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
