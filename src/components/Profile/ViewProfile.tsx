@@ -71,7 +71,7 @@ export function ViewProfile() {
           <CardHeader>
             <div className="flex gap-5 items-start">
               <CardTitle className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-title-text-size) font-medium">
-                {capital(user?.first_name)}  {capital(user?.last_name)}
+                {capital(user?.first_name || "")}  {capital(user?.last_name || "")}
               </CardTitle>
               <div className="rounded-4xl bg-(--an-profile-active-bg) flex justify-center items-center px-4 py-1 h-6">
                 <span className="text-(--an-profile-active-color) font-[urbanist] text-(length:--an-profile-active-text-size) font-medium">
