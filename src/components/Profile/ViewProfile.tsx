@@ -1,32 +1,43 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Label } from "../ui/label";
 import { Avatar, AvatarImage } from "../ui/avatar";
-import { useQuery } from "@tanstack/react-query";
-import { getProfileAPI } from "~/http/services/profile";
-import dayjs from "dayjs";
-import { useParams } from "@tanstack/react-router";
 
-export function ViewProfile() {
-  const { id } = useParams({ from: "/profile/$id" });
-
-  const { isLoading, data } = useQuery({
-    queryKey: ['user', id],
-    queryFn: () => getProfileAPI(id),
-    enabled: !!id,
-  });
-
-  const user = data?.data;
-  function capital(string: string) {
-    return string.split('').map((char: string, index) =>
-      index === 0 ? char.toUpperCase() : char).join('')
-  }
-
+type ProfileData = {
+  name: string;
+  email?: string;
+  phone?: string;
+  designation?: string;
+  dob: string;
+  doj: string;
+  avatarUrl: string;
+  status?: string;
+};
+export const profileData: ProfileData = {
+  name: "Riti Shan",
+  email: "ritishan@gmail.com",
+  phone: "1234567890",
+  designation: "Frontend Developer",
+  dob: "26 Mar 2003",
+  doj: "13 May 2023",
+  avatarUrl: "https://github.com/shadcn.png",
+  status: "Active",
+};
+export function ViewProfile({
+  name,
+  email,
+  phone,
+  designation,
+  dob,
+  doj,
+  avatarUrl,
+  status,
+}: ProfileData) {
   return (
     <Card className="w-300 h-45 p-4 items-start rounded-(--an-profile-border-radius) bg-(--an-profile-background) m-5 shadow-none border">
       <div className="flex">
         <div className="pt-2">
           <Avatar className="w-35 h-35 object-cover">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src={avatarUrl} alt={name} />
           </Avatar>
         </div>
 
@@ -34,11 +45,23 @@ export function ViewProfile() {
           <CardHeader>
             <div className="flex gap-5 items-start">
               <CardTitle className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-title-text-size) font-medium">
-                {capital(user?.first_name || "")} {capital(user?.last_name || "")}
+                {name}
               </CardTitle>
-              <div className="rounded-4xl bg-(--an-profile-active-bg) flex justify-center items-center px-4 py-1 h-6">
-                <span className="text-(--an-profile-active-color) font-[urbanist] text-(length:--an-profile-active-text-size) font-medium">
-                  Active
+              <div
+                className={`rounded-4xl ${
+                  String(status).toLowerCase() === "active"
+                    ? "bg-green-500 text-green-500"
+                    : "bg-red-500 text-red-500"
+                } flex justify-center items-center px-4 py-1 h-6`}
+              >
+                <span
+                  className={`text-(length:--an-profile-active-text-size) font-medium ${
+                    String(status).toLowerCase() === "active"
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }`}
+                >
+                  {status}
                 </span>
               </div>
             </div>
@@ -58,7 +81,7 @@ export function ViewProfile() {
                     id="email"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    {user?.email}
+                    {email}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 w-75 justify-center align-start">
@@ -72,7 +95,7 @@ export function ViewProfile() {
                     id="mobile"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    {user?.phone}
+                    {phone}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 w-75 justify-center align-start">
@@ -86,7 +109,7 @@ export function ViewProfile() {
                     id="designation"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    {user?.designation}
+                    {designation}
                   </p>
                 </div>
               </div>
@@ -102,7 +125,7 @@ export function ViewProfile() {
                     id="email"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    {dayjs(user?.dob).format("DD MMM YYYY")}
+                    {dob}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 w-75 justify-center align-start">
@@ -116,7 +139,7 @@ export function ViewProfile() {
                     id="mobile"
                     className="text-(--an-profile-text-color) font-[urbanist] text-(length:--an-profile-text-size) font-medium"
                   >
-                    {dayjs(user?.doj).format("DD MMM YYYY")}
+                    {doj}
                   </p>
                 </div>
               </div>
@@ -126,4 +149,8 @@ export function ViewProfile() {
       </div>
     </Card>
   );
+}
+
+export function Profile() {
+  return <ViewProfile {...profileData} />;
 }

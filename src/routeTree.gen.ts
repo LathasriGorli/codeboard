@@ -13,11 +13,25 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as UserAddUserImport } from './routes/user/add-user'
+import { Route as TestingTableImport } from './routes/testing/table'
+import { Route as TestingSidebarImport } from './routes/testing/sidebar'
+import { Route as TestingLoginImport } from './routes/testing/login'
+import { Route as TestingLocationsImport } from './routes/testing/locations'
+import { Route as TestingDoctorLeaveTableImport } from './routes/testing/doctor-leave-table'
 import { Route as TableUserTableImport } from './routes/table/user-table'
 import { Route as TableRecentCommitTableImport } from './routes/table/recent-commit-table'
+import { Route as TableProfileTableImport } from './routes/table/profile-table'
+import { Route as TableDataTableImport } from './routes/table/data-table'
 import { Route as TableCommitTableImport } from './routes/table/commit-table'
-import { Route as ProfileIdImport } from './routes/profile/$id'
-import { Route as LoginLoginUserImport } from './routes/login/login-user'
+import { Route as ProfileViewProfileImport } from './routes/profile/view-profile'
+import { Route as CardsIdImport } from './routes/cards/$id'
+import { Route as CardUsersCardImport } from './routes/card/users-card'
+import { Route as CardSidebarMenuImport } from './routes/card/sidebar-menu'
+import { Route as CardLoginImport } from './routes/card/login'
+import { Route as CardLocationNameImport } from './routes/card/location-name'
+import { Route as CardHeaderImport } from './routes/card/header'
+import { Route as CardFilterImport } from './routes/card/filter'
+import { Route as CardDoctorTableImport } from './routes/card/doctor-table'
 
 // Create/Update Routes
 
@@ -33,6 +47,36 @@ const UserAddUserRoute = UserAddUserImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const TestingTableRoute = TestingTableImport.update({
+  id: '/testing/table',
+  path: '/testing/table',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TestingSidebarRoute = TestingSidebarImport.update({
+  id: '/testing/sidebar',
+  path: '/testing/sidebar',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TestingLoginRoute = TestingLoginImport.update({
+  id: '/testing/login',
+  path: '/testing/login',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TestingLocationsRoute = TestingLocationsImport.update({
+  id: '/testing/locations',
+  path: '/testing/locations',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TestingDoctorLeaveTableRoute = TestingDoctorLeaveTableImport.update({
+  id: '/testing/doctor-leave-table',
+  path: '/testing/doctor-leave-table',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const TableUserTableRoute = TableUserTableImport.update({
   id: '/table/user-table',
   path: '/table/user-table',
@@ -45,21 +89,75 @@ const TableRecentCommitTableRoute = TableRecentCommitTableImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const TableProfileTableRoute = TableProfileTableImport.update({
+  id: '/table/profile-table',
+  path: '/table/profile-table',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TableDataTableRoute = TableDataTableImport.update({
+  id: '/table/data-table',
+  path: '/table/data-table',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const TableCommitTableRoute = TableCommitTableImport.update({
   id: '/table/commit-table',
   path: '/table/commit-table',
   getParentRoute: () => rootRoute,
 } as any)
 
-const ProfileIdRoute = ProfileIdImport.update({
-  id: '/profile/$id',
-  path: '/profile/$id',
+const ProfileViewProfileRoute = ProfileViewProfileImport.update({
+  id: '/profile/view-profile',
+  path: '/profile/view-profile',
   getParentRoute: () => rootRoute,
 } as any)
 
-const LoginLoginUserRoute = LoginLoginUserImport.update({
-  id: '/login/login-user',
-  path: '/login/login-user',
+const CardsIdRoute = CardsIdImport.update({
+  id: '/cards/$id',
+  path: '/cards/$id',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CardUsersCardRoute = CardUsersCardImport.update({
+  id: '/card/users-card',
+  path: '/card/users-card',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CardSidebarMenuRoute = CardSidebarMenuImport.update({
+  id: '/card/sidebar-menu',
+  path: '/card/sidebar-menu',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CardLoginRoute = CardLoginImport.update({
+  id: '/card/login',
+  path: '/card/login',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CardLocationNameRoute = CardLocationNameImport.update({
+  id: '/card/location-name',
+  path: '/card/location-name',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CardHeaderRoute = CardHeaderImport.update({
+  id: '/card/header',
+  path: '/card/header',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CardFilterRoute = CardFilterImport.update({
+  id: '/card/filter',
+  path: '/card/filter',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CardDoctorTableRoute = CardDoctorTableImport.update({
+  id: '/card/doctor-table',
+  path: '/card/doctor-table',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -74,18 +172,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/login/login-user': {
-      id: '/login/login-user'
-      path: '/login/login-user'
-      fullPath: '/login/login-user'
-      preLoaderRoute: typeof LoginLoginUserImport
+    '/card/doctor-table': {
+      id: '/card/doctor-table'
+      path: '/card/doctor-table'
+      fullPath: '/card/doctor-table'
+      preLoaderRoute: typeof CardDoctorTableImport
       parentRoute: typeof rootRoute
     }
-    '/profile/$id': {
-      id: '/profile/$id'
-      path: '/profile/$id'
-      fullPath: '/profile/$id'
-      preLoaderRoute: typeof ProfileIdImport
+    '/card/filter': {
+      id: '/card/filter'
+      path: '/card/filter'
+      fullPath: '/card/filter'
+      preLoaderRoute: typeof CardFilterImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/header': {
+      id: '/card/header'
+      path: '/card/header'
+      fullPath: '/card/header'
+      preLoaderRoute: typeof CardHeaderImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/location-name': {
+      id: '/card/location-name'
+      path: '/card/location-name'
+      fullPath: '/card/location-name'
+      preLoaderRoute: typeof CardLocationNameImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/login': {
+      id: '/card/login'
+      path: '/card/login'
+      fullPath: '/card/login'
+      preLoaderRoute: typeof CardLoginImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/sidebar-menu': {
+      id: '/card/sidebar-menu'
+      path: '/card/sidebar-menu'
+      fullPath: '/card/sidebar-menu'
+      preLoaderRoute: typeof CardSidebarMenuImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/users-card': {
+      id: '/card/users-card'
+      path: '/card/users-card'
+      fullPath: '/card/users-card'
+      preLoaderRoute: typeof CardUsersCardImport
+      parentRoute: typeof rootRoute
+    }
+    '/cards/$id': {
+      id: '/cards/$id'
+      path: '/cards/$id'
+      fullPath: '/cards/$id'
+      preLoaderRoute: typeof CardsIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/profile/view-profile': {
+      id: '/profile/view-profile'
+      path: '/profile/view-profile'
+      fullPath: '/profile/view-profile'
+      preLoaderRoute: typeof ProfileViewProfileImport
       parentRoute: typeof rootRoute
     }
     '/table/commit-table': {
@@ -93,6 +240,20 @@ declare module '@tanstack/react-router' {
       path: '/table/commit-table'
       fullPath: '/table/commit-table'
       preLoaderRoute: typeof TableCommitTableImport
+      parentRoute: typeof rootRoute
+    }
+    '/table/data-table': {
+      id: '/table/data-table'
+      path: '/table/data-table'
+      fullPath: '/table/data-table'
+      preLoaderRoute: typeof TableDataTableImport
+      parentRoute: typeof rootRoute
+    }
+    '/table/profile-table': {
+      id: '/table/profile-table'
+      path: '/table/profile-table'
+      fullPath: '/table/profile-table'
+      preLoaderRoute: typeof TableProfileTableImport
       parentRoute: typeof rootRoute
     }
     '/table/recent-commit-table': {
@@ -109,6 +270,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TableUserTableImport
       parentRoute: typeof rootRoute
     }
+    '/testing/doctor-leave-table': {
+      id: '/testing/doctor-leave-table'
+      path: '/testing/doctor-leave-table'
+      fullPath: '/testing/doctor-leave-table'
+      preLoaderRoute: typeof TestingDoctorLeaveTableImport
+      parentRoute: typeof rootRoute
+    }
+    '/testing/locations': {
+      id: '/testing/locations'
+      path: '/testing/locations'
+      fullPath: '/testing/locations'
+      preLoaderRoute: typeof TestingLocationsImport
+      parentRoute: typeof rootRoute
+    }
+    '/testing/login': {
+      id: '/testing/login'
+      path: '/testing/login'
+      fullPath: '/testing/login'
+      preLoaderRoute: typeof TestingLoginImport
+      parentRoute: typeof rootRoute
+    }
+    '/testing/sidebar': {
+      id: '/testing/sidebar'
+      path: '/testing/sidebar'
+      fullPath: '/testing/sidebar'
+      preLoaderRoute: typeof TestingSidebarImport
+      parentRoute: typeof rootRoute
+    }
+    '/testing/table': {
+      id: '/testing/table'
+      path: '/testing/table'
+      fullPath: '/testing/table'
+      preLoaderRoute: typeof TestingTableImport
+      parentRoute: typeof rootRoute
+    }
     '/user/add-user': {
       id: '/user/add-user'
       path: '/user/add-user'
@@ -123,32 +319,74 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/login/login-user': typeof LoginLoginUserRoute
-  '/profile/$id': typeof ProfileIdRoute
+  '/card/doctor-table': typeof CardDoctorTableRoute
+  '/card/filter': typeof CardFilterRoute
+  '/card/header': typeof CardHeaderRoute
+  '/card/location-name': typeof CardLocationNameRoute
+  '/card/login': typeof CardLoginRoute
+  '/card/sidebar-menu': typeof CardSidebarMenuRoute
+  '/card/users-card': typeof CardUsersCardRoute
+  '/cards/$id': typeof CardsIdRoute
+  '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/commit-table': typeof TableCommitTableRoute
+  '/table/data-table': typeof TableDataTableRoute
+  '/table/profile-table': typeof TableProfileTableRoute
   '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
+  '/testing/doctor-leave-table': typeof TestingDoctorLeaveTableRoute
+  '/testing/locations': typeof TestingLocationsRoute
+  '/testing/login': typeof TestingLoginRoute
+  '/testing/sidebar': typeof TestingSidebarRoute
+  '/testing/table': typeof TestingTableRoute
   '/user/add-user': typeof UserAddUserRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/login/login-user': typeof LoginLoginUserRoute
-  '/profile/$id': typeof ProfileIdRoute
+  '/card/doctor-table': typeof CardDoctorTableRoute
+  '/card/filter': typeof CardFilterRoute
+  '/card/header': typeof CardHeaderRoute
+  '/card/location-name': typeof CardLocationNameRoute
+  '/card/login': typeof CardLoginRoute
+  '/card/sidebar-menu': typeof CardSidebarMenuRoute
+  '/card/users-card': typeof CardUsersCardRoute
+  '/cards/$id': typeof CardsIdRoute
+  '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/commit-table': typeof TableCommitTableRoute
+  '/table/data-table': typeof TableDataTableRoute
+  '/table/profile-table': typeof TableProfileTableRoute
   '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
+  '/testing/doctor-leave-table': typeof TestingDoctorLeaveTableRoute
+  '/testing/locations': typeof TestingLocationsRoute
+  '/testing/login': typeof TestingLoginRoute
+  '/testing/sidebar': typeof TestingSidebarRoute
+  '/testing/table': typeof TestingTableRoute
   '/user/add-user': typeof UserAddUserRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/login/login-user': typeof LoginLoginUserRoute
-  '/profile/$id': typeof ProfileIdRoute
+  '/card/doctor-table': typeof CardDoctorTableRoute
+  '/card/filter': typeof CardFilterRoute
+  '/card/header': typeof CardHeaderRoute
+  '/card/location-name': typeof CardLocationNameRoute
+  '/card/login': typeof CardLoginRoute
+  '/card/sidebar-menu': typeof CardSidebarMenuRoute
+  '/card/users-card': typeof CardUsersCardRoute
+  '/cards/$id': typeof CardsIdRoute
+  '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/commit-table': typeof TableCommitTableRoute
+  '/table/data-table': typeof TableDataTableRoute
+  '/table/profile-table': typeof TableProfileTableRoute
   '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
+  '/testing/doctor-leave-table': typeof TestingDoctorLeaveTableRoute
+  '/testing/locations': typeof TestingLocationsRoute
+  '/testing/login': typeof TestingLoginRoute
+  '/testing/sidebar': typeof TestingSidebarRoute
+  '/testing/table': typeof TestingTableRoute
   '/user/add-user': typeof UserAddUserRoute
 }
 
@@ -156,50 +394,120 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/login/login-user'
-    | '/profile/$id'
+    | '/card/doctor-table'
+    | '/card/filter'
+    | '/card/header'
+    | '/card/location-name'
+    | '/card/login'
+    | '/card/sidebar-menu'
+    | '/card/users-card'
+    | '/cards/$id'
+    | '/profile/view-profile'
     | '/table/commit-table'
+    | '/table/data-table'
+    | '/table/profile-table'
     | '/table/recent-commit-table'
     | '/table/user-table'
+    | '/testing/doctor-leave-table'
+    | '/testing/locations'
+    | '/testing/login'
+    | '/testing/sidebar'
+    | '/testing/table'
     | '/user/add-user'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/login/login-user'
-    | '/profile/$id'
+    | '/card/doctor-table'
+    | '/card/filter'
+    | '/card/header'
+    | '/card/location-name'
+    | '/card/login'
+    | '/card/sidebar-menu'
+    | '/card/users-card'
+    | '/cards/$id'
+    | '/profile/view-profile'
     | '/table/commit-table'
+    | '/table/data-table'
+    | '/table/profile-table'
     | '/table/recent-commit-table'
     | '/table/user-table'
+    | '/testing/doctor-leave-table'
+    | '/testing/locations'
+    | '/testing/login'
+    | '/testing/sidebar'
+    | '/testing/table'
     | '/user/add-user'
   id:
     | '__root__'
     | '/'
-    | '/login/login-user'
-    | '/profile/$id'
+    | '/card/doctor-table'
+    | '/card/filter'
+    | '/card/header'
+    | '/card/location-name'
+    | '/card/login'
+    | '/card/sidebar-menu'
+    | '/card/users-card'
+    | '/cards/$id'
+    | '/profile/view-profile'
     | '/table/commit-table'
+    | '/table/data-table'
+    | '/table/profile-table'
     | '/table/recent-commit-table'
     | '/table/user-table'
+    | '/testing/doctor-leave-table'
+    | '/testing/locations'
+    | '/testing/login'
+    | '/testing/sidebar'
+    | '/testing/table'
     | '/user/add-user'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LoginLoginUserRoute: typeof LoginLoginUserRoute
-  ProfileIdRoute: typeof ProfileIdRoute
+  CardDoctorTableRoute: typeof CardDoctorTableRoute
+  CardFilterRoute: typeof CardFilterRoute
+  CardHeaderRoute: typeof CardHeaderRoute
+  CardLocationNameRoute: typeof CardLocationNameRoute
+  CardLoginRoute: typeof CardLoginRoute
+  CardSidebarMenuRoute: typeof CardSidebarMenuRoute
+  CardUsersCardRoute: typeof CardUsersCardRoute
+  CardsIdRoute: typeof CardsIdRoute
+  ProfileViewProfileRoute: typeof ProfileViewProfileRoute
   TableCommitTableRoute: typeof TableCommitTableRoute
+  TableDataTableRoute: typeof TableDataTableRoute
+  TableProfileTableRoute: typeof TableProfileTableRoute
   TableRecentCommitTableRoute: typeof TableRecentCommitTableRoute
   TableUserTableRoute: typeof TableUserTableRoute
+  TestingDoctorLeaveTableRoute: typeof TestingDoctorLeaveTableRoute
+  TestingLocationsRoute: typeof TestingLocationsRoute
+  TestingLoginRoute: typeof TestingLoginRoute
+  TestingSidebarRoute: typeof TestingSidebarRoute
+  TestingTableRoute: typeof TestingTableRoute
   UserAddUserRoute: typeof UserAddUserRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LoginLoginUserRoute: LoginLoginUserRoute,
-  ProfileIdRoute: ProfileIdRoute,
+  CardDoctorTableRoute: CardDoctorTableRoute,
+  CardFilterRoute: CardFilterRoute,
+  CardHeaderRoute: CardHeaderRoute,
+  CardLocationNameRoute: CardLocationNameRoute,
+  CardLoginRoute: CardLoginRoute,
+  CardSidebarMenuRoute: CardSidebarMenuRoute,
+  CardUsersCardRoute: CardUsersCardRoute,
+  CardsIdRoute: CardsIdRoute,
+  ProfileViewProfileRoute: ProfileViewProfileRoute,
   TableCommitTableRoute: TableCommitTableRoute,
+  TableDataTableRoute: TableDataTableRoute,
+  TableProfileTableRoute: TableProfileTableRoute,
   TableRecentCommitTableRoute: TableRecentCommitTableRoute,
   TableUserTableRoute: TableUserTableRoute,
+  TestingDoctorLeaveTableRoute: TestingDoctorLeaveTableRoute,
+  TestingLocationsRoute: TestingLocationsRoute,
+  TestingLoginRoute: TestingLoginRoute,
+  TestingSidebarRoute: TestingSidebarRoute,
+  TestingTableRoute: TestingTableRoute,
   UserAddUserRoute: UserAddUserRoute,
 }
 
@@ -214,31 +522,87 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/login/login-user",
-        "/profile/$id",
+        "/card/doctor-table",
+        "/card/filter",
+        "/card/header",
+        "/card/location-name",
+        "/card/login",
+        "/card/sidebar-menu",
+        "/card/users-card",
+        "/cards/$id",
+        "/profile/view-profile",
         "/table/commit-table",
+        "/table/data-table",
+        "/table/profile-table",
         "/table/recent-commit-table",
         "/table/user-table",
+        "/testing/doctor-leave-table",
+        "/testing/locations",
+        "/testing/login",
+        "/testing/sidebar",
+        "/testing/table",
         "/user/add-user"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/login/login-user": {
-      "filePath": "login/login-user.tsx"
+    "/card/doctor-table": {
+      "filePath": "card/doctor-table.tsx"
     },
-    "/profile/$id": {
-      "filePath": "profile/$id.tsx"
+    "/card/filter": {
+      "filePath": "card/filter.tsx"
+    },
+    "/card/header": {
+      "filePath": "card/header.tsx"
+    },
+    "/card/location-name": {
+      "filePath": "card/location-name.tsx"
+    },
+    "/card/login": {
+      "filePath": "card/login.tsx"
+    },
+    "/card/sidebar-menu": {
+      "filePath": "card/sidebar-menu.tsx"
+    },
+    "/card/users-card": {
+      "filePath": "card/users-card.tsx"
+    },
+    "/cards/$id": {
+      "filePath": "cards/$id.tsx"
+    },
+    "/profile/view-profile": {
+      "filePath": "profile/view-profile.tsx"
     },
     "/table/commit-table": {
       "filePath": "table/commit-table.tsx"
+    },
+    "/table/data-table": {
+      "filePath": "table/data-table.tsx"
+    },
+    "/table/profile-table": {
+      "filePath": "table/profile-table.tsx"
     },
     "/table/recent-commit-table": {
       "filePath": "table/recent-commit-table.tsx"
     },
     "/table/user-table": {
       "filePath": "table/user-table.tsx"
+    },
+    "/testing/doctor-leave-table": {
+      "filePath": "testing/doctor-leave-table.tsx"
+    },
+    "/testing/locations": {
+      "filePath": "testing/locations.tsx"
+    },
+    "/testing/login": {
+      "filePath": "testing/login.tsx"
+    },
+    "/testing/sidebar": {
+      "filePath": "testing/sidebar.tsx"
+    },
+    "/testing/table": {
+      "filePath": "testing/table.tsx"
     },
     "/user/add-user": {
       "filePath": "user/add-user.tsx"

@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -6,8 +6,10 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <div className="p-2">
-      <h3>Welcome Home!!!</h3>
+    <div className="p-2 flex flex-col items-start">
+      <button onClick={() => window.location.href = 'testing/table'}>Table</button>
+      <button onClick={() => window.location.href = 'testing/sidebar'}>Sidebar</button>
+      <button onClick={() => window.location.href = 'testing/login'}>Login</button>
     </div>
   )
 }

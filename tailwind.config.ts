@@ -9,6 +9,9 @@ module.exports = {
         fontFamily: {
           inter: ['Inter', 'sans-serif'],
           urbanist: ['Urbanist', 'sans-serif'],
+          manrope: ['Manrope', 'sans-serif'],
+          dmsans: ['DM Sans', 'sans-serif'],
+          nunito: ['Nunito Sans', 'sans-serif'],
         },
       },    
     },

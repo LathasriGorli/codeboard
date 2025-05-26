@@ -1,0 +1,4679 @@
+[
+    {
+      "location": {
+        "id": 100,
+        "location_code": 2000,
+        "location_en_name": "Harborview Medical",
+        "location_ar_name": "العيادة 1",
+        "s3_icon": "icon1.png",
+        "is_active": true,
+        "created_on": "22-06-2025"
+      },
+      "specializations": [
+        {
+          "id": 676,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 510,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 845,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 101,
+        "location_code": 2001,
+        "location_en_name": "Springfield Health",
+        "location_ar_name": "العيادة 2",
+        "s3_icon": "icon2.png",
+        "is_active": false,
+        "created_on": "20-02-2025"
+      },
+      "specializations": [
+        {
+          "id": 671,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 265,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 283,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 102,
+        "location_code": 2002,
+        "location_en_name": "Oakwood Clinic",
+        "location_ar_name": "العيادة 3",
+        "s3_icon": "icon3.png",
+        "is_active": false,
+        "created_on": "10-04-2025"
+      },
+      "specializations": [
+        {
+          "id": 696,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 357,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 945,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 432,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 562,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 103,
+        "location_code": 2003,
+        "location_en_name": "Meadowbrook Hospital",
+        "location_ar_name": "العيادة 4",
+        "s3_icon": "icon4.png",
+        "is_active": true,
+        "created_on": "23-07-2025"
+      },
+      "specializations": [
+        {
+          "id": 495,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 405,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 766,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 104,
+        "location_code": 2004,
+        "location_en_name": "Pinecrest Care Center",
+        "location_ar_name": "العيادة 5",
+        "s3_icon": "icon5.png",
+        "is_active": true,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 569,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 585,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 610,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 474,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 105,
+        "location_code": 2005,
+        "location_en_name": "Riverside Medical",
+        "location_ar_name": "العيادة 6",
+        "s3_icon": "icon6.png",
+        "is_active": false,
+        "created_on": "15-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 419,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 368,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 106,
+        "location_code": 2006,
+        "location_en_name": "Highland Clinic",
+        "location_ar_name": "العيادة 7",
+        "s3_icon": "icon7.png",
+        "is_active": false,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 880,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 724,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 561,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 404,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 864,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 107,
+        "location_code": 2007,
+        "location_en_name": "Valley Regional",
+        "location_ar_name": "العيادة 8",
+        "s3_icon": "icon8.png",
+        "is_active": false,
+        "created_on": "10-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 789,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 884,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 713,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 663,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 416,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 108,
+        "location_code": 2008,
+        "location_en_name": "Lakeside Hospital",
+        "location_ar_name": "العيادة 9",
+        "s3_icon": "icon9.png",
+        "is_active": false,
+        "created_on": "18-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 909,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        },
+        {
+          "id": 891,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 746,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 109,
+        "location_code": 2009,
+        "location_en_name": "Cedar Grove Clinic",
+        "location_ar_name": "العيادة 10",
+        "s3_icon": "icon10.png",
+        "is_active": true,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 518,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 933,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 110,
+        "location_code": 2010,
+        "location_en_name": "Blue Ridge Health",
+        "location_ar_name": "العيادة 11",
+        "s3_icon": "icon11.png",
+        "is_active": false,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 749,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 360,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 918,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 939,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 856,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 111,
+        "location_code": 2011,
+        "location_en_name": "Silver Lake Medical",
+        "location_ar_name": "العيادة 12",
+        "s3_icon": "icon12.png",
+        "is_active": true,
+        "created_on": "19-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 327,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 956,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 928,
+          "specialization_en_name": "Allergy & Immunology",
+          "specialization_ar_name": "طب الحساسية والمناعة",
+          "s3_image": "SpecializationIcons/42.png",
+          "s3_icon": "allergy_&_immunology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 42
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 112,
+        "location_code": 2012,
+        "location_en_name": "Maplewood Hospital",
+        "location_ar_name": "العيادة 13",
+        "s3_icon": "icon13.png",
+        "is_active": true,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 303,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 336,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 113,
+        "location_code": 2013,
+        "location_en_name": "Sunset Health Center",
+        "location_ar_name": "العيادة 14",
+        "s3_icon": "icon14.png",
+        "is_active": false,
+        "created_on": "21-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 765,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 569,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 812,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 114,
+        "location_code": 2014,
+        "location_en_name": "Elm Street Clinic",
+        "location_ar_name": "العيادة 15",
+        "s3_icon": "icon15.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 647,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 228,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 845,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 489,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 115,
+        "location_code": 2015,
+        "location_en_name": "Golden Valley Health",
+        "location_ar_name": "العيادة 16",
+        "s3_icon": "icon16.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 851,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 450,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 245,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 804,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 116,
+        "location_code": 2016,
+        "location_en_name": "Willow Springs Clinic",
+        "location_ar_name": "العيادة 17",
+        "s3_icon": "icon17.png",
+        "is_active": true,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 458,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 219,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 117,
+        "location_code": 2017,
+        "location_en_name": "Ironwood Medical",
+        "location_ar_name": "العيادة 18",
+        "s3_icon": "icon18.png",
+        "is_active": false,
+        "created_on": "30-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 392,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 916,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 118,
+        "location_code": 2018,
+        "location_en_name": "Prairie Health Center",
+        "location_ar_name": "العيادة 19",
+        "s3_icon": "icon19.png",
+        "is_active": true,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 356,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 624,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 203,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 506,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 247,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 119,
+        "location_code": 2019,
+        "location_en_name": "Oceanview Hospital",
+        "location_ar_name": "العيادة 20",
+        "s3_icon": "icon20.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 443,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 639,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 120,
+        "location_code": 2020,
+        "location_en_name": "Foxhill Clinic",
+        "location_ar_name": "العيادة 21",
+        "s3_icon": "icon21.png",
+        "is_active": true,
+        "created_on": "21-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 959,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 814,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 951,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 913,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 121,
+        "location_code": 2021,
+        "location_en_name": "Stonebridge Medical",
+        "location_ar_name": "العيادة 22",
+        "s3_icon": "icon22.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 410,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 514,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 788,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 767,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 489,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 122,
+        "location_code": 2022,
+        "location_en_name": "Bayside Health",
+        "location_ar_name": "العيادة 23",
+        "s3_icon": "icon23.png",
+        "is_active": false,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 979,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 632,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 493,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        },
+        {
+          "id": 481,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 123,
+        "location_code": 2023,
+        "location_en_name": "Twin Oaks Hospital",
+        "location_ar_name": "العيادة 24",
+        "s3_icon": "icon24.png",
+        "is_active": true,
+        "created_on": "23-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 622,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 760,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 124,
+        "location_code": 2024,
+        "location_en_name": "Greenhill Medical",
+        "location_ar_name": "العيادة 25",
+        "s3_icon": "icon25.png",
+        "is_active": true,
+        "created_on": "24-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 888,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 206,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 637,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 125,
+        "location_code": 2025,
+        "location_en_name": "Northgate Clinic",
+        "location_ar_name": "العيادة 26",
+        "s3_icon": "icon26.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 837,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 599,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 126,
+        "location_code": 2026,
+        "location_en_name": "Southside Health",
+        "location_ar_name": "العيادة 27",
+        "s3_icon": "icon27.png",
+        "is_active": false,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 348,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 870,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 643,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 127,
+        "location_code": 2027,
+        "location_en_name": "Westwood Medical",
+        "location_ar_name": "العيادة 28",
+        "s3_icon": "icon28.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 875,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 775,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 570,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 612,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 128,
+        "location_code": 2028,
+        "location_en_name": "Brookside Hospital",
+        "location_ar_name": "العيادة 29",
+        "s3_icon": "icon29.png",
+        "is_active": false,
+        "created_on": "28-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 927,
+          "specialization_en_name": "Allergy & Immunology",
+          "specialization_ar_name": "طب الحساسية والمناعة",
+          "s3_image": "SpecializationIcons/42.png",
+          "s3_icon": "allergy_&_immunology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 42
+        },
+        {
+          "id": 407,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 899,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 882,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 779,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 129,
+        "location_code": 2029,
+        "location_en_name": "Hilltop Health Center",
+        "location_ar_name": "العيادة 30",
+        "s3_icon": "icon30.png",
+        "is_active": false,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 982,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 335,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 391,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 100,
+        "location_code": 2000,
+        "location_en_name": "Harborview Medical",
+        "location_ar_name": "العيادة 1",
+        "s3_icon": "icon1.png",
+        "is_active": true,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 676,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 510,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 845,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 101,
+        "location_code": 2001,
+        "location_en_name": "Springfield Health",
+        "location_ar_name": "العيادة 2",
+        "s3_icon": "icon2.png",
+        "is_active": false,
+        "created_on": "20-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 671,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 265,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 283,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 102,
+        "location_code": 2002,
+        "location_en_name": "Oakwood Clinic",
+        "location_ar_name": "العيادة 3",
+        "s3_icon": "icon3.png",
+        "is_active": false,
+        "created_on": "10-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 696,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 357,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 945,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 432,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 562,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 103,
+        "location_code": 2003,
+        "location_en_name": "Meadowbrook Hospital",
+        "location_ar_name": "العيادة 4",
+        "s3_icon": "icon4.png",
+        "is_active": true,
+        "created_on": "23-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 495,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 405,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 766,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 104,
+        "location_code": 2004,
+        "location_en_name": "Pinecrest Care Center",
+        "location_ar_name": "العيادة 5",
+        "s3_icon": "icon5.png",
+        "is_active": true,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 569,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 585,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 610,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 474,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 105,
+        "location_code": 2005,
+        "location_en_name": "Riverside Medical",
+        "location_ar_name": "العيادة 6",
+        "s3_icon": "icon6.png",
+        "is_active": false,
+        "created_on": "15-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 419,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 368,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 106,
+        "location_code": 2006,
+        "location_en_name": "Highland Clinic",
+        "location_ar_name": "العيادة 7",
+        "s3_icon": "icon7.png",
+        "is_active": false,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 880,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 724,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 561,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 404,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 864,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 107,
+        "location_code": 2007,
+        "location_en_name": "Valley Regional",
+        "location_ar_name": "العيادة 8",
+        "s3_icon": "icon8.png",
+        "is_active": false,
+        "created_on": "10-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 789,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 884,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 713,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 663,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 416,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 108,
+        "location_code": 2008,
+        "location_en_name": "Lakeside Hospital",
+        "location_ar_name": "العيادة 9",
+        "s3_icon": "icon9.png",
+        "is_active": false,
+        "created_on": "18-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 909,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        },
+        {
+          "id": 891,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 746,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 109,
+        "location_code": 2009,
+        "location_en_name": "Cedar Grove Clinic",
+        "location_ar_name": "العيادة 10",
+        "s3_icon": "icon10.png",
+        "is_active": true,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 518,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 933,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 110,
+        "location_code": 2010,
+        "location_en_name": "Blue Ridge Health",
+        "location_ar_name": "العيادة 11",
+        "s3_icon": "icon11.png",
+        "is_active": false,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 749,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 360,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 918,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 939,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 856,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 111,
+        "location_code": 2011,
+        "location_en_name": "Silver Lake Medical",
+        "location_ar_name": "العيادة 12",
+        "s3_icon": "icon12.png",
+        "is_active": true,
+        "created_on": "19-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 327,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 956,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 928,
+          "specialization_en_name": "Allergy & Immunology",
+          "specialization_ar_name": "طب الحساسية والمناعة",
+          "s3_image": "SpecializationIcons/42.png",
+          "s3_icon": "allergy_&_immunology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 42
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 112,
+        "location_code": 2012,
+        "location_en_name": "Maplewood Hospital",
+        "location_ar_name": "العيادة 13",
+        "s3_icon": "icon13.png",
+        "is_active": true,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 303,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 336,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 113,
+        "location_code": 2013,
+        "location_en_name": "Sunset Health Center",
+        "location_ar_name": "العيادة 14",
+        "s3_icon": "icon14.png",
+        "is_active": false,
+        "created_on": "21-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 765,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 569,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 812,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 114,
+        "location_code": 2014,
+        "location_en_name": "Elm Street Clinic",
+        "location_ar_name": "العيادة 15",
+        "s3_icon": "icon15.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 647,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 228,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 845,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 489,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 115,
+        "location_code": 2015,
+        "location_en_name": "Golden Valley Health",
+        "location_ar_name": "العيادة 16",
+        "s3_icon": "icon16.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 851,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 450,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 245,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 804,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 116,
+        "location_code": 2016,
+        "location_en_name": "Willow Springs Clinic",
+        "location_ar_name": "العيادة 17",
+        "s3_icon": "icon17.png",
+        "is_active": true,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 458,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 219,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 117,
+        "location_code": 2017,
+        "location_en_name": "Ironwood Medical",
+        "location_ar_name": "العيادة 18",
+        "s3_icon": "icon18.png",
+        "is_active": false,
+        "created_on": "30-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 392,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 916,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 118,
+        "location_code": 2018,
+        "location_en_name": "Prairie Health Center",
+        "location_ar_name": "العيادة 19",
+        "s3_icon": "icon19.png",
+        "is_active": true,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 356,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 624,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 203,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 506,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 247,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 119,
+        "location_code": 2019,
+        "location_en_name": "Oceanview Hospital",
+        "location_ar_name": "العيادة 20",
+        "s3_icon": "icon20.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 443,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 639,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 120,
+        "location_code": 2020,
+        "location_en_name": "Foxhill Clinic",
+        "location_ar_name": "العيادة 21",
+        "s3_icon": "icon21.png",
+        "is_active": true,
+        "created_on": "21-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 959,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 814,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 951,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 913,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 121,
+        "location_code": 2021,
+        "location_en_name": "Stonebridge Medical",
+        "location_ar_name": "العيادة 22",
+        "s3_icon": "icon22.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 410,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 514,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 788,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 767,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 489,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 122,
+        "location_code": 2022,
+        "location_en_name": "Bayside Health",
+        "location_ar_name": "العيادة 23",
+        "s3_icon": "icon23.png",
+        "is_active": false,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 979,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 632,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 493,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        },
+        {
+          "id": 481,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 123,
+        "location_code": 2023,
+        "location_en_name": "Twin Oaks Hospital",
+        "location_ar_name": "العيادة 24",
+        "s3_icon": "icon24.png",
+        "is_active": true,
+        "created_on": "23-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 622,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 760,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 124,
+        "location_code": 2024,
+        "location_en_name": "Greenhill Medical",
+        "location_ar_name": "العيادة 25",
+        "s3_icon": "icon25.png",
+        "is_active": true,
+        "created_on": "24-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 888,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 206,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 637,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 125,
+        "location_code": 2025,
+        "location_en_name": "Northgate Clinic",
+        "location_ar_name": "العيادة 26",
+        "s3_icon": "icon26.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 837,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 599,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 126,
+        "location_code": 2026,
+        "location_en_name": "Southside Health",
+        "location_ar_name": "العيادة 27",
+        "s3_icon": "icon27.png",
+        "is_active": false,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 348,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 870,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 643,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 127,
+        "location_code": 2027,
+        "location_en_name": "Westwood Medical",
+        "location_ar_name": "العيادة 28",
+        "s3_icon": "icon28.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 875,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 775,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 570,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 612,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 128,
+        "location_code": 2028,
+        "location_en_name": "Brookside Hospital",
+        "location_ar_name": "العيادة 29",
+        "s3_icon": "icon29.png",
+        "is_active": false,
+        "created_on": "28-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 927,
+          "specialization_en_name": "Allergy & Immunology",
+          "specialization_ar_name": "طب الحساسية والمناعة",
+          "s3_image": "SpecializationIcons/42.png",
+          "s3_icon": "allergy_&_immunology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 42
+        },
+        {
+          "id": 407,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 899,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 882,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 779,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 129,
+        "location_code": 2029,
+        "location_en_name": "Hilltop Health Center",
+        "location_ar_name": "العيادة 30",
+        "s3_icon": "icon30.png",
+        "is_active": false,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 982,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 335,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 391,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 100,
+        "location_code": 2000,
+        "location_en_name": "Harborview Medical",
+        "location_ar_name": "العيادة 1",
+        "s3_icon": "icon1.png",
+        "is_active": true,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 676,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 510,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 845,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 101,
+        "location_code": 2001,
+        "location_en_name": "Springfield Health",
+        "location_ar_name": "العيادة 2",
+        "s3_icon": "icon2.png",
+        "is_active": false,
+        "created_on": "20-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 671,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 265,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 283,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 102,
+        "location_code": 2002,
+        "location_en_name": "Oakwood Clinic",
+        "location_ar_name": "العيادة 3",
+        "s3_icon": "icon3.png",
+        "is_active": false,
+        "created_on": "10-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 696,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 357,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 945,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 432,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 562,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 103,
+        "location_code": 2003,
+        "location_en_name": "Meadowbrook Hospital",
+        "location_ar_name": "العيادة 4",
+        "s3_icon": "icon4.png",
+        "is_active": true,
+        "created_on": "23-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 495,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 405,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 766,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 104,
+        "location_code": 2004,
+        "location_en_name": "Pinecrest Care Center",
+        "location_ar_name": "العيادة 5",
+        "s3_icon": "icon5.png",
+        "is_active": true,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 569,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 585,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 610,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 474,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 105,
+        "location_code": 2005,
+        "location_en_name": "Riverside Medical",
+        "location_ar_name": "العيادة 6",
+        "s3_icon": "icon6.png",
+        "is_active": false,
+        "created_on": "15-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 419,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 368,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 106,
+        "location_code": 2006,
+        "location_en_name": "Highland Clinic",
+        "location_ar_name": "العيادة 7",
+        "s3_icon": "icon7.png",
+        "is_active": false,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 880,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 724,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 561,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 404,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 864,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 107,
+        "location_code": 2007,
+        "location_en_name": "Valley Regional",
+        "location_ar_name": "العيادة 8",
+        "s3_icon": "icon8.png",
+        "is_active": false,
+        "created_on": "10-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 789,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 884,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 713,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 663,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 416,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 108,
+        "location_code": 2008,
+        "location_en_name": "Lakeside Hospital",
+        "location_ar_name": "العيادة 9",
+        "s3_icon": "icon9.png",
+        "is_active": false,
+        "created_on": "18-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 909,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        },
+        {
+          "id": 891,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 746,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 109,
+        "location_code": 2009,
+        "location_en_name": "Cedar Grove Clinic",
+        "location_ar_name": "العيادة 10",
+        "s3_icon": "icon10.png",
+        "is_active": true,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 518,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 933,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 110,
+        "location_code": 2010,
+        "location_en_name": "Blue Ridge Health",
+        "location_ar_name": "العيادة 11",
+        "s3_icon": "icon11.png",
+        "is_active": false,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 749,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 360,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 918,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 939,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 856,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 111,
+        "location_code": 2011,
+        "location_en_name": "Silver Lake Medical",
+        "location_ar_name": "العيادة 12",
+        "s3_icon": "icon12.png",
+        "is_active": true,
+        "created_on": "19-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 327,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 956,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 928,
+          "specialization_en_name": "Allergy & Immunology",
+          "specialization_ar_name": "طب الحساسية والمناعة",
+          "s3_image": "SpecializationIcons/42.png",
+          "s3_icon": "allergy_&_immunology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 42
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 112,
+        "location_code": 2012,
+        "location_en_name": "Maplewood Hospital",
+        "location_ar_name": "العيادة 13",
+        "s3_icon": "icon13.png",
+        "is_active": true,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 303,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 336,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 113,
+        "location_code": 2013,
+        "location_en_name": "Sunset Health Center",
+        "location_ar_name": "العيادة 14",
+        "s3_icon": "icon14.png",
+        "is_active": false,
+        "created_on": "21-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 765,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 569,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 812,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 114,
+        "location_code": 2014,
+        "location_en_name": "Elm Street Clinic",
+        "location_ar_name": "العيادة 15",
+        "s3_icon": "icon15.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 647,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 228,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 845,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 489,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 115,
+        "location_code": 2015,
+        "location_en_name": "Golden Valley Health",
+        "location_ar_name": "العيادة 16",
+        "s3_icon": "icon16.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 851,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 450,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 245,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 804,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 116,
+        "location_code": 2016,
+        "location_en_name": "Willow Springs Clinic",
+        "location_ar_name": "العيادة 17",
+        "s3_icon": "icon17.png",
+        "is_active": true,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 458,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 219,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 117,
+        "location_code": 2017,
+        "location_en_name": "Ironwood Medical",
+        "location_ar_name": "العيادة 18",
+        "s3_icon": "icon18.png",
+        "is_active": false,
+        "created_on": "30-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 392,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 916,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 118,
+        "location_code": 2018,
+        "location_en_name": "Prairie Health Center",
+        "location_ar_name": "العيادة 19",
+        "s3_icon": "icon19.png",
+        "is_active": true,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 356,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 624,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 203,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 506,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 247,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 119,
+        "location_code": 2019,
+        "location_en_name": "Oceanview Hospital",
+        "location_ar_name": "العيادة 20",
+        "s3_icon": "icon20.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 443,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 639,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 120,
+        "location_code": 2020,
+        "location_en_name": "Foxhill Clinic",
+        "location_ar_name": "العيادة 21",
+        "s3_icon": "icon21.png",
+        "is_active": true,
+        "created_on": "21-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 959,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 814,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 951,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 913,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 121,
+        "location_code": 2021,
+        "location_en_name": "Stonebridge Medical",
+        "location_ar_name": "العيادة 22",
+        "s3_icon": "icon22.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 410,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 514,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 788,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 767,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 489,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 122,
+        "location_code": 2022,
+        "location_en_name": "Bayside Health",
+        "location_ar_name": "العيادة 23",
+        "s3_icon": "icon23.png",
+        "is_active": false,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 979,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 632,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 493,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        },
+        {
+          "id": 481,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 123,
+        "location_code": 2023,
+        "location_en_name": "Twin Oaks Hospital",
+        "location_ar_name": "العيادة 24",
+        "s3_icon": "icon24.png",
+        "is_active": true,
+        "created_on": "23-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 622,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 760,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 124,
+        "location_code": 2024,
+        "location_en_name": "Greenhill Medical",
+        "location_ar_name": "العيادة 25",
+        "s3_icon": "icon25.png",
+        "is_active": true,
+        "created_on": "24-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 888,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 206,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 637,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 125,
+        "location_code": 2025,
+        "location_en_name": "Northgate Clinic",
+        "location_ar_name": "العيادة 26",
+        "s3_icon": "icon26.png",
+        "is_active": false,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 837,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 599,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 126,
+        "location_code": 2026,
+        "location_en_name": "Southside Health",
+        "location_ar_name": "العيادة 27",
+        "s3_icon": "icon27.png",
+        "is_active": false,
+        "created_on": "26-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 348,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 870,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 643,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 127,
+        "location_code": 2027,
+        "location_en_name": "Westwood Medical",
+        "location_ar_name": "العيادة 28",
+        "s3_icon": "icon28.png",
+        "is_active": true,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 875,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 775,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 570,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 612,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 128,
+        "location_code": 2028,
+        "location_en_name": "Brookside Hospital",
+        "location_ar_name": "العيادة 29",
+        "s3_icon": "icon29.png",
+        "is_active": false,
+        "created_on": "28-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 927,
+          "specialization_en_name": "Allergy & Immunology",
+          "specialization_ar_name": "طب الحساسية والمناعة",
+          "s3_image": "SpecializationIcons/42.png",
+          "s3_icon": "allergy_&_immunology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 42
+        },
+        {
+          "id": 407,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 899,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 882,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 779,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 129,
+        "location_code": 2029,
+        "location_en_name": "Hilltop Health Center",
+        "location_ar_name": "العيادة 30",
+        "s3_icon": "icon30.png",
+        "is_active": false,
+        "created_on": "29-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 982,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 335,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 391,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 100,
+        "location_code": 2000,
+        "location_en_name": "Harborview Medical",
+        "location_ar_name": "العيادة 1",
+        "s3_icon": "icon1.png",
+        "is_active": true,
+        "created_on": "22-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 676,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 510,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 845,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 101,
+        "location_code": 2001,
+        "location_en_name": "Springfield Health",
+        "location_ar_name": "العيادة 2",
+        "s3_icon": "icon2.png",
+        "is_active": false,
+        "created_on": "20-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 671,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 265,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 283,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 102,
+        "location_code": 2002,
+        "location_en_name": "Oakwood Clinic",
+        "location_ar_name": "العيادة 3",
+        "s3_icon": "icon3.png",
+        "is_active": false,
+        "created_on": "10-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 696,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        },
+        {
+          "id": 357,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 945,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 432,
+          "specialization_en_name": "ENT",
+          "specialization_ar_name": "أنف وأذن وحنجرة",
+          "s3_image": "SpecializationIcons/10.png",
+          "s3_icon": "ent.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 10
+        },
+        {
+          "id": 562,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 103,
+        "location_code": 2003,
+        "location_en_name": "Meadowbrook Hospital",
+        "location_ar_name": "العيادة 4",
+        "s3_icon": "icon4.png",
+        "is_active": true,
+        "created_on": "23-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 495,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 405,
+          "specialization_en_name": "Nephrology",
+          "specialization_ar_name": "طب الكلى",
+          "s3_image": "SpecializationIcons/21.png",
+          "s3_icon": "nephrology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 21
+        },
+        {
+          "id": 766,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 104,
+        "location_code": 2004,
+        "location_en_name": "Pinecrest Care Center",
+        "location_ar_name": "العيادة 5",
+        "s3_icon": "icon5.png",
+        "is_active": true,
+        "created_on": "25-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 569,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 585,
+          "specialization_en_name": "Cardiology",
+          "specialization_ar_name": "طب القلب",
+          "s3_image": "SpecializationIcons/12.png",
+          "s3_icon": "cardiology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 12
+        },
+        {
+          "id": 610,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 474,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 105,
+        "location_code": 2005,
+        "location_en_name": "Riverside Medical",
+        "location_ar_name": "العيادة 6",
+        "s3_icon": "icon6.png",
+        "is_active": false,
+        "created_on": "15-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 419,
+          "specialization_en_name": "Neurology",
+          "specialization_ar_name": "طب الأعصاب",
+          "s3_image": "SpecializationIcons/13.png",
+          "s3_icon": "neurology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 13
+        },
+        {
+          "id": 368,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 106,
+        "location_code": 2006,
+        "location_en_name": "Highland Clinic",
+        "location_ar_name": "العيادة 7",
+        "s3_icon": "icon7.png",
+        "is_active": false,
+        "created_on": "27-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 880,
+          "specialization_en_name": "Oncology",
+          "specialization_ar_name": "الأورام",
+          "s3_image": "SpecializationIcons/18.png",
+          "s3_icon": "oncology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 18
+        },
+        {
+          "id": 724,
+          "specialization_en_name": "Orthopedics",
+          "specialization_ar_name": "جراحة العظام",
+          "s3_image": "SpecializationIcons/16.png",
+          "s3_icon": "orthopedics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 16
+        },
+        {
+          "id": 561,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 404,
+          "specialization_en_name": "Dentistry",
+          "specialization_ar_name": "طب الأسنان",
+          "s3_image": "SpecializationIcons/2.png",
+          "s3_icon": "dentistry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 2
+        },
+        {
+          "id": 864,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 107,
+        "location_code": 2007,
+        "location_en_name": "Valley Regional",
+        "location_ar_name": "العيادة 8",
+        "s3_icon": "icon8.png",
+        "is_active": false,
+        "created_on": "10-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 789,
+          "specialization_en_name": "Endocrinology",
+          "specialization_ar_name": "طب الغدد الصماء",
+          "s3_image": "SpecializationIcons/22.png",
+          "s3_icon": "endocrinology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 22
+        },
+        {
+          "id": 884,
+          "specialization_en_name": "Breast Surgery",
+          "specialization_ar_name": "جراحة الثدي",
+          "s3_image": "SpecializationIcons/39.png",
+          "s3_icon": "breast_surgery.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 39
+        },
+        {
+          "id": 713,
+          "specialization_en_name": "Psychiatry",
+          "specialization_ar_name": "الطب النفسي",
+          "s3_image": "SpecializationIcons/19.png",
+          "s3_icon": "psychiatry.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 19
+        },
+        {
+          "id": 663,
+          "specialization_en_name": "Pediatrics",
+          "specialization_ar_name": "طب الأطفال",
+          "s3_image": "SpecializationIcons/14.png",
+          "s3_icon": "pediatrics.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 14
+        },
+        {
+          "id": 416,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    },
+    {
+      "location": {
+        "id": 108,
+        "location_code": 2008,
+        "location_en_name": "Lakeside Hospital",
+        "location_ar_name": "العيادة 9",
+        "s3_icon": "icon9.png",
+        "is_active": false,
+        "created_on": "18-05-2025"
+      },
+      "specializations": [
+        {
+          "id": 909,
+          "specialization_en_name": "Dermatology",
+          "specialization_ar_name": "الأمراض الجلدية",
+          "s3_image": "SpecializationIcons/15.png",
+          "s3_icon": "dermatology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 15
+        },
+        {
+          "id": 891,
+          "specialization_en_name": "Pulmonology",
+          "specialization_ar_name": "طب الرئة",
+          "s3_image": "SpecializationIcons/20.png",
+          "s3_icon": "pulmonology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 20
+        },
+        {
+          "id": 746,
+          "specialization_en_name": "Gastroenterology",
+          "specialization_ar_name": "أمراض الجهاز الهضمي",
+          "s3_image": "SpecializationIcons/17.png",
+          "s3_icon": "gastroenterology.svg",
+          "is_active": true,
+          "rec_id": null,
+          "specialization_code": 17
+        }
+      ]
+    }
+  ]

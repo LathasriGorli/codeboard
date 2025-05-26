@@ -1,7 +1,5 @@
 import {
   ColumnDef,
-  ColumnFiltersState,
-  SortingState,
   VisibilityState,
   flexRender,
   getCoreRowModel,
@@ -19,61 +17,8 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { useState } from "react";
-import { cn } from "~/lib/utils";
-
-const data: Project[] = [
-  {
-    imgUrl: "/public/nyaya-tech.png",
-    project_name: "NYAYA TECH",
-    month: "12/05/2023",
-    date: "12-May-2023",
-    time: "12:06:00",
-    lines_of_code: 200,
-    project_link: "admin.nyayatech.com",
-    commit_name: "Update position of view profile screen",
-  },
-  {
-    imgUrl: "/public/esigns.png",
-    project_name: "eSigns",
-    month: "12/05/2023",
-    date: "12-May-2023",
-    time: "12:06:00",
-    lines_of_code: 200,
-    project_link: "admin.esigns.com",
-    commit_name: "Update position of view profile screen",
-  },
-  {
-    imgUrl: "/public/lab-squire.png",
-    project_name: "Lab Squire",
-    month: "12/05/2023",
-    date: "12-May-2023",
-    time: "12:06:00",
-    lines_of_code: 200,
-    project_link: "admin.labsquire.com",
-    commit_name: "Update position of view profile screen",
-  },
-  {
-    imgUrl: "/public/peepul-agri.png",
-    project_name: "Peepul Agri",
-    month: "12/05/2023",
-    date: "12-May-2023",
-    time: "12:06:00",
-    lines_of_code: 200,
-    project_link: "admin.peepulagri.com",
-    commit_name: "Update position of view profile screen",
-  },
-  {
-    imgUrl: "/public/nyaya-tech.png",
-    project_name: "NYAYA TECH",
-    month: "12/05/2023",
-    date: "12-May-2023",
-    time: "12:06:00",
-    lines_of_code: 200,
-    project_link: "admin.nyayatech.com",
-    commit_name: "Update position of view profile screen",
-  },
-];
+import { useLocation } from "@tanstack/react-router";
+import Pagination from "./Pagination";
 
 export type Project = {
   imgUrl: string;
@@ -86,109 +31,14 @@ export type Project = {
   commit_name: string;
 };
 
-export const columns: ColumnDef<Project>[] = [
-  {
-    accessorKey: "project_name",
-    header: () => <div>Project Name</div>,
-    cell: ({ row }) => (
-      <div className="flex gap-2 items-center w-40 px-3">
-        <img
-          src={row.original.imgUrl}
-          className="w-8 h-8 rounded-2xl object-cover border"
-        />
-        <div className="text-(--an-table-body-text-color)">
-          {row.getValue("project_name")}
-        </div>
-      </div>
-    ),
-  },
-  {
-    accessorKey: "month",
-    header: () => <div>Month</div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-(--an-table-body-number-color)">
-          {row.getValue("month")}
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "date",
-    header: () => <div>Date</div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-(--an-table-body-number-color)">
-          {row.getValue("date")}
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "time",
-    header: () => <div>Time</div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-(--an-table-body-number-color)">
-          {row.getValue("time")}
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "lines_of_code",
-    header: () => <div>Lines of Codes</div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-(--an-table-body-number-color)">
-          {row.getValue("lines_of_code")}
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "project_link",
-    header: () => <div>Project Link</div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-(--an-table-body-text-color)">
-          {row.getValue("project_link")}
-        </div>
-      );
-    },
-  },
-  {
-    id: "commit_link",
-    header: () => <div>Commit Links</div>,
-    cell: () => (
-      <Button className="bg-(--an-table-header-background) rounded-lg text-(--an-table-body-text-color) text-(length:--an-table-body-text-size) hover:bg-blue-400 hover:text-white h-7 font-normal">
-        Open Link
-      </Button>
-    ),
-  },
-  {
-    accessorKey: "commit_name",
-    header: () => <div>Commit Name</div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-(--an-table-body-text-color)">
-          {row.getValue("commit_name")}
-        </div>
-      );
-    },
-  },
-  {
-    id: "actions",
-    header: () => <div>Actions</div>,
-    cell: () => (
-      <div className="w-30 text-(--an-table-body-text-color)">Actions</div>
-    ),
-  },
-];
-
-export function UserTable() {
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-  const [rowSelection, setRowSelection] = useState({});
+export function UserTable({ 
+  data, 
+  columns,
+  getData,
+  paginationDetails,
+ }: any) {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location?.search);
 
   const table = useReactTable({
     data,
@@ -197,13 +47,29 @@ export function UserTable() {
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
-    onRowSelectionChange: setRowSelection,
-    state: {
-      columnVisibility,
-      rowSelection,
-    },
   });
+
+  const capturePageNum = (value: number) => {
+    getData({
+      ...searchParams,
+      limit: searchParams.get("limit")
+        ? +(searchParams.get("limit") as string)
+        : 25,
+      page: value,
+      order_by: searchParams.get("order_by"),
+      order_type: searchParams.get("order_type"),
+    });
+  };
+
+  const captureRowPerItems = (value: number) => {
+    getData({
+      ...searchParams,
+      limit: value,
+      page: 1,
+      order_by: searchParams.get("order_by"),
+      order_type: searchParams.get("order_type"),
+    });
+  };
 
   return (
     <div className="w-full bg-blue-50 p-5">
@@ -254,6 +120,13 @@ export function UserTable() {
           )}
         </TableBody>
       </Table>
+      <div className="bg-transparent mt-2">
+          <Pagination
+            paginationDetails={paginationDetails}
+            capturePageNum={capturePageNum}
+            captureRowPerItems={captureRowPerItems}
+          />
+        </div>
     </div>
   );
 }

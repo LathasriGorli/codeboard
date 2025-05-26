@@ -1,10 +1,11 @@
 @import 'tailwindcss';
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 @plugin 'tailwindcss-animate';
-
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -178,12 +179,74 @@
   --an-profile-active-text-size: 0.875rem;
 }
 @theme table{
-  --an-table-header-text-color: #4F4F4F;
-  --an-table-text-size: 0.8rem;
   --an-table-background: #fff;
   --an-table-body-text-color: #000;
-  --an-table-body-number-color:rgba(0, 0, 0, 0.80);
-  --an-table-header-background: #F5F5F5;
+  --an-table-row-background : #F7F7F7;
+  --an-table-font-family: 'Urbanist', 'Sans-Serif';
+  --an-table-header-background: #fff;
+  --an-table-body-background: #F5F5F5;
+  --an-table-body-title-text-color: #4D4D4D;
+  --an-table-checkbox-border-color: #AFAFAF;
+  --an-table-row-text-color: #494343;
+  --an-table-active-background: #CEDFCE;
+  --an-table-active-text-color: #009D46;
+  --an-table-inactive-background: rgba(240, 99, 79, 0.21);
+  --an-table-inactive-text-color: rgba(255, 0, 0, 0.80);
+}
+
+@theme header{
+  --an-header-background: #fff;
+  --an-header-title-text-color: #333;
+  --an-header-role-text-color:#444C5E;
+  --an-header-font-family: 'Urbanist', 'Sans-Serif';
+  --an-header-title-size: 0.883rem;
+  --an-header-role-size: 0.731rem;
+}
+
+@theme sidebar{
+  --an-sidebar-background: #fff;
+  --an-sidebar-text-color: #000;
+  --an-sidebar-border-radius: 1rem;
+  --an-sidebar-font-family: 'Inter', 'Sans-Serif';
+  --an-sidebar-count-color: #828282;
+  --an-sidebar-add-buton-font-family: 'Urbanist', 'Sans-Serif';
+  --an-sidebar-add-button-text-color: #fff;
+  --an-sidebar-add-button-background: #F00;
+  --an-sidebar-active-background: rgba(0, 86, 105, 0.20);
+  --an-sidebar-active-text-color: #005669;
+}
+
+@theme login{
+  --an-login-font-family: 'Manrope', 'Sans-Serif';
+  --an-login-text-color: #000;
+  --an-login-background: #fff;
+  --an-login-almana-color: #005669;
+  --an-login-login-text-size: 2rem;
+  --an-login-description-color: #4F4F4F;
+  --an-login-input-border-color: #D4D4D4;
+  --an-login-input-background: #F3F8FF;
+  --an-login-signin-background: #005669;
+  --an-login-signin-text-color: #fff;
+  --an-login-forgot-text-color: rgba(0, 0, 0, 0.60);
+}
+
+@theme menu-card{
+  --an-menu-background: #fff;
+  --an-menu-text-color: #444D5E;
+  --an-menu-font-family: 'Urbanist', 'Sans-Serif';
+  --an-menu-footer-bg: rgba(0, 181, 173, 0.30);
+}
+
+@theme pagination{
+  --an-pagination-background: #fff;
+  --an-pagination-font-family: 'Urbanist', 'Sans-Serif';
+  --an-pagination-text-color: #313131;
+}
+
+@theme location-name{
+  --an-location-name-background: #fff;
+  --an-location-name-font-family: 'Urbanist', 'Sans-Serif';
+  --an-location-name-edit-button-bg: rgba(0, 86, 105, 0.20);
 }
 
 @layer base {

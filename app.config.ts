@@ -1,15 +1,18 @@
-import { defineConfig } from '@tanstack/react-start/config'
-import tsConfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from "@tanstack/react-start/config";
+import tsConfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig({
+var app_config_default = defineConfig({
   tsr: {
-    appDirectory: 'src',
+    appDirectory: "src"
   },
   vite: {
     plugins: [
       tsConfigPaths({
-        projects: ['./tsconfig.json'],
+        projects: ["./tsconfig.json"]
       }),
-    ],
-  },
-})
+    ]
+  }
+});
+export {
+  app_config_default as default
+};
