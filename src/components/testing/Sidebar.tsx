@@ -1,5 +1,4 @@
-import { LayoutGrid, LoaderCircle } from "lucide-react";
-import { UsersCard } from "../Card/UsersCard";
+import { LayoutGrid } from "lucide-react";
 import { SidebarMenu } from "../Card/SidebarMenu";
 
 // const items = [
@@ -31,21 +30,22 @@ import { SidebarMenu } from "../Card/SidebarMenu";
 //   ];
 
 const items = [
-  {id : 1, icon: LayoutGrid, title: 'Dashboard'},
-  {id : 2, icon: LayoutGrid, title: 'Appointments'}, 
-  {id : 3, icon: LayoutGrid, title: 'Hospitals & Clinics'},
-  {id : 4, icon: LayoutGrid, title: 'Locations'},
-  {id : 5, icon: LayoutGrid, title: 'Specializations'},
-  {id : 6, icon: LayoutGrid, title: 'Doctors'},
-  {id : 7, icon: LayoutGrid, title: 'Doctors Leave Management'},
-  {id : 8, icon: LayoutGrid, title: 'Payments'},
-  {id : 9, icon: LayoutGrid, title: 'E-Prescriptions'},
-  {id : 10, icon: LayoutGrid, title: 'Medication Refill Requests'},
-  {id : 11, icon: LayoutGrid, title: 'Medical Reports'},
-  {id : 12, icon: LayoutGrid, title: 'Offers & Promotions'},
-  {id : 13, icon: LayoutGrid, title: 'User Management'},
-  {id : 14, icon: LayoutGrid, title: 'Settings'},
+  {id : 1, icon: LayoutGrid, title: 'Dashboard',url: '/'},
+  {id : 2, icon: LayoutGrid, title: 'Appointments',url: './Login'}, 
+  {id : 3, icon: LayoutGrid, title: 'Hospitals & Clinics',url: './Table'},
+  {id : 4, icon: LayoutGrid, title: 'Locations', url: ''},
+  {id : 5, icon: LayoutGrid, title: 'Specializations',url: ''},
+  {id : 6, icon: LayoutGrid, title: 'Doctors',url: ''},
+  {id : 7, icon: LayoutGrid, title: 'Doctors Leave Management',url: ''},
+  {id : 8, icon: LayoutGrid, title: 'Payments',url: ''},
+  {id : 9, icon: LayoutGrid, title: 'E-Prescriptions',url: ''},
+  {id : 10, icon: LayoutGrid, title: 'Medication Refill Requests',url: ''},
+  {id : 11, icon: LayoutGrid, title: 'Medical Reports',url: ''},
+  {id : 12, icon: LayoutGrid, title: 'Offers & Promotions',url: ''},
+  {id : 13, icon: LayoutGrid, title: 'User Management',url: ''},
+  {id : 14, icon: LayoutGrid, title: 'Settings',url: ''},
 ]
+
 const details ={
     name: "User Name",
     role: "Frontend Developer",
@@ -53,7 +53,6 @@ const details ={
 export function Sidebar({ id }: {id: string}){
     return(
         <div>
-            {/* <UsersCard users={items} /> */}
             <SidebarMenu items={items}/>
         </div>
     )

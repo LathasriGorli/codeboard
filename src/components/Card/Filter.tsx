@@ -1,134 +1,3 @@
-// import { Column, RowData } from "@tanstack/react-table";
-// import { CalendarIcon, X } from "lucide-react";
-// import { useEffect, useState } from "react";
-// import { Input } from "../ui/input";
-// import { Calendar } from "../ui/calendar";
-// import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-// import dayjs from "dayjs";
-
-// declare module "@tanstack/react-table" {
-//   interface ColumnMeta<TData extends RowData, TValue> {
-//     filterVariant?: "text" | "select" | "date" | "number";
-//     options?: { label: string; value: string }[];
-//   }
-// }
-
-// export function Filter({ column }: { column: Column<any, unknown> }) {
-//   const columnFilterValue = column.getFilterValue();
-//   const { filterVariant = "text", options = [] } = column.columnDef.meta ?? {};
-
-//   switch (filterVariant) {
-//     case "select":
-//       return (
-//         <select
-//           onChange={(e) => column.setFilterValue(e.target.value || undefined)}
-//           value={String(columnFilterValue ?? "")}
-//           className="border shadow rounded h-6 text-sm"
-//         >
-//           <option value="">All</option>
-//           {options.map((option) => (
-//             <option key={option.value} value={option.value}>
-//               {option.label}
-//             </option>
-//           ))}
-//         </select>
-//       );
-
-//     case "date":
-//     case "number":
-//     case "text":
-//     default:
-//       return (
-//         <DebouncedInput
-//           onChange={(value) => column.setFilterValue(value || undefined)}
-//           placeholder={
-//             filterVariant === "date" ? "Search date..." :
-//             filterVariant === "number" ? "Search number..." :
-//             "Search..."}
-//           type={filterVariant}
-//           value={String(columnFilterValue ?? "")}
-//         />
-//       );
-//   }
-// }
-
-// function DebouncedInput({
-//   value: initialValue,
-//   onChange,
-//   debounce = 500,
-//   type = "text",
-//   ...props
-// }: {
-//   value: string;
-//   onChange: (value: string) => void;
-//   debounce?: number;
-//   type?: "text" | "date" | "number";
-// } & Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "type">) {
-//   const [value, setValue] = useState(initialValue);
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   useEffect(() => {
-//     setValue(initialValue);
-//   }, [initialValue]);
-
-//   useEffect(() => {
-//     const timeout = setTimeout(() => {
-//       onChange(value);
-//     }, debounce);
-
-//     return () => clearTimeout(timeout);
-//   }, [value, debounce, onChange]);
-
-//   return (
-//     <div className="flex border shadow rounded w-36 items-center">
-//       {type === "date" ? (
-//         <div className="flex items-center w-full">
-//           <Input
-//             {...props}
-//             type="text"
-//             value={value}
-//             onChange={(e) => setValue(e.target.value)}
-//             className="h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm flex-1"
-//           />
-//           <Popover open={isOpen} onOpenChange={setIsOpen}>
-//             <PopoverTrigger asChild>
-//               <button className="pr-1">
-//                 <CalendarIcon className="w-4 h-4 text-gray-500 cursor-pointer" />
-//               </button>
-//             </PopoverTrigger>
-//             <PopoverContent className="w-auto p-0">
-//             <Calendar
-//                 mode="single"
-//                 selected={value ? dayjs(value, "DD-MM-YYYY").toDate() : undefined}
-//                 onSelect={(date) => {
-//                   if (date) {
-//                     const formatted = dayjs(date).format("DD-MM-YYYY");
-//                     setValue(formatted);
-//                     setIsOpen(false);
-//                   }
-//                 }}
-//               />
-//             </PopoverContent>
-//           </Popover>
-//         </div>
-//       ) : (
-//         <Input
-//           {...props}
-//           type={type === "number" ? "number" : "text"}
-//           value={value}
-//           onChange={(e) => setValue(e.target.value)}
-//           className="h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm"
-//         />
-//       )}
-//       {value && (
-//         <button onClick={() => setValue("")}>
-//           <X className="w-5 h-5 text-gray-400 pr-1 cursor-pointer" />
-//         </button>
-//       )}
-//     </div>
-//   );
-// }
-
 import React, { useEffect, useState } from "react";
 import { Calendar, X } from "lucide-react";
 import { Input } from "../ui/input";
@@ -244,29 +113,31 @@ function DebouncedInput({
               type="text"
               value={value}
               onChange={(e) => setValue(e.target.value)}
-              onFocus={() => setShowDatePicker(true)}
               className="h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm flex-1"
+            />
+            <input
+              type="date"
+              value={formatDateForInput(value)}
+              onChange={handleDateChange}
+              className="absolute opacity-0 pointer-events-none"
+              ref={(ref) => {
+                if (ref) {
+                  (ref as any)._dateInput = ref;
+                }
+              }}
             />
             <button
               type="button"
-              onClick={() => setShowDatePicker(!showDatePicker)}
+              onClick={() => {
+                const dateInput = document.querySelector('input[type="date"]') as HTMLInputElement;
+                if (dateInput) {
+                  dateInput.showPicker?.();
+                }
+              }}
               className="pr-1"
             >
               <Calendar className="w-4 h-4 text-gray-500 cursor-pointer" />
             </button>
-            
-            {showDatePicker && (
-              <div className="absolute top-full left-0 mt-1 z-50">
-                <div className="bg-white border border-gray-200 rounded-md shadow-lg p-2">
-                  <Input
-                    type="date"
-                    value={formatDateForInput(value)}
-                    onChange={handleDateChange}
-                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus-visible:ring-0 focus-visible:ring-offset-0" 
-                  />
-                </div>
-              </div>
-            )}
           </>
         ) : (
           <Input

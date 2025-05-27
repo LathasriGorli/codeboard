@@ -1,9 +1,9 @@
 import { Login } from "../Card/Login";
 
 const error = {
-  image: '/public/Frame 13.png',
-  email: "*email is required",
-  password: "*password is required",
+  image: '/src/components/icons/LoginImg.svg',
+  email: "",
+  password: "",
   message: "",
 };
 
