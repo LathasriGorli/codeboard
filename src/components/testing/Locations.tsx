@@ -179,7 +179,6 @@ export const columns: ColumnDef<Person>[] = [
     cell: ({ row }) => {
       const status = row.getValue("status") as boolean;
       return (
-        <div>
           <div
             className={cn(
               "rounded-xl font-normal text-sm w-fit px-2 flex items-center justify-center",
@@ -189,7 +188,6 @@ export const columns: ColumnDef<Person>[] = [
           >
             {status === true ? "Active" : status === false ? "Inactive" : ""}
           </div>
-        </div>
       );
     },
     filterFn: (row, columnId, filterValue) => {

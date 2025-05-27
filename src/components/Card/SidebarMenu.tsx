@@ -13,7 +13,8 @@ import {
 import { useState } from "react";
 import { Header } from "./Header";
 import { LocationName } from "./LocationName";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
+import { AppointmentScreen } from "./AppointmentScreen";
 
 type headings = {
   id: number;
@@ -22,8 +23,51 @@ type headings = {
   url: string;
 };
 
+const gallery = [
+  { img: "/src/components/icons/LoctaionName/img1.jpg" },
+  { img: "/src/components/icons/LoctaionName/img2.jpg" },
+  { img: "/src/components/icons/LoctaionName/img3.jpg" },
+  { img: "/src/components/icons/LoctaionName/img4.jpg" },
+  { img: "/src/components/icons/LoctaionName/img5.jpg" },
+  { img: "/src/components/icons/LoctaionName/img6.jpg" },
+  { img: "/src/components/icons/LoctaionName/img7.jpg" },
+  { img: "/src/components/icons/LoctaionName/img8.jpg" },
+  { img: "/src/components/icons/LoctaionName/img9.jpg" },
+];
+
+const speciality = [
+  { name: "General Practitioner" },
+  { name: "ENT" },
+  { name: "Gastroenterology" },
+  { name: "Diabetology" },
+  { name: "Psychiatry" },
+  { name: "Neurology" },
+];
+
+const doctors = [
+  { name: "Fatima SI Jaber" },
+  { name: "Asmaa Mohamed" },
+  { name: "Sheikha AI kaabi" },
+  { name: "Maryam AI Tunaiji" },
+  { name: "Fatima Mohamed" },
+  { name: "Fatima Mohamed" },
+];
+
+const data = {
+  status : true,
+  created_on: "26-05-2025",
+  email: "info.almanahospital.com.sa",
+  phone: "+917013170520",
+  address: "23-05-2025"
+}
+
 export function SidebarMenu({ items }: { items: headings[] }) {
-  const [activeId, setActiveId] = useState(1);
+  const location = useLocation();
+  const [activeId, setActiveId] = useState<number>(() => {
+    const currentItem = items.find((item) => item.url === location.pathname);
+    return currentItem ? currentItem.id : 1;
+  });
+
   return (
     <SidebarProvider
       className="bg-[#EFF4EF]"
@@ -65,7 +109,8 @@ export function SidebarMenu({ items }: { items: headings[] }) {
       </Sidebar>
       <div className="flex flex-col gap-4 w-full max-w-full overflow-hidden">
         <Header name="John Doe" role="Frondend Developer" />
-        <LocationName />
+        <LocationName data={data} doctors={doctors} speciality={speciality} gallery={gallery}/>
+        {/* <AppointmentScreen /> */}
       </div>
     </SidebarProvider>
   );

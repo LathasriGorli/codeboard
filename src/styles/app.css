@@ -246,8 +246,38 @@
 
 @theme location-name{
   --an-location-name-background: #fff;
+  --an-location-name-border: #D2E2D7;
   --an-location-name-font-family: 'Urbanist', 'Sans-Serif';
   --an-location-name-edit-button-bg: rgba(0, 86, 105, 0.20);
+  --an-location-name-title: #000;
+  --an-location-name-edit-text-color: #005669;
+  --an-location-name-label-color: #6B6B6B;
+  --an-location-name-map-color: #2F80ED;
+  --an-location-name-label-width: 13.125rem;
+  --an-location-name-edit-icon: #2D9CDB;
+  --an-location-name-gallery-border-color: #CECECE;
+  --an-loctaion-name-gallery-size: 5rem;
+  --an-location-name-subcard-title: #212121;
+  --an-location-name-subcard-text-color: #020202;
+  --an-location-name-subcard3-bg: #F2FAF3;
+  --an-location-name-subcard-bg: #FAFAFA;
+  --an-location-active-background: #CEDFCE;
+  --an-location-active-text-color: #009D46;
+  --an-location-inactive-background: rgba(240, 99, 79, 0.21);
+  --an-location-inactive-text-color: rgba(255, 0, 0, 0.80);
+}
+
+@theme appointment-screen{
+  --an-appoint-screen-background: #fff;
+  --an-appoint-screen-font-family: 'Urbanist', 'Sans-Serif';
+  --an-appoint-screen-header-text-color: #333;
+  --an-appoint-screen-card-width: 78.063rem;
+  --an-appoint-screen-icon-border-color: #019EA3;
+  --an-appoint-screen-icon-bg-color: #F6F6F6;
+  --an-appoint-screen-icon-title-color: #00B5AD;
+  --an-appoint-screen-icon-subtitle-color:#494343;
+  --an-appoint-screen-symptom-bg-color: #E4E4E4;
+  --an-appoint-screen-desc-color: #828282;
 }
 
 @layer base {

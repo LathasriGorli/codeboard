@@ -32,6 +32,7 @@ import { Route as CardLocationNameImport } from './routes/card/location-name'
 import { Route as CardHeaderImport } from './routes/card/header'
 import { Route as CardFilterImport } from './routes/card/filter'
 import { Route as CardDoctorTableImport } from './routes/card/doctor-table'
+import { Route as CardAppointmentScreenImport } from './routes/card/appointment-screen'
 
 // Create/Update Routes
 
@@ -161,6 +162,12 @@ const CardDoctorTableRoute = CardDoctorTableImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const CardAppointmentScreenRoute = CardAppointmentScreenImport.update({
+  id: '/card/appointment-screen',
+  path: '/card/appointment-screen',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -170,6 +177,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/appointment-screen': {
+      id: '/card/appointment-screen'
+      path: '/card/appointment-screen'
+      fullPath: '/card/appointment-screen'
+      preLoaderRoute: typeof CardAppointmentScreenImport
       parentRoute: typeof rootRoute
     }
     '/card/doctor-table': {
@@ -319,6 +333,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/card/appointment-screen': typeof CardAppointmentScreenRoute
   '/card/doctor-table': typeof CardDoctorTableRoute
   '/card/filter': typeof CardFilterRoute
   '/card/header': typeof CardHeaderRoute
@@ -343,6 +358,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/card/appointment-screen': typeof CardAppointmentScreenRoute
   '/card/doctor-table': typeof CardDoctorTableRoute
   '/card/filter': typeof CardFilterRoute
   '/card/header': typeof CardHeaderRoute
@@ -368,6 +384,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/card/appointment-screen': typeof CardAppointmentScreenRoute
   '/card/doctor-table': typeof CardDoctorTableRoute
   '/card/filter': typeof CardFilterRoute
   '/card/header': typeof CardHeaderRoute
@@ -394,6 +411,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/card/appointment-screen'
     | '/card/doctor-table'
     | '/card/filter'
     | '/card/header'
@@ -417,6 +435,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/card/appointment-screen'
     | '/card/doctor-table'
     | '/card/filter'
     | '/card/header'
@@ -440,6 +459,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/card/appointment-screen'
     | '/card/doctor-table'
     | '/card/filter'
     | '/card/header'
@@ -465,6 +485,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CardAppointmentScreenRoute: typeof CardAppointmentScreenRoute
   CardDoctorTableRoute: typeof CardDoctorTableRoute
   CardFilterRoute: typeof CardFilterRoute
   CardHeaderRoute: typeof CardHeaderRoute
@@ -489,6 +510,7 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CardAppointmentScreenRoute: CardAppointmentScreenRoute,
   CardDoctorTableRoute: CardDoctorTableRoute,
   CardFilterRoute: CardFilterRoute,
   CardHeaderRoute: CardHeaderRoute,
@@ -522,6 +544,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/card/appointment-screen",
         "/card/doctor-table",
         "/card/filter",
         "/card/header",
@@ -546,6 +569,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/card/appointment-screen": {
+      "filePath": "card/appointment-screen.tsx"
     },
     "/card/doctor-table": {
       "filePath": "card/doctor-table.tsx"
