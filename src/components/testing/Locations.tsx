@@ -120,7 +120,7 @@ export const columns: ColumnDef<Person>[] = [
         </div>
       );
     },
-    header: () => <div className="text-right">Arabic Title</div>,
+    header: () => <div className="w-full text-right">Arabic Title</div>,
     enableColumnFilter: false,
   },
   {

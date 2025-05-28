@@ -78,7 +78,7 @@ export const columns: ColumnDef<Project>[] = [
   },
   {
     accessorKey: "arabic_title",
-    header: () => <div className="text-right">Arabic Title</div>,
+    header: () => <div className="w-full text-right">Arabic Title</div>,
     cell: ({ row }) => {
       return (
         <div className="text-(--an-table-row-text-color) text-right font-normal">

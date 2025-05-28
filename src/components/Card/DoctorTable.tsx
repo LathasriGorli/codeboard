@@ -20,6 +20,7 @@ import {
 import { Filter } from "./Filter";
 import { Pagination } from "../Table/Pagination";
 import { ScrollArea } from "../ui/scroll-area";
+import { ShowFilter } from "./ShowFilter";
 
 type DataTableProps = {
   data: any[];
@@ -37,6 +38,7 @@ export function DataTable({
   removeSortingForColumnIds = [],
 }: DataTableProps) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [showFilters, setShowFilters] = useState(false);
 
   const table = useReactTable({
     data: data || [],
@@ -63,9 +65,10 @@ export function DataTable({
 
   return (
     <div className="w-auto bg-(--an-table-background) p-2 rounded-lg">
+      <ShowFilter onclick={() => setShowFilters((prev) => !prev)} />
       <div className="overflow-hidden rounded-lg">
-          <Table className="border-separate border-spacing-y-0.5">
-            <ScrollArea className="rounded-lg" style={{ height : height }}>
+        <Table className="border-separate border-spacing-y-0.5">
+          <ScrollArea className="rounded-lg" style={{ height: height }}>
             <TableHeader className="sticky top-0 z-10">
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>
@@ -73,43 +76,50 @@ export function DataTable({
                     const isSortingRemoved = removeSortingForColumnIds.includes(
                       header.column.id
                     );
-  
+
                     return (
                       <TableHead
-                      key={header.id}
-                      colSpan={header.colSpan}
-                      className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-sm font-normal bg-white"
-                    >
-                      <div
-                        className={
-                          !isSortingRemoved && header.column.getCanSort()
-                            ? "cursor-pointer select-none flex items-center gap-2"
-                            : "flex items-center gap-2"
-                        }
-                        onClick={
-                          !isSortingRemoved ? header.column.getToggleSortingHandler() : undefined
-                        }
+                        key={header.id}
+                        colSpan={header.colSpan}
+                        className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-sm font-medium bg-white"
                       >
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                        {!isSortingRemoved && (
-                          header.column.getIsSorted() === "asc" ? (
-                            <ChevronUp className="w-4 h-4" />
-                          ) : header.column.getIsSorted() === "desc" ? (
-                            <ChevronDown className="w-4 h-4" />
-                          ) : (
-                            <ChevronsUpDown className="w-4 h-4" />
-                          )
-                        )}
-                      </div>
-                      {header.column.getCanFilter() ? (
-                        <div>
-                          <Filter column={header.column}/>
+                        <div
+                          className={
+                            !isSortingRemoved && header.column.getCanSort()
+                              ? "cursor-pointer select-none flex items-center gap-2"
+                              : "flex items-center gap-2"
+                          }
+                          onClick={
+                            !isSortingRemoved
+                              ? header.column.getToggleSortingHandler()
+                              : undefined
+                          }
+                        >
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                          {!isSortingRemoved &&
+                            (header.column.getIsSorted() === "asc" ? (
+                              <ChevronUp className="w-4 h-4" />
+                            ) : header.column.getIsSorted() === "desc" ? (
+                              <ChevronDown className="w-4 h-4" />
+                            ) : (
+                              <ChevronsUpDown className="w-4 h-4" />
+                            ))}
                         </div>
-                      ) : null}
-                    </TableHead>
+                        {header.column.getCanFilter() ? (
+                          <div
+                            className={`${showFilters ? "h-7" : "h-0"} overflow-hidden transition-all duration-300`}
+                          >
+                            <Filter column={header.column} />
+                          </div>
+                        ) : (
+                          <div
+                            className={`${showFilters ? "h-7" : "h-0"} transition-all duration-300`}
+                          />
+                        )}
+                      </TableHead>
                     );
                   })}
                 </TableRow>
@@ -172,11 +182,11 @@ export function DataTable({
                 </TableRow>
               )}
             </TableBody>
-            </ScrollArea>
-          </Table>
+          </ScrollArea>
+        </Table>
       </div>
       <div className="bg-transparent mt-2">
-        <Pagination paginationDetails={paginationDetails} table={table}/>
+        <Pagination paginationDetails={paginationDetails} table={table} />
       </div>
     </div>
   );
