@@ -78,7 +78,7 @@ export function DataTable({
                       <TableHead
                       key={header.id}
                       colSpan={header.colSpan}
-                      className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-base font-normal bg-white"
+                      className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-sm font-normal bg-white"
                     >
                       <div
                         className={
@@ -129,7 +129,7 @@ export function DataTable({
                           : index === table.getRowModel().rows.length - 1
                             ? "rounded-b-lg"
                             : ""
-                    }  text-sm font-normal`}
+                    }  text-xs font-normal`}
                   >
                     {row.getVisibleCells().map((cell, cellIndex) => (
                       <TableCell

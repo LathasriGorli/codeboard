@@ -71,13 +71,13 @@ export function SidebarMenu({ items }: { items: headings[] }) {
   return (
     <SidebarProvider
       className="bg-[#EFF4EF]"
-      style={{ "--sidebar-width": "13rem" } as React.CSSProperties}
+      style={{ "--sidebar-width": "11.5rem", } as React.CSSProperties}
     >
-      <Sidebar className="flex flex-col h-screen w-[199px] p-1 itmes-start gap-10 rounded-md bg-(--an-menu-background) mt-1 border-none">
-        <SidebarHeader>
+      <Sidebar className="flex flex-col h-screen w-[175px] p-1 itmes-start gap-10 rounded-md bg-(--an-menu-background) m-1 border-none">
+        <SidebarHeader className="bg-white">
           <AlmanaIcon className={"w-25 h-12"} />
         </SidebarHeader>
-        <SidebarContent>
+        <SidebarContent className="bg-white">
           <SidebarGroup className="gap-1">
               <SidebarGroupLabel className="text-(--an-menu-text-color) font-(family-name:--an-menu-font-family) text-xs font-normal p-0">
                 MAIN MENU
@@ -105,7 +105,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                 ))}
           </SidebarGroup>
         </SidebarContent>
-        <SidebarFooter className="absolute -bottom-30 -left-1 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-login-footer-bg) to-(--an-login-footer-bg) blur-2xl rotate-37.723deg"></SidebarFooter>
+        <div className="absolute -bottom-30 -left-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-sidebar-footer-bg) to-(--an-sidebar-footer-bg) blur-2xl rotate-35"></div>
       </Sidebar>
       <div className="flex flex-col gap-4 w-full max-w-full overflow-hidden">
         <Header name="John Doe" role="Frondend Developer" />

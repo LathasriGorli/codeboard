@@ -30,7 +30,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
               src={row.original.imgUrl}
               className="w-6 h-6 object-cover border"
             />
-            <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) text-sm font-normal">
+            <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) font-normal">
               {row.getValue("title")}
             </div>
           </div>
@@ -42,7 +42,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       header: () => <div>From Date</div>,
       cell: ({ row }) => {
         return (
-          <div className="text-(--an-table-body-title-text-color) font-(family-name:--an-table-font-body-family) text-sm font-normal">
+          <div className="text-(--an-table-body-title-text-color) font-(family-name:--an-table-font-body-family) font-normal">
             {row.getValue("from_date")}
           </div>
         );
@@ -54,6 +54,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       },
       meta: {
         filterVariant: "date",
+        dateFormat: "MMM DD, YYYY",
       }
     },
     {
@@ -61,7 +62,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       header: () => <div>To Date</div>,
       cell: ({ row }) => {
         return (
-          <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) text-sm font-normal">
+          <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) font-normal">
             {row.getValue('to_date')}
           </div>
         );
@@ -73,6 +74,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       },
       meta: {
         filterVariant: "date",
+        dateFormat: "MMM DD, YYYY",
       }
     },
     {
@@ -84,7 +86,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
         const textColor = type === "Holiday" ? "#F2994A" : type === "Conference" ? "#9B51E0" : "#B90000";
         const width = type.length * 10;
         return (
-          <div className="h-8 rounded-sm border-1 p-2 font-(family-name:--an-table-font-family) text-xs font-normal" style={{ color: textColor, borderColor: borderColor, width: `${width}px` }}>
+          <div className="h-8 rounded-sm border-1 p-2 font-(family-name:--an-table-font-family) font-normal" style={{ color: textColor, borderColor: borderColor, width: `${width}px` }}>
             {row.getValue("type")}
           </div>
         );
@@ -114,7 +116,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
         }
     
         return (
-          <div className="flex gap-2 items-center text-(--an-table-row-text-color) font-(family-name:--an-table-font-family) text-sm font-normal">
+          <div className="flex gap-2 items-center text-(--an-table-row-text-color) font-(family-name:--an-table-font-family) font-normal">
             {icon} 
             {row.getValue("status")}
           </div>
@@ -134,30 +136,24 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       header: () => <div>Reason (hover to view)</div>,
       cell: ({ row }) => {
         return (
-          <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) overflow-ellipsis overflow-hidden w-90 text-sm font-normal">
+          <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) overflow-ellipsis overflow-hidden w-90 font-normal">
             {row.getValue("reason")}
           </div>
         );
       },
+      enableColumnFilter:false,
     },
     {
       accessorKey: "affected_slots",
       header: () => <div>Affected Slots</div>,
       cell: ({ row }) => {
         return (
-          <div className="flex flex-col justify-center items-center rounded-sm bg-[#5B5B5B] text-white font-(family-name:--an-table-font-header-family) w-6 h-6 text-sm font-normal">
+          <div className="flex flex-col justify-center items-center rounded-sm bg-[#5B5B5B] text-white font-(family-name:--an-table-font-header-family) w-6 h-6 font-normal">
             {row.getValue("affected_slots")}
           </div>
         );
       },
-      meta: {
-        filterVariant: "number"
-      },
-      filterFn: (row,filterValue) => {
-        const rowValue = row.getValue("affected_slots") as number;
-        const filterNumber = parseInt(filterValue, 10);
-        return rowValue >= filterNumber;
-      },
+      enableColumnFilter: false,
     },
     {
       id: "actions",
@@ -171,20 +167,19 @@ export const columns: ColumnDef<DoctorLeave>[] = [
     },
 ];
 
-export function DoctorLeaveTable({ id }: {id: string}, paginationDetails: LocationsProps) {
+export function DoctorLeaveTable() {
+  const paginationDetails = {
+    page: 1,
+    limit: 25,
+    total_pages: Math.ceil(data.length / 25),
+    total: data.length,
+  }
   return (
   <>
     <DataTable 
       data={data} 
       columns={columns} 
-      paginationDetails={
-        paginationDetails ?? {
-          page: 1,
-          limit: 25,
-          total_pages: Math.ceil(data.length / 10),
-          total: data.length,
-        }
-      }
+      paginationDetails={ paginationDetails }
       removeSortingForColumnIds={["actions"]}
       height="36rem"
     />

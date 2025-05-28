@@ -54,7 +54,7 @@ export const columns: ColumnDef<Person>[] = [
             onClick={() => table.toggleAllPageRowsSelected(false)}
             aria-label="Deselect all"
           >
-            <span className="text-lg">-</span>
+            <span className="text-base">-</span>
           </button>
         ) : (
           <Checkbox
@@ -85,7 +85,7 @@ export const columns: ColumnDef<Person>[] = [
       const globalIndex = sortedRows.findIndex((r: any) => r.id === row.id);
       const serialNumber = globalIndex + 1;
       return (
-        <span className="text-base text-left font-normal text-(--an-table-row-text-color)">
+        <span className="text-sm text-left font-normal text-(--an-table-row-text-color)">
         {serialNumber.toString().padStart(2, "0")}
       </span>
       );
@@ -95,7 +95,7 @@ export const columns: ColumnDef<Person>[] = [
   },
   {
     accessorKey: "titleName",
-    header: () => <div className="text-start">Title</div>,
+    header: () => <div>Title</div>,
     enableColumnFilter: true,
     cell: ({ row }) => (
       <div className="flex gap-2">
@@ -115,7 +115,7 @@ export const columns: ColumnDef<Person>[] = [
     accessorKey: "arabicTitle",
     cell: ({ row }) => {
       return (
-        <div className="text-(--an-table-row-text-color) text-right text-sm font-normal">
+        <div className="text-(--an-table-row-text-color) text-right font-normal">
           {row.getValue("arabicTitle")}
         </div>
       );
@@ -141,7 +141,7 @@ export const columns: ColumnDef<Person>[] = [
               <span
                 key={i}
                 className={cn(
-                  `text-xs px-2 py-1 rounded-full ${colorClass}`,
+                  `px-2 py-1 rounded-full ${colorClass}`,
                   "font-normal"
                 )}
               >
@@ -154,13 +154,13 @@ export const columns: ColumnDef<Person>[] = [
   <Tooltip>
     <TooltipTrigger asChild>
       <span
-        className="bg-gray-400 text-[#494343] text-xs px-2 py-1 rounded-full border-1 border-[#E3E3E3] cursor-pointer"
+        className="bg-gray-400 text-[#494343] px-2 py-1 rounded-full border-1 border-[#E3E3E3] cursor-pointer"
       >
         +{remainingCount}
       </span>
     </TooltipTrigger>
     <TooltipContent side="top" align="center">
-      <div className="text-xs text-white">
+      <div className=" text-white">
         {allSpecialities.slice(3).join(', ')}
       </div>
     </TooltipContent>
@@ -181,7 +181,7 @@ export const columns: ColumnDef<Person>[] = [
       return (
           <div
             className={cn(
-              "rounded-xl font-normal text-sm w-fit px-2 flex items-center justify-center",
+              "rounded-xl font-normal w-fit px-2 flex items-center justify-center",
               status === true
                 ? "bg-(--an-table-active-background) text-(--an-table-active-text-color) hover:bg-(--an-table-active-background)" : "bg-(--an-table-inactive-background) text-(--an-table-inactive-text-color) hover:bg-(--an-table-inactive-background)"
             )}
@@ -207,24 +207,6 @@ export const columns: ColumnDef<Person>[] = [
         { value: "active", label: "Active" },
         { value: "inactive", label: "Inactive" },
       ]
-    }
-  },
- {
-    accessorKey: "createdOn",
-    cell: ({row}) => (
-      <span>{row.getValue('createdOn')}</span>
-    ),
-    header: () => "Created On",
-    sortUndefined: 'last',
-    sortDescFirst: false,
-    filterFn: (row, columnId, filterValue) => {
-      const rowValue = String(row.getValue(columnId));
-      const filterText = String(filterValue);
-      return rowValue.includes(filterText);
-    },
-    meta:{
-      filterVariant: "date",
-      dateFormat: "DD-MM-YYYY",
     }
   },
   {

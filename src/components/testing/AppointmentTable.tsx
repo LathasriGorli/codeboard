@@ -36,7 +36,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
     accessorKey: "date",
     header: () => <div>Date</div>,
     cell: ({ row }) => (
-      <div className="text-(--an-table-row-text-color) text-sm font-normal">
+      <div className="text-(--an-table-row-text-color) font-normal">
         {row.getValue("date")}
       </div>
     ),
@@ -55,16 +55,12 @@ export const columns: ColumnDef<AppointmentTable>[] = [
     header: () => <div>Slot</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-(--an-table-body-title-text-color)  text-sm font-normal">
+        <div className="text-(--an-table-body-title-text-color) font-normal">
           {row.getValue("slot")}
         </div>
       );
     },
-    filterFn: (row, columnId, filterValue) => {
-      const rowValue = String(row.getValue(columnId)).toLowerCase();
-      const filterText = String(filterValue).toLowerCase();
-      return rowValue.includes(filterText);
-    },
+    enableColumnFilter: false,
   },
   {
     accessorKey: "type_of_visit",
@@ -86,7 +82,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
       const width = type.length * 8;
       return (
         <div
-          className="h-8 rounded-sm border-1 p-2 text-xs font-normal"
+          className="h-8 rounded-sm border-1 p-2 font-normal"
           style={{
             color: textColor,
             borderColor: borderColor,
@@ -115,7 +111,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
           src={row.original.imgUrl1}
           className="w-6 h-6 object-cover border"
         />
-        <div className="text-(--an-table-row-text-color) text-sm font-normal">
+        <div className="text-(--an-table-row-text-color) font-normal">
           {row.getValue("appointment_for")}
         </div>
       </div>
@@ -126,12 +122,12 @@ export const columns: ColumnDef<AppointmentTable>[] = [
     accessorKey: "doctor_name",
     header: () => <div>Doctor</div>,
     cell: ({ row }) => (
-      <div className="flex gap-2 items-center w-50">
+      <div className="flex gap-2 items-center w-40">
         <img
           src={row.original.imgUrl2}
           className="w-6 h-6 object-cover border"
         />
-        <div className="text-(--an-table-row-text-color) text-sm font-normal">
+        <div className="text-(--an-table-row-text-color) font-normal">
           {row.getValue("doctor_name")}
         </div>
       </div>
@@ -146,7 +142,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
       const width = type.length * 8;
       return (
         <div
-          className="rounded-full border-1 px-2 py-1 text-xs font-normal text-[#4F81BD] bg-(--an-appoint-table-row-specality-bg) border-(--an-appoint-table-row-specality-border)"
+          className="rounded-full border-1 px-2 py-1 font-normal text-[#4F81BD] bg-(--an-appoint-table-row-specality-bg) border-(--an-appoint-table-row-specality-border)"
           style={{
             width: `${width}px`,
           }}
@@ -155,7 +151,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
         </div>
       );
     },
-    filterFn: fuzzyStringFilter,
+    enableColumnFilter: false,
   },
   {
     accessorKey: "status",
@@ -173,7 +169,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
       }
 
       return (
-        <div className="flex gap-2 items-center text-(--an-table-row-text-color) text-sm font-normal">
+        <div className="flex gap-2 items-center text-(--an-table-row-text-color) font-normal">
           {icon}
           {row.getValue("status")}
         </div>
@@ -191,8 +187,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
   {
     accessorKey: "symptoms",
     header: () => <div>Symptoms</div>,
-    filterFn: fuzzyArrayFilter,
-    enableColumnFilter: true,
+    enableColumnFilter: false,
     cell: ({ row }) => {
       const allSymptoms = row.original.symptoms;
       const displayed = allSymptoms.slice(0, 2);
@@ -202,7 +197,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
         <div className="flex flex-wrap gap-1">
           {displayed.map((item,index) => {
             return (
-              <div key={index} className="text-sm text-[#494343] px-2 py-1 font-normal bg-[#E4E4E4] rounded-sm overflow-ellipsis overflow-hidden">
+              <div key={index} className="text-[#494343] px-2 py-1 font-normal bg-[#E4E4E4] rounded-sm overflow-ellipsis overflow-hidden">
                 {item}
               </div>
             );
@@ -210,12 +205,12 @@ export const columns: ColumnDef<AppointmentTable>[] = [
           {remainingCount > 0 && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <span className="bg-[#E4E4E4] text-[#494343] text-xs p-1 border-1 border-[#E3E3E3] cursor-pointer">
+                <span className="bg-[#E4E4E4] text-[#494343] p-1 border-1 border-[#E3E3E3] cursor-pointer">
                   +{remainingCount}
                 </span>
               </TooltipTrigger>
               <TooltipContent side="top" align="center">
-                <div className="text-xs text-white">
+                <div className=" text-white">
                   {allSymptoms.slice(2).join(", ")}
                 </div>
               </TooltipContent>

@@ -9,6 +9,7 @@ import {
 } from "../ui/card";
 import { Label } from "../ui/label";
 import { cn } from "~/lib/utils";
+import { BackButton } from "./ArrowLeft";
 
 interface Data {
   status: boolean;
@@ -40,17 +41,17 @@ interface LocationNameProps {
 export function LocationName({ data, doctors, speciality, gallery }: LocationNameProps) {
   return (
     <div className="flex gap-2 w-full max-w-full">
-    <Button className="bg-white text-black border shadow rounded-lg hover:bg-white hover:text-black"><ArrowLeft /></Button>
+      <BackButton onclick={() => {}} />
       <Card className="w-full md:w-[48%] lg:w-auto flex flex-col rounded-xl bg-(--an-location-name-background) gap-[20px] border-none shadow-none">
         <CardHeader className="flex justify-between">
           <div className="flex flex-col items-start">
             <div className="flex gap-8 items-center">
-              <CardTitle className="text-(--an-location-name-title) text-center text-lg font-normal font-(family-name:--an-location-name-font-family)">
+              <CardTitle className="text-(--an-location-name-title) text-center text-base font-normal font-(family-name:--an-location-name-font-family)">
                 Location Name
               </CardTitle>
               <div
             className={cn(
-              "rounded-xl font-normal text-sm w-fit px-2 flex items-center justify-center font-(family-name:--an-location-name-font-family)",
+              "rounded-xl font-normal text-xs w-fit px-2 flex items-center justify-center font-(family-name:--an-location-name-font-family)",
               data.status === true
                 ? "bg-(--an-location-active-background) text-(--an-location-active-text-color) hover:bg-(--an-location-active-background)" : "bg-(--an-location-inactive-background) text-(--an-location-inactive-text-color) hover:bg-(--an-location-inactive-background)"
             )}
@@ -58,11 +59,11 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
             {data.status === true ? "Active" : data.status === false ? "Inactive" : ""}
           </div>
             </div>
-            <CardDescription className="text-(--an-location-name-edit-text-color) text-center text-base font-normal font-(family-name:--an-location-name-font-family)">
+            <CardDescription className="text-(--an-location-name-edit-text-color) text-center text-sm font-normal font-(family-name:--an-location-name-font-family)">
               عنوان التخصص
             </CardDescription>
           </div>
-          <Button className="font-(family-name:--an-location-name-font-family) rounded-sm bg-(--an-location-name-edit-button-bg) text-(--an-location-name-edit-text-color) text-base font-medium hover:bg-(--an-location-name-edit-button-bg) cursor-pointer">
+          <Button className="font-(family-name:--an-location-name-font-family) rounded-sm bg-(--an-location-name-edit-button-bg) text-(--an-location-name-edit-text-color) text-sm font-medium hover:bg-(--an-location-name-edit-button-bg) cursor-pointer">
             <Edit className="text-(--an-location-name-edit-text-color)" />
             Edit
           </Button>
@@ -71,64 +72,64 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
           <form>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col gap-1">
-                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-sm font-normal">
+                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
                   Created On
                 </Label>
-                <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-base font-normal">
+                <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-sm font-normal">
                   {data.created_on}
                 </p>
               </div>
               <div className="flex gap-8">
                 <div className="flex flex-col gap-1">
-                  <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-sm font-normal">
+                  <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
                     Email ID
                   </Label>
-                  <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-base font-normal">
+                  <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-sm font-normal">
                     {data.email}
                   </p>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-sm font-normal">
+                  <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
                     Phone
                   </Label>
-                  <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-base font-normal">
+                  <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-sm font-normal">
                     {data.phone}
                   </p>
                 </div>
               </div>
               <div className="flex flex-col gap-1">
-                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-sm font-normal">
+                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
                   Icon
                 </Label>
                 <img
                   src="/src/components/icons/LoctaionName/ImgIcon.svg"
                   className="w-[80px] h-[80px]"
                 />
-                <button className="text-(--an-location-name-edit-icon) font-(family-name:--an-location-name-font-family) text-sm font-normal text-start cursor-pointer">
+                <button className="text-(--an-location-name-edit-icon) font-(family-name:--an-location-name-font-family) text-xs font-normal text-start cursor-pointer">
                   Edit Icon
                 </button>
               </div>
               <div className="flex flex-col gap-1">
-                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-sm font-normal">
+                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
                   Full Address
                 </Label>
-                <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-base font-normal">
+                <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-sm font-normal">
                   {data.address}
                 </p>
               </div>
               <div className="flex flex-col gap-1">
-                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-sm font-normal">
+                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
                   Google Map URL
                 </Label>
                 <a
                   href="https://maps.app.goo.gl/ruQRae6CP6J22wDa7"
                   target="_blank"
-                  className="text-(--an-location-name-map-color) font-(family-name:--an-location-name-font-family) text-base font-normal underline decoration-auto decoration-solid"
+                  className="text-(--an-location-name-map-color) font-(family-name:--an-location-name-font-family) text-sm font-normal underline decoration-auto decoration-solid"
                 >
                   https://maps.app.goo.gl/ruQRae6CP6J22wDa7
                 </a>
               </div>
-              <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-sm font-normal">
+              <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
                 Gallery
               </Label>
               <div className="flex gap-2">
@@ -153,7 +154,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
               src="/src/components/icons/LoctaionName/SpecalityIcon.svg"
               alt=""
             />
-            <p className="text-(--an-location-name-subcard-title) font-(family-name:--an-location-name-font-family) text-base font-medium">
+            <p className="text-(--an-location-name-subcard-title) font-(family-name:--an-location-name-font-family) text-sm font-medium">
               Specialities
             </p>
           </CardTitle>
@@ -163,7 +164,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
           {speciality.map((item, index) => (
             <div key={index} className="flex gap-2 items-center rounded-lg border-1 border-(--an-location-name-gallery-border-color) bg-(--an-location-name-subcard-bg) p-1 mt-2">
               <GripVertical className="text-[#C6C6C6]" />
-              <p className="text-(--an-location-name-subcard-text-color) font-(family-name:--an-location-name-font-family) text-sm font-medium">
+              <p className="text-(--an-location-name-subcard-text-color) font-(family-name:--an-location-name-font-family) text-xs font-medium">
                 {item.name}
               </p>
             </div>
@@ -177,7 +178,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
               src="/src/components/icons/LoctaionName/SpecalityIcon.svg"
               alt=""
             />
-            <p className="text-(--an-location-name-subcard-title) font-(family-name:--an-location-name-font-family) text-base font-medium">
+            <p className="text-(--an-location-name-subcard-title) font-(family-name:--an-location-name-font-family) text-sm font-medium">
               Doctors
             </p>
           </CardTitle>
@@ -193,7 +194,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
                 src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"
                 className="w-6 h-6 rounded-full"
               />
-              <p className="text-(--an-location-name-subcard-text-color) font-(family-name:--an-location-name-font-family) text-sm font-medium">
+              <p className="text-(--an-location-name-subcard-text-color) font-(family-name:--an-location-name-font-family) text-xs font-medium">
                 {item.name}
               </p>
             </div>

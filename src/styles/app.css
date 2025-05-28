@@ -214,6 +214,7 @@
   --an-sidebar-add-button-background: #F00;
   --an-sidebar-active-background: rgba(0, 86, 105, 0.20);
   --an-sidebar-active-text-color: #005669;
+  --an-sidebar-footer-bg: rgba(0, 181, 173, 0.30);
 }
 
 @theme login{

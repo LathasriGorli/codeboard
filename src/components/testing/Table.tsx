@@ -27,7 +27,7 @@ export const columns: ColumnDef<Project>[] = [
             onClick={() => table.toggleAllPageRowsSelected(false)}
             aria-label="Deselect all"
           >
-            <span className="text-lg font-bold">-</span>
+            <span className="text-base font-bold">-</span>
           </button>
         ) : (
           <Checkbox
@@ -59,7 +59,7 @@ export const columns: ColumnDef<Project>[] = [
       const globalIndex = sortedRows.findIndex((r: any) => r.id === row.id);
       const serialNumber = globalIndex + 1;
       return (
-        <span className="text-base font-normal text-(--an-table-row-text-color)">
+        <span className="text-sm font-normal text-(--an-table-row-text-color)">
         {serialNumber.toString().padStart(2, "0")}
       </span>
       );
@@ -71,7 +71,7 @@ export const columns: ColumnDef<Project>[] = [
     accessorKey: "title",
     header: () => <div>Title</div>,
     cell: ({ row }) => (
-      <div className="text-(--an-table-body-title-text-color) text-sm font-normal">
+      <div className="text-(--an-table-body-title-text-color) font-normal">
         {row.getValue("title")}
       </div>
     ),
@@ -81,7 +81,7 @@ export const columns: ColumnDef<Project>[] = [
     header: () => <div className="text-right">Arabic Title</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-(--an-table-row-text-color) text-right text-sm font-normal">
+        <div className="text-(--an-table-row-text-color) text-right font-normal">
           {row.getValue("arabic_title")}
         </div>
       );
@@ -93,7 +93,7 @@ export const columns: ColumnDef<Project>[] = [
     header: () => <div>Code</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-(--an-table-row-text-color) text-sm font-normal">
+        <div className="text-(--an-table-row-text-color) font-normal">
           {row.getValue("code")}
         </div>
       );
@@ -114,12 +114,13 @@ export const columns: ColumnDef<Project>[] = [
             src={row.original.imgUrl}
             className="w-6 h-6 object-cover border"
           />
-          <div className="text-(--an-table-row-text-color) text-sm font-normal">
+          <div className="text-(--an-table-row-text-color) font-normal">
             {row.getValue("img_title")}
           </div>
         </div>
       );
     },
+    enableColumnFilter: false,
   },
   {
     accessorKey: "status",
@@ -128,7 +129,7 @@ export const columns: ColumnDef<Project>[] = [
       const status = row.getValue("status") as boolean;  
       return (
         <Button
-          className={`rounded-xl font-normal text-sm p-3 h-5 bg-white
+          className={`rounded-xl font-normal p-3 h-5 bg-white
             ${status === true ? "bg-(--an-table-active-background) text-(--an-table-active-text-color) hover:bg-(--an-table-active-background)" : "bg-(--an-table-inactive-background) text-(--an-table-inactive-text-color) hover:bg-(--an-table-inactive-background)"}`}
         >
           {status === true ? 'Active' : (status === false ? 'Inactive' : '')}
@@ -152,26 +153,6 @@ export const columns: ColumnDef<Project>[] = [
         { value: "active", label: "Active" },
         { value: "inactive", label: "Inactive" },
       ]
-    }
-  },
-  {
-    accessorKey: "created_on",
-    header: () => <div>Created On</div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-(--an-table-row-text-color) text-sm font-normal">
-          {row.getValue("created_on")}
-        </div>
-      );
-    },
-    filterFn: (row, columnId, filterValue) => {
-      const rowValue = String(row.getValue(columnId));
-      const filterText = String(filterValue);
-      return rowValue.includes(filterText);
-    },
-    meta: {
-      filterVariant: "date",
-      dateFormat: "DD-MM-YYYY",
     }
   },
   {

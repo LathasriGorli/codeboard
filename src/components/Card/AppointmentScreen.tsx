@@ -1,16 +1,14 @@
-
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
 } from "~/components/ui/card";
 import { Calendar } from "../icons/Appointment/Calendar";
 import { MotherIcon } from "../icons/Appointment/MotherIcon";
 import { ProgressIcon } from "../icons/Appointment/progressIcon";
-import { Button } from "../ui/button";
-import { ArrowLeft } from "lucide-react";
+import { BackButton } from "./ArrowLeft";
 
 const appointScreenData = [
   {
@@ -55,7 +53,7 @@ const description = "Scheduling appointments can be a breeze when you have the r
 export function AppointmentScreen() {
   return (
     <div className="flex gap-2 justify-center">
-    <Button className="bg-white text-black border shadow rounded-lg hover:bg-white hover:text-black"><ArrowLeft /></Button>
+      <BackButton onclick={() => {}}/>
     <Card className="max-w-[1100px] w-full flex rounded-xl bg-(--an-appoint-screen-background) shadow-none border-none">
       <CardHeader className="flex justify-between items-center">
         <CardTitle className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-xl font-medium">
