@@ -88,7 +88,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                   <SidebarMenuItem key={item.id} className="list-none">
                     <SidebarMenuButton
                       asChild
-                      className={`p-2 rounded-lg h-9 cursor-pointer ${activeId === item.id ? "bg-(--an-sidebar-active-background) hover:bg-(--an-sidebar-active-background) border-1 border-(--an-sidebar-active-text-color) text-(--an-sidebar-active-text-color) hover:text-(--an-sidebar-active-text-color)" : ""}`}
+                      className={`p-2 rounded-lg h-8 cursor-pointer ${activeId === item.id ? "bg-(--an-sidebar-active-background) hover:bg-(--an-sidebar-active-background) border-1 border-(--an-sidebar-active-text-color) text-(--an-sidebar-active-text-color) hover:text-(--an-sidebar-active-text-color)" : ""}`}
                       onClick={() => setActiveId(item.id)}
                     >
                       <Link
@@ -96,7 +96,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                       className="flex justify-start items-center"
                     >
                       <item.icon className="w-6 h-6" />
-                      <p className="text-sm font-(family-name:--an-menu-font-family) font-normal">
+                      <p className="text-xs font-(family-name:--an-menu-font-family) font-normal">
                         {item.title}
                       </p>
                     </Link>
