@@ -159,7 +159,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
             </p>
           </CardTitle>
         </CardHeader>
-        <hr />
+        <div className="w-60 ml-3 border-b border-black/10 focus:outline-none "></div>
         <CardContent className="px-3">
           {speciality.map((item, index) => (
             <div key={index} className="flex gap-2 items-center rounded-lg border-1 border-(--an-location-name-gallery-border-color) bg-(--an-location-name-subcard-bg) p-1 mt-2">
@@ -183,7 +183,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
             </p>
           </CardTitle>
         </CardHeader>
-        <hr />
+        <div className="w-86 ml-3 border-b border-black/10 focus:outline-none "></div>
         <CardContent className="px-3">
           {doctors.map((item, index) => (
             <div
