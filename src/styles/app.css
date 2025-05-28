@@ -280,6 +280,16 @@
   --an-appoint-screen-desc-color: #828282;
 }
 
+@theme doctor-leave{
+  --an-doctor-leave-font-family: 'Urbanist', 'Sans-Serif';
+}
+
+@theme appointment-table{
+    --an-appoint-table-row-specality-color: #4F81BD;
+    --an-appoint-table-row-specality-bg: rgba(79, 129, 189, 0.20);
+    --an-appoint-table-row-specality-border: rgba(79, 129, 189, 0.30);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

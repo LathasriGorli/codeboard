@@ -224,6 +224,7 @@ export const columns: ColumnDef<Person>[] = [
     },
     meta:{
       filterVariant: "date",
+      dateFormat: "DD-MM-YYYY",
     }
   },
   {

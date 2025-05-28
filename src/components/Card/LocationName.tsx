@@ -48,9 +48,6 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
               <CardTitle className="text-(--an-location-name-title) text-center text-lg font-normal font-(family-name:--an-location-name-font-family)">
                 Location Name
               </CardTitle>
-              {/* <span className="text-[#009D46] rounded-xl bg-[#CEDFCE] w-20 h-6 text-center font-(family-name:--an-location-name-font-family)">
-                {data.status}
-              </span> */}
               <div
             className={cn(
               "rounded-xl font-normal text-sm w-fit px-2 flex items-center justify-center font-(family-name:--an-location-name-font-family)",

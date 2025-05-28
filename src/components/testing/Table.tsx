@@ -5,20 +5,6 @@ import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 import data from './dummy_doctor_data.json';
 
-// const data = [
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "InActive",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "InActive",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "Active",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "InActive",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "Active",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "InActive",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "Active",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "InActive",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "InActive",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "Active",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-//   {full_name: "Lathasri",email: "lathasrigorli@gmail.com",phone: "1234567890",status: "InActive",dob: "26 Mar 2003",doj: "13 May 2023",designation: "Frontend Developer",created_at: "13 May 2023",updated_at: "13 May 2023",},
-// ];
-
 export type Project = {
     id: number;
     title: string;
@@ -29,112 +15,6 @@ export type Project = {
     status: boolean;
     created_on: string;
 };
-
-// export const columns: ColumnDef<Project>[] = [
-//   {
-//     accessorKey: "full_name",
-//     header: () => <div>Full Name</div>,
-//     cell: ({ row }) => (
-//       <div className="text-(--an-table-body-text-color) pl-3">
-//         {row.getValue("full_name")}
-//       </div>
-//     ),
-//   },
-//   {
-//     accessorKey: "email",
-//     header: () => <div>Email</div>,
-//     cell: ({ row }) => {
-//       return (
-//         <div className="text-(--an-table-body-number-color)">
-//           {row.getValue("email")}
-//         </div>
-//       );
-//     },
-//   },
-//   {
-//     accessorKey: "phone",
-//     header: () => <div>Mobile</div>,
-//     cell: ({ row }) => {
-//       return (
-//         <div className="text-(--an-table-body-number-color)">
-//           {row.getValue("phone")}
-//         </div>
-//       );
-//     },
-//   },
-//   {
-//     accessorKey: "status",
-//     header: () => <div>Status</div>,
-//     cell: ({ row }) => {
-//       const status = row.getValue("status") as string;
-//       const isActive = status.toLowerCase() === "active";
-
-//       return (
-//         <Button
-//           className={`rounded-lg font-normal text-white p-0 h-5 bg-white
-//             ${isActive ? "text-green-500 hover:bg-white" : "text-red-500 hover:bg-white"}`}
-//         >
-//           {row.getValue("status")}
-//         </Button>
-//       );
-//     },
-//   },
-//   {
-//     accessorKey: "dob",
-//     header: () => <div>Date Of Birth</div>,
-//     cell: ({ row }) => {
-//       return (
-//         <div className="text-(--an-table-body-number-color)">
-//           {row.getValue("dob")}
-//         </div>
-//       );
-//     },
-//   },
-//   {
-//     accessorKey: "doj",
-//     header: () => <div>Date Of Joining</div>,
-//     cell: ({ row }) => {
-//       return (
-//         <div className="text-(--an-table-body-text-color)">
-//           {row.getValue("doj")}
-//         </div>
-//       );
-//     },
-//   },
-//   {
-//     accessorKey: "designation",
-//     header: () => <div>Designation</div>,
-//     cell: ({ row }) => {
-//       return (
-//         <div className="text-(--an-table-body-text-color)">
-//           {row.getValue("designation")}
-//         </div>
-//       );
-//     },
-//   },
-//   {
-//     accessorKey: "created_at",
-//     header: () => <div>Created_At</div>,
-//     cell: ({ row }) => {
-//       return (
-//         <div className="text-(--an-table-body-text-color)">
-//           {row.getValue("created_at")}
-//         </div>
-//       );
-//     },
-//   },
-//   {
-//     accessorKey: "updated_at",
-//     header: () => <div>Updated_At</div>,
-//     cell: ({ row }) => {
-//       return (
-//         <div className="text-(--an-table-body-text-color)">
-//           {row.getValue("updated_at")}
-//         </div>
-//       );
-//     },
-//   },
-// ];
 
 export const columns: ColumnDef<Project>[] = [
   {
@@ -291,6 +171,7 @@ export const columns: ColumnDef<Project>[] = [
     },
     meta: {
       filterVariant: "date",
+      dateFormat: "DD-MM-YYYY",
     }
   },
   {

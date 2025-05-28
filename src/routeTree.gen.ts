@@ -18,6 +18,7 @@ import { Route as TestingSidebarImport } from './routes/testing/sidebar'
 import { Route as TestingLoginImport } from './routes/testing/login'
 import { Route as TestingLocationsImport } from './routes/testing/locations'
 import { Route as TestingDoctorLeaveTableImport } from './routes/testing/doctor-leave-table'
+import { Route as TestingAppointmentTableImport } from './routes/testing/appointment-table'
 import { Route as TableUserTableImport } from './routes/table/user-table'
 import { Route as TableRecentCommitTableImport } from './routes/table/recent-commit-table'
 import { Route as TableProfileTableImport } from './routes/table/profile-table'
@@ -32,6 +33,7 @@ import { Route as CardLocationNameImport } from './routes/card/location-name'
 import { Route as CardHeaderImport } from './routes/card/header'
 import { Route as CardFilterImport } from './routes/card/filter'
 import { Route as CardDoctorTableImport } from './routes/card/doctor-table'
+import { Route as CardDoctorLeaveImport } from './routes/card/doctor-leave'
 import { Route as CardAppointmentScreenImport } from './routes/card/appointment-screen'
 
 // Create/Update Routes
@@ -75,6 +77,12 @@ const TestingLocationsRoute = TestingLocationsImport.update({
 const TestingDoctorLeaveTableRoute = TestingDoctorLeaveTableImport.update({
   id: '/testing/doctor-leave-table',
   path: '/testing/doctor-leave-table',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TestingAppointmentTableRoute = TestingAppointmentTableImport.update({
+  id: '/testing/appointment-table',
+  path: '/testing/appointment-table',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -162,6 +170,12 @@ const CardDoctorTableRoute = CardDoctorTableImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const CardDoctorLeaveRoute = CardDoctorLeaveImport.update({
+  id: '/card/doctor-leave',
+  path: '/card/doctor-leave',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const CardAppointmentScreenRoute = CardAppointmentScreenImport.update({
   id: '/card/appointment-screen',
   path: '/card/appointment-screen',
@@ -184,6 +198,13 @@ declare module '@tanstack/react-router' {
       path: '/card/appointment-screen'
       fullPath: '/card/appointment-screen'
       preLoaderRoute: typeof CardAppointmentScreenImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/doctor-leave': {
+      id: '/card/doctor-leave'
+      path: '/card/doctor-leave'
+      fullPath: '/card/doctor-leave'
+      preLoaderRoute: typeof CardDoctorLeaveImport
       parentRoute: typeof rootRoute
     }
     '/card/doctor-table': {
@@ -284,6 +305,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TableUserTableImport
       parentRoute: typeof rootRoute
     }
+    '/testing/appointment-table': {
+      id: '/testing/appointment-table'
+      path: '/testing/appointment-table'
+      fullPath: '/testing/appointment-table'
+      preLoaderRoute: typeof TestingAppointmentTableImport
+      parentRoute: typeof rootRoute
+    }
     '/testing/doctor-leave-table': {
       id: '/testing/doctor-leave-table'
       path: '/testing/doctor-leave-table'
@@ -334,6 +362,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/card/appointment-screen': typeof CardAppointmentScreenRoute
+  '/card/doctor-leave': typeof CardDoctorLeaveRoute
   '/card/doctor-table': typeof CardDoctorTableRoute
   '/card/filter': typeof CardFilterRoute
   '/card/header': typeof CardHeaderRoute
@@ -348,6 +377,7 @@ export interface FileRoutesByFullPath {
   '/table/profile-table': typeof TableProfileTableRoute
   '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
+  '/testing/appointment-table': typeof TestingAppointmentTableRoute
   '/testing/doctor-leave-table': typeof TestingDoctorLeaveTableRoute
   '/testing/locations': typeof TestingLocationsRoute
   '/testing/login': typeof TestingLoginRoute
@@ -359,6 +389,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/card/appointment-screen': typeof CardAppointmentScreenRoute
+  '/card/doctor-leave': typeof CardDoctorLeaveRoute
   '/card/doctor-table': typeof CardDoctorTableRoute
   '/card/filter': typeof CardFilterRoute
   '/card/header': typeof CardHeaderRoute
@@ -373,6 +404,7 @@ export interface FileRoutesByTo {
   '/table/profile-table': typeof TableProfileTableRoute
   '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
+  '/testing/appointment-table': typeof TestingAppointmentTableRoute
   '/testing/doctor-leave-table': typeof TestingDoctorLeaveTableRoute
   '/testing/locations': typeof TestingLocationsRoute
   '/testing/login': typeof TestingLoginRoute
@@ -385,6 +417,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/card/appointment-screen': typeof CardAppointmentScreenRoute
+  '/card/doctor-leave': typeof CardDoctorLeaveRoute
   '/card/doctor-table': typeof CardDoctorTableRoute
   '/card/filter': typeof CardFilterRoute
   '/card/header': typeof CardHeaderRoute
@@ -399,6 +432,7 @@ export interface FileRoutesById {
   '/table/profile-table': typeof TableProfileTableRoute
   '/table/recent-commit-table': typeof TableRecentCommitTableRoute
   '/table/user-table': typeof TableUserTableRoute
+  '/testing/appointment-table': typeof TestingAppointmentTableRoute
   '/testing/doctor-leave-table': typeof TestingDoctorLeaveTableRoute
   '/testing/locations': typeof TestingLocationsRoute
   '/testing/login': typeof TestingLoginRoute
@@ -412,6 +446,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/card/appointment-screen'
+    | '/card/doctor-leave'
     | '/card/doctor-table'
     | '/card/filter'
     | '/card/header'
@@ -426,6 +461,7 @@ export interface FileRouteTypes {
     | '/table/profile-table'
     | '/table/recent-commit-table'
     | '/table/user-table'
+    | '/testing/appointment-table'
     | '/testing/doctor-leave-table'
     | '/testing/locations'
     | '/testing/login'
@@ -436,6 +472,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/card/appointment-screen'
+    | '/card/doctor-leave'
     | '/card/doctor-table'
     | '/card/filter'
     | '/card/header'
@@ -450,6 +487,7 @@ export interface FileRouteTypes {
     | '/table/profile-table'
     | '/table/recent-commit-table'
     | '/table/user-table'
+    | '/testing/appointment-table'
     | '/testing/doctor-leave-table'
     | '/testing/locations'
     | '/testing/login'
@@ -460,6 +498,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/card/appointment-screen'
+    | '/card/doctor-leave'
     | '/card/doctor-table'
     | '/card/filter'
     | '/card/header'
@@ -474,6 +513,7 @@ export interface FileRouteTypes {
     | '/table/profile-table'
     | '/table/recent-commit-table'
     | '/table/user-table'
+    | '/testing/appointment-table'
     | '/testing/doctor-leave-table'
     | '/testing/locations'
     | '/testing/login'
@@ -486,6 +526,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CardAppointmentScreenRoute: typeof CardAppointmentScreenRoute
+  CardDoctorLeaveRoute: typeof CardDoctorLeaveRoute
   CardDoctorTableRoute: typeof CardDoctorTableRoute
   CardFilterRoute: typeof CardFilterRoute
   CardHeaderRoute: typeof CardHeaderRoute
@@ -500,6 +541,7 @@ export interface RootRouteChildren {
   TableProfileTableRoute: typeof TableProfileTableRoute
   TableRecentCommitTableRoute: typeof TableRecentCommitTableRoute
   TableUserTableRoute: typeof TableUserTableRoute
+  TestingAppointmentTableRoute: typeof TestingAppointmentTableRoute
   TestingDoctorLeaveTableRoute: typeof TestingDoctorLeaveTableRoute
   TestingLocationsRoute: typeof TestingLocationsRoute
   TestingLoginRoute: typeof TestingLoginRoute
@@ -511,6 +553,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CardAppointmentScreenRoute: CardAppointmentScreenRoute,
+  CardDoctorLeaveRoute: CardDoctorLeaveRoute,
   CardDoctorTableRoute: CardDoctorTableRoute,
   CardFilterRoute: CardFilterRoute,
   CardHeaderRoute: CardHeaderRoute,
@@ -525,6 +568,7 @@ const rootRouteChildren: RootRouteChildren = {
   TableProfileTableRoute: TableProfileTableRoute,
   TableRecentCommitTableRoute: TableRecentCommitTableRoute,
   TableUserTableRoute: TableUserTableRoute,
+  TestingAppointmentTableRoute: TestingAppointmentTableRoute,
   TestingDoctorLeaveTableRoute: TestingDoctorLeaveTableRoute,
   TestingLocationsRoute: TestingLocationsRoute,
   TestingLoginRoute: TestingLoginRoute,
@@ -545,6 +589,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/card/appointment-screen",
+        "/card/doctor-leave",
         "/card/doctor-table",
         "/card/filter",
         "/card/header",
@@ -559,6 +604,7 @@ export const routeTree = rootRoute
         "/table/profile-table",
         "/table/recent-commit-table",
         "/table/user-table",
+        "/testing/appointment-table",
         "/testing/doctor-leave-table",
         "/testing/locations",
         "/testing/login",
@@ -572,6 +618,9 @@ export const routeTree = rootRoute
     },
     "/card/appointment-screen": {
       "filePath": "card/appointment-screen.tsx"
+    },
+    "/card/doctor-leave": {
+      "filePath": "card/doctor-leave.tsx"
     },
     "/card/doctor-table": {
       "filePath": "card/doctor-table.tsx"
@@ -614,6 +663,9 @@ export const routeTree = rootRoute
     },
     "/table/user-table": {
       "filePath": "table/user-table.tsx"
+    },
+    "/testing/appointment-table": {
+      "filePath": "testing/appointment-table.tsx"
     },
     "/testing/doctor-leave-table": {
       "filePath": "testing/doctor-leave-table.tsx"

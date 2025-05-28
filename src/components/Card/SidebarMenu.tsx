@@ -64,7 +64,7 @@ const data = {
 export function SidebarMenu({ items }: { items: headings[] }) {
   const location = useLocation();
   const [activeId, setActiveId] = useState<number>(() => {
-    const currentItem = items.find((item) => item.url === location.pathname);
+    const currentItem = items.find((item) => location.pathname.startsWith(item.url));
     return currentItem ? currentItem.id : 1;
   });
 
