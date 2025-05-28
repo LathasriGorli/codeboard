@@ -283,6 +283,10 @@
 
 @theme doctor-leave{
   --an-doctor-leave-font-family: 'Urbanist', 'Sans-Serif';
+  --an-doctor-leave-edit-button-bg: rgba(0, 86, 105, 0.20);
+  --an-doctor-leave-edit-text-color: #005669;
+  --an-doctor-leave-label-color: #6B6B6B;
+  --an-doctor-leave-text-color: #000;
 }
 
 @theme appointment-table{
