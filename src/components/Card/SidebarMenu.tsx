@@ -88,7 +88,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                   <SidebarMenuItem key={item.id} className="list-none">
                     <SidebarMenuButton
                       asChild
-                      className={`p-2 rounded-lg h-8 cursor-pointer ${activeId === item.id ? "bg-(--an-sidebar-active-background) hover:bg-(--an-sidebar-active-background) border-1 border-(--an-sidebar-active-text-color) text-(--an-sidebar-active-text-color) hover:text-(--an-sidebar-active-text-color)" : ""}`}
+                      className={`p-2 rounded-lg h-9 cursor-pointer ${activeId === item.id ? "bg-(--an-sidebar-active-background) hover:bg-(--an-sidebar-active-background) border-1 border-(--an-sidebar-active-text-color) text-(--an-sidebar-active-text-color) hover:text-(--an-sidebar-active-text-color)" : ""}`}
                       onClick={() => setActiveId(item.id)}
                     >
                       <Link
@@ -96,7 +96,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                       className="flex justify-start items-center"
                     >
                       <item.icon className="w-6 h-6" />
-                      <p className="text-[13px] font-(family-name:--an-menu-font-family) font-normal">
+                      <p className="text-sm font-(family-name:--an-menu-font-family) font-normal">
                         {item.title}
                       </p>
                     </Link>
@@ -105,7 +105,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                 ))}
           </SidebarGroup>
         </SidebarContent>
-        <SidebarFooter className="w-full h-24 bg-(--an-menu-footer-bg) blur-2xl rotate-38.723deg -left-15 -bottom-10 relative"></SidebarFooter>
+        <SidebarFooter className="absolute -bottom-30 -left-1 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-login-footer-bg) to-(--an-login-footer-bg) blur-2xl rotate-37.723deg"></SidebarFooter>
       </Sidebar>
       <div className="flex flex-col gap-4 w-full max-w-full overflow-hidden">
         <Header name="John Doe" role="Frondend Developer" />
