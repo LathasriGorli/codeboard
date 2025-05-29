@@ -42,7 +42,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
   return (
     <div className="flex gap-2 w-full max-w-full">
       <BackButton onclick={() => {}} />
-      <Card className="w-full md:w-[48%] lg:w-auto flex flex-col rounded-xl bg-(--an-location-name-background) gap-[20px] border-none shadow-none">
+      <Card className="w-full md:w-[48%] lg:w-[50%] flex flex-col rounded-xl bg-(--an-location-name-background) gap-[20px] border-none shadow-none">
         <CardHeader className="flex justify-between">
           <div className="flex flex-col items-start">
             <div className="flex gap-8 items-center">
@@ -147,7 +147,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
           </form>
         </CardContent>
       </Card>
-      <Card className="flex w-full md:w-[48%] lg:w-[339px] flex-col rounded-xl bg-(--an-location-name-background) gap-2 border-1 border-(--an-location-name-border) py-3 shadow-none">
+      <Card className="flex w-full md:w-[48%] lg:w-[20%] flex-col rounded-xl bg-(--an-location-name-background) gap-2 border-1 border-(--an-location-name-border) py-3 shadow-none">
         <CardHeader className="px-3">
           <CardTitle className="flex gap-2">
             <img
@@ -159,7 +159,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
             </p>
           </CardTitle>
         </CardHeader>
-        <div className="w-60 ml-3 border-b border-black/10 focus:outline-none "></div>
+        <div className="w-[90%] ml-3 border-b border-black/10 focus:outline-none "></div>
         <CardContent className="px-3">
           {speciality.map((item, index) => (
             <div key={index} className="flex gap-2 items-center rounded-lg border-1 border-(--an-location-name-gallery-border-color) bg-(--an-location-name-subcard-bg) p-1 mt-2">
@@ -171,7 +171,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
           ))}
         </CardContent>
       </Card>
-      <Card className="flex w-full md:w-[48%] lg:w-[468px] flex-col rounded-xl bg-(--an-location-name-background) gap-2 border-1 border-(--an-location-name-border) py-3 shadow-none">
+      <Card className="flex w-full md:w-[48%] lg:w-[30%] flex-col rounded-xl bg-(--an-location-name-background) gap-2 border-1 border-(--an-location-name-border) py-3 shadow-none">
         <CardHeader className="px-3">
           <CardTitle className="flex gap-2 ">
             <img
@@ -183,7 +183,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
             </p>
           </CardTitle>
         </CardHeader>
-        <div className="w-86 ml-3 border-b border-black/10 focus:outline-none "></div>
+        <div className="w-[90%] ml-3 border-b border-black/10 focus:outline-none "></div>
         <CardContent className="px-3">
           {doctors.map((item, index) => (
             <div

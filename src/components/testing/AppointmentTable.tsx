@@ -33,76 +33,6 @@ const AppointData: AppointmentTable[] = data.map((item) => ({
 
 export const columns: ColumnDef<AppointmentTable>[] = [
   {
-    accessorKey: "date",
-    header: () => <div>Date</div>,
-    cell: ({ row }) => (
-      <div className="text-(--an-table-row-text-color) font-normal">
-        {row.getValue("date")}
-      </div>
-    ),
-    filterFn: (row, columnId, filterValue) => {
-      const rowValue = String(row.getValue(columnId)).toLowerCase();
-      const filterText = String(filterValue).toLowerCase();
-      return rowValue.includes(filterText);
-    },
-    meta: {
-      filterVariant: "date",
-      dateFormat: "MMM DD, YYYY",
-    }
-  },
-  {
-    accessorKey: "slot",
-    header: () => <div>Slot</div>,
-    cell: ({ row }) => {
-      return (
-        <div className="text-(--an-table-body-title-text-color) font-normal">
-          {row.getValue("slot")}
-        </div>
-      );
-    },
-    enableColumnFilter: false,
-  },
-  {
-    accessorKey: "type_of_visit",
-    header: () => <div>Type Of Visit</div>,
-    cell: ({ row }) => {
-      const type = row.getValue("type_of_visit") as string;
-      const borderColor =
-        type === "Teleconsultation"
-          ? "#F2994A"
-          : type === "Home visit"
-            ? "#9B51E0"
-            : "#2D9CDB";
-      const textColor =
-        type === "Teleconsultation"
-          ? "#F2994A"
-          : type === "Home visit"
-            ? "#9B51E0"
-            : "#2D9CDB";
-      const width = type.length * 8;
-      return (
-        <div
-          className="h-8 rounded-sm border-1 p-2 font-normal"
-          style={{
-            color: textColor,
-            borderColor: borderColor,
-            width: `${width}px`,
-          }}
-        >
-          {row.getValue("type_of_visit")}
-        </div>
-      );
-    },
-    meta: {
-      filterVariant: "select",
-      options: [
-        { value: "Teleconsultation", label: "Teleconsultation" },
-        { value: "Hospital visit", label: "Hospital visit" },
-        { value: "Home visit", label: "Home visit" },
-      ],
-    },
-  },
-  {
     accessorKey: "appointment_for",
     header: () => <div>Appointment For</div>,
     cell: ({ row }) => (
@@ -135,17 +65,81 @@ export const columns: ColumnDef<AppointmentTable>[] = [
     filterFn: fuzzyStringFilter,
   },
   {
+    accessorKey: "type_of_visit",
+    header: () => <div>Type Of Visit</div>,
+    cell: ({ row }) => {
+      const type = row.getValue("type_of_visit") as string;
+      const borderColor =
+        type === "Teleconsultation"
+          ? "#F2994A"
+          : type === "Home visit"
+            ? "#9B51E0"
+            : "#2D9CDB";
+      const textColor =
+        type === "Teleconsultation"
+          ? "#F2994A"
+          : type === "Home visit"
+            ? "#9B51E0"
+            : "#2D9CDB";
+      return (
+        <div
+          className="h-6 rounded-sm border-1 p-1 font-normal w-fit"
+          style={{
+            color: textColor,
+            borderColor: borderColor,
+          }}
+        >
+          {row.getValue("type_of_visit")}
+        </div>
+      );
+    },
+    meta: {
+      filterVariant: "select",
+      options: [
+        { value: "Teleconsultation", label: "Teleconsultation" },
+        { value: "Hospital visit", label: "Hospital visit" },
+        { value: "Home visit", label: "Home visit" },
+      ],
+    },
+  },
+  {
+    accessorKey: "date",
+    header: () => <div>Date</div>,
+    cell: ({ row }) => (
+      <div className="text-(--an-table-row-text-color) font-normal">
+        {row.getValue("date")}
+      </div>
+    ),
+    filterFn: (row, columnId, filterValue) => {
+      const rowValue = String(row.getValue(columnId)).toLowerCase();
+      const filterText = String(filterValue).toLowerCase();
+      return rowValue.includes(filterText);
+    },
+    meta: {
+      filterVariant: "date",
+      dateFormat: "MMM DD, YYYY",
+    }
+  },
+  {
+    accessorKey: "slot",
+    header: () => <div>Slot</div>,
+    cell: ({ row }) => {
+      return (
+        <div className="text-(--an-table-body-title-text-color) font-normal">
+          {row.getValue("slot")}
+        </div>
+      );
+    },
+    enableColumnFilter: false,
+  },
+  {
     accessorKey: "speciality",
     header: () => <div>Speciality</div>,
     cell: ({ row }) => {
       const type = row.getValue("speciality") as string;
-      const width = type.length * 8;
       return (
         <div
-          className="rounded-full border-1 px-2 py-1 font-normal text-[#4F81BD] bg-(--an-appoint-table-row-specality-bg) border-(--an-appoint-table-row-specality-border)"
-          style={{
-            width: `${width}px`,
-          }}
+          className="rounded-full border-1 p-1 font-normal text-[#4F81BD] bg-(--an-appoint-table-row-specality-bg) border-(--an-appoint-table-row-specality-border) w-fit"
         >
           {row.getValue("speciality")}
         </div>

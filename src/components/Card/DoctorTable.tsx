@@ -144,7 +144,7 @@ export function DataTable({
                     {row.getVisibleCells().map((cell, cellIndex) => (
                       <TableCell
                         key={cell.id}
-                        className={`font-(family-name:--an-table-font-family)${
+                        className={`font-(family-name:--an-table-font-family) ${
                           index === 0 && cellIndex === 0 ? "rounded-tl-lg" : ""
                         } ${
                           index === 0 &&

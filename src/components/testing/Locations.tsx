@@ -211,7 +211,7 @@ export const columns: ColumnDef<Person>[] = [
   },
   {
     id: "actions",
-    header: () => <div className="text-center">Actions</div>,
+    header: () => <div className="w-full text-center">Actions</div>,
     cell: () => (
       <div className="flex items-center justify-center gap-2">
           <Eye className="w-4 h-4"/>

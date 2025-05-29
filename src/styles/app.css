@@ -295,6 +295,10 @@
     --an-appoint-table-row-specality-border: rgba(79, 129, 189, 0.30);
 }
 
+@theme personal-details{
+  --an-personal-details-font-family: 'Urbanist', 'Sans-Serif';
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

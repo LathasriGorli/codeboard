@@ -28,6 +28,7 @@ import { Route as ProfileViewProfileImport } from './routes/profile/view-profile
 import { Route as CardsIdImport } from './routes/cards/$id'
 import { Route as CardUsersCardImport } from './routes/card/users-card'
 import { Route as CardSidebarMenuImport } from './routes/card/sidebar-menu'
+import { Route as CardPersonalDetailsImport } from './routes/card/personal-details'
 import { Route as CardLoginImport } from './routes/card/login'
 import { Route as CardLocationNameImport } from './routes/card/location-name'
 import { Route as CardHeaderImport } from './routes/card/header'
@@ -140,6 +141,12 @@ const CardSidebarMenuRoute = CardSidebarMenuImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const CardPersonalDetailsRoute = CardPersonalDetailsImport.update({
+  id: '/card/personal-details',
+  path: '/card/personal-details',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const CardLoginRoute = CardLoginImport.update({
   id: '/card/login',
   path: '/card/login',
@@ -240,6 +247,13 @@ declare module '@tanstack/react-router' {
       path: '/card/login'
       fullPath: '/card/login'
       preLoaderRoute: typeof CardLoginImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/personal-details': {
+      id: '/card/personal-details'
+      path: '/card/personal-details'
+      fullPath: '/card/personal-details'
+      preLoaderRoute: typeof CardPersonalDetailsImport
       parentRoute: typeof rootRoute
     }
     '/card/sidebar-menu': {
@@ -368,6 +382,7 @@ export interface FileRoutesByFullPath {
   '/card/header': typeof CardHeaderRoute
   '/card/location-name': typeof CardLocationNameRoute
   '/card/login': typeof CardLoginRoute
+  '/card/personal-details': typeof CardPersonalDetailsRoute
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
@@ -395,6 +410,7 @@ export interface FileRoutesByTo {
   '/card/header': typeof CardHeaderRoute
   '/card/location-name': typeof CardLocationNameRoute
   '/card/login': typeof CardLoginRoute
+  '/card/personal-details': typeof CardPersonalDetailsRoute
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
@@ -423,6 +439,7 @@ export interface FileRoutesById {
   '/card/header': typeof CardHeaderRoute
   '/card/location-name': typeof CardLocationNameRoute
   '/card/login': typeof CardLoginRoute
+  '/card/personal-details': typeof CardPersonalDetailsRoute
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
@@ -452,6 +469,7 @@ export interface FileRouteTypes {
     | '/card/header'
     | '/card/location-name'
     | '/card/login'
+    | '/card/personal-details'
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
@@ -478,6 +496,7 @@ export interface FileRouteTypes {
     | '/card/header'
     | '/card/location-name'
     | '/card/login'
+    | '/card/personal-details'
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
@@ -504,6 +523,7 @@ export interface FileRouteTypes {
     | '/card/header'
     | '/card/location-name'
     | '/card/login'
+    | '/card/personal-details'
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
@@ -532,6 +552,7 @@ export interface RootRouteChildren {
   CardHeaderRoute: typeof CardHeaderRoute
   CardLocationNameRoute: typeof CardLocationNameRoute
   CardLoginRoute: typeof CardLoginRoute
+  CardPersonalDetailsRoute: typeof CardPersonalDetailsRoute
   CardSidebarMenuRoute: typeof CardSidebarMenuRoute
   CardUsersCardRoute: typeof CardUsersCardRoute
   CardsIdRoute: typeof CardsIdRoute
@@ -559,6 +580,7 @@ const rootRouteChildren: RootRouteChildren = {
   CardHeaderRoute: CardHeaderRoute,
   CardLocationNameRoute: CardLocationNameRoute,
   CardLoginRoute: CardLoginRoute,
+  CardPersonalDetailsRoute: CardPersonalDetailsRoute,
   CardSidebarMenuRoute: CardSidebarMenuRoute,
   CardUsersCardRoute: CardUsersCardRoute,
   CardsIdRoute: CardsIdRoute,
@@ -595,6 +617,7 @@ export const routeTree = rootRoute
         "/card/header",
         "/card/location-name",
         "/card/login",
+        "/card/personal-details",
         "/card/sidebar-menu",
         "/card/users-card",
         "/cards/$id",
@@ -636,6 +659,9 @@ export const routeTree = rootRoute
     },
     "/card/login": {
       "filePath": "card/login.tsx"
+    },
+    "/card/personal-details": {
+      "filePath": "card/personal-details.tsx"
     },
     "/card/sidebar-menu": {
       "filePath": "card/sidebar-menu.tsx"

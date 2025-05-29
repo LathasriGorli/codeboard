@@ -152,7 +152,7 @@ function DebouncedInput({
 
   return (
     <div className="relative">
-      <div className={`flex border shadow rounded w-36 items-center ${hasDateError ? 'border-red-300' : ''}`}>
+      <div className={`flex border shadow rounded w-30 items-center ${hasDateError ? 'border-red-300' : ''}`}>
         {type === "date" ? (
           <>
             <Input
