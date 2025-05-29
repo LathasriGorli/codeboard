@@ -28,7 +28,6 @@ import { Route as ProfileViewProfileImport } from './routes/profile/view-profile
 import { Route as CardsIdImport } from './routes/cards/$id'
 import { Route as CardUsersCardImport } from './routes/card/users-card'
 import { Route as CardSidebarMenuImport } from './routes/card/sidebar-menu'
-import { Route as CardPersonalDetailsImport } from './routes/card/personal-details'
 import { Route as CardLoginImport } from './routes/card/login'
 import { Route as CardLocationNameImport } from './routes/card/location-name'
 import { Route as CardHeaderImport } from './routes/card/header'
@@ -36,6 +35,8 @@ import { Route as CardFilterImport } from './routes/card/filter'
 import { Route as CardDoctorTableImport } from './routes/card/doctor-table'
 import { Route as CardDoctorLeaveImport } from './routes/card/doctor-leave'
 import { Route as CardAppointmentScreenImport } from './routes/card/appointment-screen'
+import { Route as CardDoctorsSpecialitiesImport } from './routes/card/doctors/specialities'
+import { Route as CardDoctorsPersonalDetailsImport } from './routes/card/doctors/personal-details'
 
 // Create/Update Routes
 
@@ -141,12 +142,6 @@ const CardSidebarMenuRoute = CardSidebarMenuImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const CardPersonalDetailsRoute = CardPersonalDetailsImport.update({
-  id: '/card/personal-details',
-  path: '/card/personal-details',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const CardLoginRoute = CardLoginImport.update({
   id: '/card/login',
   path: '/card/login',
@@ -188,6 +183,20 @@ const CardAppointmentScreenRoute = CardAppointmentScreenImport.update({
   path: '/card/appointment-screen',
   getParentRoute: () => rootRoute,
 } as any)
+
+const CardDoctorsSpecialitiesRoute = CardDoctorsSpecialitiesImport.update({
+  id: '/card/doctors/specialities',
+  path: '/card/doctors/specialities',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CardDoctorsPersonalDetailsRoute = CardDoctorsPersonalDetailsImport.update(
+  {
+    id: '/card/doctors/personal-details',
+    path: '/card/doctors/personal-details',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
 
 // Populate the FileRoutesByPath interface
 
@@ -247,13 +256,6 @@ declare module '@tanstack/react-router' {
       path: '/card/login'
       fullPath: '/card/login'
       preLoaderRoute: typeof CardLoginImport
-      parentRoute: typeof rootRoute
-    }
-    '/card/personal-details': {
-      id: '/card/personal-details'
-      path: '/card/personal-details'
-      fullPath: '/card/personal-details'
-      preLoaderRoute: typeof CardPersonalDetailsImport
       parentRoute: typeof rootRoute
     }
     '/card/sidebar-menu': {
@@ -368,6 +370,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserAddUserImport
       parentRoute: typeof rootRoute
     }
+    '/card/doctors/personal-details': {
+      id: '/card/doctors/personal-details'
+      path: '/card/doctors/personal-details'
+      fullPath: '/card/doctors/personal-details'
+      preLoaderRoute: typeof CardDoctorsPersonalDetailsImport
+      parentRoute: typeof rootRoute
+    }
+    '/card/doctors/specialities': {
+      id: '/card/doctors/specialities'
+      path: '/card/doctors/specialities'
+      fullPath: '/card/doctors/specialities'
+      preLoaderRoute: typeof CardDoctorsSpecialitiesImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -382,7 +398,6 @@ export interface FileRoutesByFullPath {
   '/card/header': typeof CardHeaderRoute
   '/card/location-name': typeof CardLocationNameRoute
   '/card/login': typeof CardLoginRoute
-  '/card/personal-details': typeof CardPersonalDetailsRoute
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
@@ -399,6 +414,8 @@ export interface FileRoutesByFullPath {
   '/testing/sidebar': typeof TestingSidebarRoute
   '/testing/table': typeof TestingTableRoute
   '/user/add-user': typeof UserAddUserRoute
+  '/card/doctors/personal-details': typeof CardDoctorsPersonalDetailsRoute
+  '/card/doctors/specialities': typeof CardDoctorsSpecialitiesRoute
 }
 
 export interface FileRoutesByTo {
@@ -410,7 +427,6 @@ export interface FileRoutesByTo {
   '/card/header': typeof CardHeaderRoute
   '/card/location-name': typeof CardLocationNameRoute
   '/card/login': typeof CardLoginRoute
-  '/card/personal-details': typeof CardPersonalDetailsRoute
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
@@ -427,6 +443,8 @@ export interface FileRoutesByTo {
   '/testing/sidebar': typeof TestingSidebarRoute
   '/testing/table': typeof TestingTableRoute
   '/user/add-user': typeof UserAddUserRoute
+  '/card/doctors/personal-details': typeof CardDoctorsPersonalDetailsRoute
+  '/card/doctors/specialities': typeof CardDoctorsSpecialitiesRoute
 }
 
 export interface FileRoutesById {
@@ -439,7 +457,6 @@ export interface FileRoutesById {
   '/card/header': typeof CardHeaderRoute
   '/card/location-name': typeof CardLocationNameRoute
   '/card/login': typeof CardLoginRoute
-  '/card/personal-details': typeof CardPersonalDetailsRoute
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
@@ -456,6 +473,8 @@ export interface FileRoutesById {
   '/testing/sidebar': typeof TestingSidebarRoute
   '/testing/table': typeof TestingTableRoute
   '/user/add-user': typeof UserAddUserRoute
+  '/card/doctors/personal-details': typeof CardDoctorsPersonalDetailsRoute
+  '/card/doctors/specialities': typeof CardDoctorsSpecialitiesRoute
 }
 
 export interface FileRouteTypes {
@@ -469,7 +488,6 @@ export interface FileRouteTypes {
     | '/card/header'
     | '/card/location-name'
     | '/card/login'
-    | '/card/personal-details'
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
@@ -486,6 +504,8 @@ export interface FileRouteTypes {
     | '/testing/sidebar'
     | '/testing/table'
     | '/user/add-user'
+    | '/card/doctors/personal-details'
+    | '/card/doctors/specialities'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -496,7 +516,6 @@ export interface FileRouteTypes {
     | '/card/header'
     | '/card/location-name'
     | '/card/login'
-    | '/card/personal-details'
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
@@ -513,6 +532,8 @@ export interface FileRouteTypes {
     | '/testing/sidebar'
     | '/testing/table'
     | '/user/add-user'
+    | '/card/doctors/personal-details'
+    | '/card/doctors/specialities'
   id:
     | '__root__'
     | '/'
@@ -523,7 +544,6 @@ export interface FileRouteTypes {
     | '/card/header'
     | '/card/location-name'
     | '/card/login'
-    | '/card/personal-details'
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
@@ -540,6 +560,8 @@ export interface FileRouteTypes {
     | '/testing/sidebar'
     | '/testing/table'
     | '/user/add-user'
+    | '/card/doctors/personal-details'
+    | '/card/doctors/specialities'
   fileRoutesById: FileRoutesById
 }
 
@@ -552,7 +574,6 @@ export interface RootRouteChildren {
   CardHeaderRoute: typeof CardHeaderRoute
   CardLocationNameRoute: typeof CardLocationNameRoute
   CardLoginRoute: typeof CardLoginRoute
-  CardPersonalDetailsRoute: typeof CardPersonalDetailsRoute
   CardSidebarMenuRoute: typeof CardSidebarMenuRoute
   CardUsersCardRoute: typeof CardUsersCardRoute
   CardsIdRoute: typeof CardsIdRoute
@@ -569,6 +590,8 @@ export interface RootRouteChildren {
   TestingSidebarRoute: typeof TestingSidebarRoute
   TestingTableRoute: typeof TestingTableRoute
   UserAddUserRoute: typeof UserAddUserRoute
+  CardDoctorsPersonalDetailsRoute: typeof CardDoctorsPersonalDetailsRoute
+  CardDoctorsSpecialitiesRoute: typeof CardDoctorsSpecialitiesRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -580,7 +603,6 @@ const rootRouteChildren: RootRouteChildren = {
   CardHeaderRoute: CardHeaderRoute,
   CardLocationNameRoute: CardLocationNameRoute,
   CardLoginRoute: CardLoginRoute,
-  CardPersonalDetailsRoute: CardPersonalDetailsRoute,
   CardSidebarMenuRoute: CardSidebarMenuRoute,
   CardUsersCardRoute: CardUsersCardRoute,
   CardsIdRoute: CardsIdRoute,
@@ -597,6 +619,8 @@ const rootRouteChildren: RootRouteChildren = {
   TestingSidebarRoute: TestingSidebarRoute,
   TestingTableRoute: TestingTableRoute,
   UserAddUserRoute: UserAddUserRoute,
+  CardDoctorsPersonalDetailsRoute: CardDoctorsPersonalDetailsRoute,
+  CardDoctorsSpecialitiesRoute: CardDoctorsSpecialitiesRoute,
 }
 
 export const routeTree = rootRoute
@@ -617,7 +641,6 @@ export const routeTree = rootRoute
         "/card/header",
         "/card/location-name",
         "/card/login",
-        "/card/personal-details",
         "/card/sidebar-menu",
         "/card/users-card",
         "/cards/$id",
@@ -633,7 +656,9 @@ export const routeTree = rootRoute
         "/testing/login",
         "/testing/sidebar",
         "/testing/table",
-        "/user/add-user"
+        "/user/add-user",
+        "/card/doctors/personal-details",
+        "/card/doctors/specialities"
       ]
     },
     "/": {
@@ -659,9 +684,6 @@ export const routeTree = rootRoute
     },
     "/card/login": {
       "filePath": "card/login.tsx"
-    },
-    "/card/personal-details": {
-      "filePath": "card/personal-details.tsx"
     },
     "/card/sidebar-menu": {
       "filePath": "card/sidebar-menu.tsx"
@@ -710,6 +732,12 @@ export const routeTree = rootRoute
     },
     "/user/add-user": {
       "filePath": "user/add-user.tsx"
+    },
+    "/card/doctors/personal-details": {
+      "filePath": "card/doctors/personal-details.tsx"
+    },
+    "/card/doctors/specialities": {
+      "filePath": "card/doctors/specialities.tsx"
     }
   }
 }

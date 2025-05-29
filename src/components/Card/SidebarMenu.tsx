@@ -15,6 +15,7 @@ import { Header } from "./Header";
 import { LocationName } from "./LocationName";
 import { Link, useLocation } from "@tanstack/react-router";
 import { AppointmentScreen } from "./AppointmentScreen";
+import { PersonalDetails } from "./Doctors/PersonalDetails";
 
 type headings = {
   id: number;
@@ -71,9 +72,9 @@ export function SidebarMenu({ items }: { items: headings[] }) {
   return (
     <SidebarProvider
       className="bg-[#EFF4EF]"
-      style={{ "--sidebar-width": "11.5rem", } as React.CSSProperties}
+      style={{ "--sidebar-width": "11.7rem", } as React.CSSProperties}
     >
-      <Sidebar className="flex flex-col h-screen w-[175px] p-1 itmes-start gap-10 rounded-md bg-(--an-menu-background) m-1 border-none">
+      <Sidebar className="flex flex-col h-screen w-[175px] p-1 itmes-start gap-10 rounded-md bg-(--an-menu-background) mt-1.5 ml-1.5 border-none">
         <SidebarHeader className="bg-white">
           <AlmanaIcon className={"w-25 h-12"} />
         </SidebarHeader>
@@ -109,8 +110,9 @@ export function SidebarMenu({ items }: { items: headings[] }) {
       </Sidebar>
       <div className="flex flex-col gap-4 w-full max-w-full overflow-hidden">
         <Header name="John Doe" role="Frondend Developer" />
-        <LocationName data={data} doctors={doctors} speciality={speciality} gallery={gallery}/>
+        {/* <LocationName data={data} doctors={doctors} speciality={speciality} gallery={gallery}/> */}
         {/* <AppointmentScreen /> */}
+        <PersonalDetails />
       </div>
     </SidebarProvider>
   );
