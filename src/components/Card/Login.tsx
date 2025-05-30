@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { AlmanaIcon } from "../icons/AlmanaIcon";
+import { OTPEdit } from "../icons/OTPEdit";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -9,8 +11,7 @@ import {
   CardTitle,
 } from "../ui/card";
 import { Input } from "../ui/input";
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "../ui/input-otp";
-import { Label } from "../ui/label";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "../ui/input-otp";
 
 type Props = {
   image: string;
@@ -20,84 +21,158 @@ type Props = {
 };
 
 export function Login({ image, email, otp, message }: Props) {
-  return (
-    <div className="flex justify-between w-screen h-screen md:flex-row">
-      <div className="flex flex-col w-1/2 gap-16 relative overflow-hidden">
-        <AlmanaIcon className={"w-32 h-12 m-2 md:w-40 md:h-15"} />
-        <div className="flex justify-center w-full">
-        <Card className="w-[400px] rounded-none shadow-none gap-8 bg-transparent border-none relative z-10">
-          <CardHeader className="gap-2">
-            <CardTitle>
-              <p className="text-(--an-login-text-color) text-center font-(family-name:--an-login-font-family) text-(length:--an-login-login-text-size) font-normal">
-                Log in to
-                <span className="text-(--an-login-almana-color) font-(family-name:--an-login-font-family) text-(length:--an-login-login-text-size) font-nromal font-semibold">
-                  {" "}
-                  Almana Hospitals
-                </span>
+  const [showOtp, setShowOtp] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(30);
+  const [otpValue, setOtpValue] = useState("");
+
+  useEffect(() => {
+    if (showOtp && secondsLeft > 0) {
+      const timer = setTimeout(() => {
+        setSecondsLeft((prev) => prev - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [showOtp, secondsLeft]);
+
+  const handleContinue = () => {
+    setShowOtp(true);
+    setSecondsLeft(30);
+  };
+
+  const handleResend = () => {
+    setSecondsLeft(30);
+  };
+
+  const EmailCard = (
+    <Card className="w-[400px] rounded-none shadow-none bg-transparent border-none relative z-10">
+      <CardHeader className="gap-4">
+        <CardTitle>
+          <p className="text-(--an-login-text-color) text-start font-(family-name:--an-login-font-family) text-(length:--an-login-text-size) font-normal">
+            Log in to
+            <span className="text-(--an-login-almana-color) font-(family-name:--an-login-font-family) text-(length:--an-login-login-text-size) font-semibold">
+              {" "}
+              Almana Hospitals
+            </span>
+          </p>
+        </CardTitle>
+        <CardDescription className="text-(--an-login-description-color) font-(family-name:--an-login-font-family) text-sm font-normal pl-8 w-80 text-center">
+          Enter your email to continue. <br />
+          We'll send you a one-time password (OTP) for verification.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form className="flex flex-col items-start mt-6 space-y-2">
+          <div className="w-85">
+            <Input
+              id="email"
+              placeholder="Email"
+              className="rounded-lg border border-(--an-login-input-border-color) bg-(--an-login-input-background) placeholder:text-(--an-login-text-color) text-sm font-normal font-(family-name:--an-login-font-family) h-11 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none"
+            />
+            {email && (
+              <p className="text-xs text-red-500 font-(family-name:--an-login-font-family)">
+                {email}
               </p>
-            </CardTitle>
-            <CardDescription className="text-(--an-login-description-color) font-(family-name:--an-login-font-family) text-xs font-normal pl-8 w-80 text-center">
-              Welcome back! Please log in to your Almana Hospitals 
-              account to proceed.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form>
-              <div className="flex flex-col items-center">
-                <div className="flex flex-col w-80">
-                  <Input
-                    id="email"
-                    placeholder="Email"
-                    className="rounded-lg border-1 border-(--an-login-input-border-color) bg-(--an-login-input-background) placeholder:text-(--an-login-text-color) text-sm font-normal font-(family-name:--an-login-font-family) h-9 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none"
-                  />
-                  <p className="text-xs text-red-500 pl-1 pt-1 font-(family-name:--an-login-font-family)">
-                    {email}
-                  </p>
-                </div>
-                <div className="flex flex-col mt-6">
-                  <InputOTP maxLength={6}>
-                  <InputOTPGroup><InputOTPSlot index={0} className="bg-(--an-login-input-background) w-10 h-10" /></InputOTPGroup>
-                  <InputOTPGroup><InputOTPSlot index={1} className="bg-(--an-login-input-background) w-10 h-10" /></InputOTPGroup>
-                  <InputOTPGroup><InputOTPSlot index={2} className="bg-(--an-login-input-background) w-10 h-10" /></InputOTPGroup>
-                  <InputOTPSeparator />
-                  <InputOTPGroup><InputOTPSlot index={3} className="bg-(--an-login-input-background) w-10 h-10" /></InputOTPGroup>
-                  <InputOTPGroup><InputOTPSlot index={4} className="bg-(--an-login-input-background) w-10 h-10" /></InputOTPGroup>
-                  <InputOTPGroup><InputOTPSlot index={5} className="bg-(--an-login-input-background) w-10 h-10" /></InputOTPGroup>
-                  </InputOTP>
-                  <p className="text-xs text-red-500 pt-1 font-(family-name:--an-login-font-family) w-full text-left">
-                    {otp}
-                  </p>
-                </div>
-                <p className="text-xs text-red-500 font-(family-name:--an-login-font-family)">
-                    {message}
-                </p>
-              </div>
-            </form>
-          </CardContent>
-          <CardFooter className="flex flex-col items-center self-stretch gap-4">
+            )}
+          </div>
+          {message && (
+            <p className="text-xs text-red-500 font-(family-name:--an-login-font-family)">
+              {message}
+            </p>
+          )}
+        </form>
+      </CardContent>
+      <CardFooter className="flex flex-col items-start">
+        <Button
+          variant="outline"
+          onClick={handleContinue}
+          className="rounded-lg bg-(--an-login-signin-background) text-(--an-login-signin-text-color) text-sm font-normal font-(family-name:--an-login-font-family) w-85 h-11 hover:bg-(--an-login-signin-background) hover:text-(--an-login-signin-text-color) cursor-pointer"
+        >
+          Continue
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+
+  const OTPCard = (
+    <Card className="w-[400px] rounded-none shadow-none bg-transparent border-none relative z-10 gap-6">
+      <CardHeader className="gap-3 flex flex-col items-center justify-center">
+        <CardTitle>
+          <p className="text-(--an-otp-text-color) text-center font-(family-name:--an-otp-font-family) text-(length:--an-otp-text-size) font-normal">
+            OTP Verification
+          </p>
+        </CardTitle>
+        <CardDescription className="text-[#6A7185] font-(family-name:--an-otp-font-family) text-xs font-normal text-center">
+          Enter the OTP sent to your email <br /> ends with{" "}
+          <span className="text-(--an-otp-text-color) inline-flex items-center">
+            user@gmail.com
             <Button
               variant="outline"
-              className="rounded-lg bg-(--an-login-signin-background) text-(--an-login-signin-text-color) text-center text-sm font-normal font-(family-name:--an-login-font-family) w-80 h-9 hover:bg-(--an-login-signin-background) hover:text-(--an-login-signin-text-color) cursor-pointer"
+              className="border-none shadow-none w-0 h-0 cursor-pointer"
+              onClick={() => {
+                setShowOtp(false) , 
+                setOtpValue("")
+              }}
             >
-              Sign in
+              <OTPEdit />
             </Button>
-            <span className="text-(--an-login-forgot-text-color) text-center font-(family-name:--an-login-font-family) text-sm font-normal">
-              Forgot password? {"  "}
-              <button className="text-(--an-login-text-color) text-center font-(family-name:--an-login-font-family) text-sm font-medium underline underline-offset-auto cursor-pointer decoration-from-font">
-                Reset
-              </button>{" "}
-              <span className="text-(--an-login-text-color) text-center font-(family-name:--an-login-font-family) text-sm font-medium">it</span>
+          </span>
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col items-center gap-3 pl-6">
+        <InputOTP maxLength={4} value={otpValue} onChange={(val) => setOtpValue(val)}>
+          {[0, 1, 2, 3].map((i) => (
+            <InputOTPGroup key={i}>
+              <InputOTPSlot
+                index={i}
+                className="bg-(--an-otp-input-background) w-13 h-13 rounded border border-(--an-otp-input-border-color) mr-5"
+              />
+            </InputOTPGroup>
+          ))}
+        </InputOTP>
+        {otp && (
+          <p className="text-xs text-red-500 pt-1 font-(family-name:--an-login-font-family) w-full text-center">
+            {otp}
+          </p>
+        )}
+        <p className="text-[#6A7185] text-center font-(family-name:--an-otp-font-family) text-sm font-normal">
+          Didn't receive OTP? <br />
+          <Button
+            variant="outline"
+            className="text-(--an-otp-resend-color) font-medium border-none shadow-none p-0 w-0 h-0 cursor-pointer hover:text-(--an-otp-resend-color)"
+            onClick={secondsLeft === 0 ? handleResend : undefined}
+          >
+            Resend OTP{" "}
+            <span className="text-orange-300">
+              {secondsLeft > 0 && `(${secondsLeft}s)`}
             </span>
-          </CardFooter>
-        </Card>
+          </Button>
+        </p>
+      </CardContent>
+      <CardFooter className="flex items-center justify-center">
+        <Button
+          variant="outline"
+          className="rounded-lg bg-(--an-otp-verify-background) text-(--an-otp-verify-text-color) text-sm font-normal font-(family-name:--an-otp-font-family) w-85 h-11 hover:bg-(--an-otp-verify-background) hover:text-(--an-otp-verify-text-color) cursor-pointer"
+        >
+          Verify
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+
+  return (
+    <div className="flex justify-between w-screen h-screen md:flex-row">
+      <div className="flex flex-col w-1/2 gap-24 relative overflow-hidden">
+        <AlmanaIcon className="w-32 h-12 m-2 md:w-40 md:h-15" />
+        <div className="flex justify-center relative">
+          <div className={showOtp ? "hidden" : "block"}>{EmailCard}</div>
+          <div className={showOtp ? "block" : "hidden"}>{OTPCard}</div>
         </div>
-        
-        <div className="absolute -bottom-10 -left-1 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-login-footer-bg) to-(--an-login-footer-bg) blur-2xl rotate-37.723deg"></div>
+        <div className="absolute -bottom-10 -left-1 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-otp-footer-bg) to-(--an-otp-footer-bg) blur-2xl rotate-[37.723deg]" />
       </div>
       <div className="w-auto">
         <img
           src={image}
-          alt=""
+          alt="Login visual"
           className="w-auto h-full relative rounded-lg py-1 px-1"
         />
       </div>

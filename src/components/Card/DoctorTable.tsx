@@ -17,19 +17,24 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { Filter } from "./Filter";
-import { Pagination } from "../Table/Pagination";
 import { ScrollArea } from "../ui/scroll-area";
 import { ShowFilter } from "./ShowFilter";
+import { Filter } from "./Filter";
+import { Pagination } from "../Table/Pagination";
 
 type DataTableProps = {
   data: any[];
   columns: any[];
-  paginationDetails: any;
+  paginationDetails?: {
+    page: number;
+    limit: number;
+    total_pages: number;
+    total: number;
+  };
   height?: string;
   removeSortingForColumnIds?: string[];
+  showFilters?: boolean;
 };
-
 export function DataTable({
   data,
   columns,
@@ -38,7 +43,7 @@ export function DataTable({
   removeSortingForColumnIds = [],
 }: DataTableProps) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [showFilters, setShowFilters] = useState(false);
+  const [showFilters, setShowFilters] = useState<boolean>(false);
 
   const table = useReactTable({
     data: data || [],
@@ -46,13 +51,17 @@ export function DataTable({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+    ...(paginationDetails
+      ? { getPaginationRowModel: getPaginationRowModel() }
+      : {}),
     filterFns: {},
-    initialState: {
-      pagination: {
-        pageSize: paginationDetails.limit,
-      },
-    },
+    initialState: paginationDetails
+      ? {
+          pagination: {
+            pageSize: paginationDetails.limit,
+          },
+        }
+      : {},
     state: {
       columnFilters,
     },
@@ -62,10 +71,9 @@ export function DataTable({
     debugColumns: false,
     autoResetPageIndex: false,
   });
-
   return (
-    <div className="w-auto bg-(--an-table-background) p-2 rounded-lg">
-      <ShowFilter onclick={() => setShowFilters((prev) => !prev)} />
+    <div className="w-full bg-(--an-table-background) p-2 rounded-lg">
+      <ShowFilter onclick={() => setShowFilters(!showFilters)} />
       <div className="overflow-hidden rounded-lg">
         <Table className="border-separate border-spacing-y-0.5">
           <ScrollArea className="rounded-lg" style={{ height: height }}>
@@ -76,7 +84,6 @@ export function DataTable({
                     const isSortingRemoved = removeSortingForColumnIds.includes(
                       header.column.id
                     );
-
                     return (
                       <TableHead
                         key={header.id}
@@ -185,9 +192,11 @@ export function DataTable({
           </ScrollArea>
         </Table>
       </div>
-      <div className="bg-transparent mt-2">
-        <Pagination paginationDetails={paginationDetails} table={table} />
-      </div>
+      {paginationDetails && (
+        <div className="bg-transparent mt-2">
+          <Pagination paginationDetails={paginationDetails} table={table} />
+        </div>
+      )}
     </div>
   );
 }

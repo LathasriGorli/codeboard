@@ -222,14 +222,29 @@
   --an-login-text-color: #000;
   --an-login-background: #fff;
   --an-login-almana-color: #005669;
-  --an-login-login-text-size: 1.8rem;
+  --an-login-text-size: 1.8rem;
   --an-login-description-color: #4F4F4F;
   --an-login-input-border-color: #D4D4D4;
   --an-login-input-background: #F3F8FF;
-  --an-login-signin-background: #005669;
-  --an-login-signin-text-color: #fff;
+  --an-login-signin-background: rgba(0, 86, 105, 0.40);
+  --an-login-signin-text-color: #005669;
   --an-login-forgot-text-color: rgba(0, 0, 0, 0.60);
   --an-login-footer-bg: rgba(0, 181, 173, 0.30);
+}
+
+@theme otp{
+  --an-otp-font-family: 'Urbanist', 'Sans-Serif';
+  --an-otp-text-color: #35353D;
+  --an-otp-background: #fff;
+  --an-otp-resend-color: #00B5AD;
+  --an-otp-text-size: 1.8rem;
+  --an-otp-description-color: #4F4F4F;
+  --an-otp-input-border-color: #D4D4D4;
+  --an-otp-input-background: #F3F8FF;
+  --an-otp-verify-background: #005669;
+  --an-otp-verify-text-color: #fff;
+  --an-otp-forgot-text-color: rgba(0, 0, 0, 0.60);
+  --an-otp-footer-bg: rgba(0, 181, 173, 0.30);
 }
 
 @theme menu-card{
