@@ -45,39 +45,6 @@ const defaultData: Person[] = data.map((item) => ({
 
 export const columns: ColumnDef<Person>[] = [
   {
-    id: "select",
-    header: ({ table }) => (
-      <div className="flex">
-        {table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected() ? (
-          <button
-            className="w-4 h-4 flex items-center justify-center text-gray-600 bg-gray-200 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-600"
-            onClick={() => table.toggleAllPageRowsSelected(false)}
-            aria-label="Deselect all"
-          >
-            <span className="text-base">-</span>
-          </button>
-        ) : (
-          <Checkbox
-            className="text-left border-1 border-solid border-(--an-table-checkbox-border-color) shadow-none"
-            checked={table.getIsAllPageRowsSelected()}
-            onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-            aria-label="Select all"
-          />
-        )}
-      </div>
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        className="border-1 border-solid border-(--an-table-checkbox-border-color) shadow-none"
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableHiding: false,
-    enableSorting: false,
-  },
-  {
     id: "serial",
     header: () => <div className="text-start">S No</div>,
     cell: ({ row, table }) => {
@@ -181,7 +148,7 @@ export const columns: ColumnDef<Person>[] = [
       return (
           <div
             className={cn(
-              "rounded-xl font-normal w-fit px-2 flex items-center justify-center",
+              "rounded-xl font-normal w-fit px-2 h-5 flex items-center justify-center text-xs",
               status === true
                 ? "bg-(--an-table-active-background) text-(--an-table-active-text-color) hover:bg-(--an-table-active-background)" : "bg-(--an-table-inactive-background) text-(--an-table-inactive-text-color) hover:bg-(--an-table-inactive-background)"
             )}
@@ -213,9 +180,16 @@ export const columns: ColumnDef<Person>[] = [
     id: "actions",
     header: () => <div className="w-full text-center">Actions</div>,
     cell: () => (
-      <div className="flex items-center justify-center gap-2">
-          <Eye className="w-4 h-4"/>
-          <EllipsisVertical  className="w-5 h-5"/>
+      <div className="flex gap-3 items-center">
+        <Tooltip>
+          <TooltipTrigger asChild>
+          <Eye className="w-4 h-3" />
+          </TooltipTrigger>
+          <TooltipContent side="top" align="center">
+            <div className=" text-white">view</div>
+          </TooltipContent>
+        </Tooltip>
+        <EllipsisVertical className="w-4 h-4" />
       </div>
     ),
   },

@@ -85,24 +85,24 @@ export const Pagination = ({ table, paginationDetails }: DynamicPaginationProps)
             table.setPageIndex(newPageIndex);
           }}
         >
-          <SelectTrigger className="w-18 text-sm bg-[#E6E6E6] rounded-none focus-visible:ring-0 focus-visible:ring-offset-0">
+          <SelectTrigger className="px-2 text-xs bg-[#E6E6E6] rounded focus-visible:ring-0 focus-visible:ring-offset-0">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
             {[25, 50, 100, 150, 200].map((pageSize) => (
-              <SelectItem key={pageSize} value={pageSize.toString()}>
+              <SelectItem key={pageSize} value={pageSize.toString()} className="py-1 text-xs">
                 {pageSize}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
       </div>
-      <span className="text-sm text-(--an-pagination-text-color)">
+      <span className="text-xs text-(--an-pagination-text-color)">
         {totalRecords === 0 ? "0 of 0" : `${firstIndex} - ${lastIndex} of ${totalRecords}`}
       </span>
       <div className="flex items-center gap-2">
         <button
-          className="border rounded p-1 w-20 disabled:opacity-50 text-(--an-pagination-text-color) font-(family-name:--an-pagination-font-family) text-sm font-normal"
+          className="border rounded h-6 w-16 disabled:opacity-50 text-(--an-pagination-text-color) font-(family-name:--an-pagination-font-family) text-xs font-normal"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
           aria-label="Previous page"
@@ -113,7 +113,7 @@ export const Pagination = ({ table, paginationDetails }: DynamicPaginationProps)
           <React.Fragment key={index}>
             {typeof page === "number" ? (
               <button
-                className={`border rounded-full p-1 w-8 h-8 text-sm ${
+                className={`border rounded-full w-6 h-6 text-xs ${
                   table.getState().pagination.pageIndex + 1 === page
                     ? "bg-[#333] text-[#fff]"
                     : "text-(--an-pagination-text-color)"
@@ -129,7 +129,7 @@ export const Pagination = ({ table, paginationDetails }: DynamicPaginationProps)
           </React.Fragment>
         ))}
         <button
-          className="border rounded p-1 w-20 disabled:opacity-50 text-(--an-pagination-text-color) font-(family-name:--an-pagination-font-family) text-sm font-normal"
+          className="border rounded h-6 w-16 disabled:opacity-50 text-(--an-pagination-text-color) font-(family-name:--an-pagination-font-family) text-xs font-normal"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
           aria-label="Next page"

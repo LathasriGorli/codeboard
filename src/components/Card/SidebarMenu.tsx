@@ -16,6 +16,7 @@ import { LocationName } from "./LocationName";
 import { Link, useLocation } from "@tanstack/react-router";
 import { AppointmentScreen } from "./AppointmentScreen";
 import { PersonalDetails } from "./Doctors/PersonalDetails";
+import { Specialities } from "./Doctors/Specialities";
 
 type headings = {
   id: number;
@@ -112,7 +113,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
         <Header name="John Doe" role="Frondend Developer" />
         {/* <LocationName data={data} doctors={doctors} speciality={speciality} gallery={gallery}/> */}
         {/* <AppointmentScreen /> */}
-        <PersonalDetails />
+        <Specialities />
       </div>
     </SidebarProvider>
   );

@@ -219,7 +219,14 @@ export const columns: ColumnDef<AppointmentTable>[] = [
     header: () => <div>Actions</div>,
     cell: () => (
       <div className="flex gap-3 items-center">
-        <Eye className="w-4 h-4" />
+        <Tooltip>
+          <TooltipTrigger asChild>
+          <Eye className="w-4 h-3" />
+          </TooltipTrigger>
+          <TooltipContent side="top" align="center">
+            <div className=" text-white">view</div>
+          </TooltipContent>
+        </Tooltip>
         <EllipsisVertical className="w-4 h-4" />
       </div>
     ),

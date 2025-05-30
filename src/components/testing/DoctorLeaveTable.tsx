@@ -1,12 +1,12 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { DataTable } from "../Card/DoctorTable";
 import { EllipsisVertical, Eye } from "lucide-react";
-import { LocationsProps } from "./Locations";
-import data from './dummy_doctor_absence_data.json';
+import { fuzzyStringFilter } from "~/http/services/utils";
+import { DataTable } from "../Card/DoctorTable";
+import { AwaitingIcon } from "../icons/AwaitingIcon";
 import { ConfirmIcon } from "../icons/ConfirmIcon";
 import { DeniedIcon } from "../icons/DeniedIcon";
-import { AwaitingIcon } from "../icons/AwaitingIcon";
-import { fuzzyStringFilter } from "~/http/services/utils";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import data from './dummy_doctor_absence_data.json';
 
 export type DoctorLeave = {
   id: number;
@@ -84,9 +84,8 @@ export const columns: ColumnDef<DoctorLeave>[] = [
         const type = row.getValue("type") as string;
         const borderColor = type === "Holiday" ? "#F2994A" : type === "Conference" ? "#9B51E0" : "#B90000";
         const textColor = type === "Holiday" ? "#F2994A" : type === "Conference" ? "#9B51E0" : "#B90000";
-        const width = type.length * 10;
         return (
-          <div className="h-8 rounded-sm border-1 p-2 font-(family-name:--an-table-font-family) font-normal" style={{ color: textColor, borderColor: borderColor, width: `${width}px` }}>
+          <div className="h-6 rounded-sm border-1 p-1 font-(family-name:--an-table-font-family) font-normal w-fit" style={{ color: textColor, borderColor: borderColor }}>
             {row.getValue("type")}
           </div>
         );
@@ -148,7 +147,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       header: () => <div>Affected Slots</div>,
       cell: ({ row }) => {
         return (
-          <div className="flex flex-col justify-center items-center rounded-sm bg-[#5B5B5B] text-white font-(family-name:--an-table-font-header-family) w-6 h-6 font-normal">
+          <div className="flex flex-col justify-center items-center rounded-sm bg-[#5B5B5B] text-white font-(family-name:--an-table-font-header-family) w-5 h-5 font-normal">
             {row.getValue("affected_slots")}
           </div>
         );
@@ -160,9 +159,16 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       header: () => <div>Actions</div>,
       cell: () => (
         <div className="flex gap-3 items-center">
-          <Eye className="w-4 h-4" />
-          <EllipsisVertical className="w-4 h-4" />
-        </div>
+        <Tooltip>
+          <TooltipTrigger asChild>
+          <Eye className="w-4 h-3" />
+          </TooltipTrigger>
+          <TooltipContent side="top" align="center">
+            <div className=" text-white">view</div>
+          </TooltipContent>
+        </Tooltip>
+        <EllipsisVertical className="w-4 h-4" />
+      </div>
       ),
     },
 ];

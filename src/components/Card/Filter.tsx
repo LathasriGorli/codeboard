@@ -32,7 +32,7 @@ export function Filter({ column }: { column: Column<any, unknown> }) {
         <select
           onChange={(e) => column.setFilterValue(e.target.value || undefined)}
           value={String(columnFilterValue ?? "")}
-          className="border shadow rounded h-6 text-sm"
+          className="border shadow rounded h-6 text-sm font-normal"
         >
           <option value="">All</option>
           {options.map((option) => (
@@ -152,7 +152,7 @@ function DebouncedInput({
 
   return (
     <div className="relative">
-      <div className={`flex border shadow rounded w-30 items-center ${hasDateError ? 'border-red-300' : ''}`}>
+      <div className={`flex border shadow rounded w-30 items-center font-normal ${hasDateError ? 'border-red-300' : ''}`}>
         {type === "date" ? (
           <>
             <Input
@@ -161,7 +161,7 @@ function DebouncedInput({
               value={value}
               onChange={(e) => setValue(e.target.value)}
               placeholder={getPlaceholder()}
-              className={`h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm flex-1 ${
+              className={`h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm flex-1 font-normal ${
                 hasDateError ? 'text-red-500' : ''
               }`}
             />
@@ -169,7 +169,7 @@ function DebouncedInput({
               type="date"
               value={formatDateForInput(value)}
               onChange={handleDateChange}
-              className="absolute opacity-0 pointer-events-none"
+              className="absolute opacity-0 pointer-events-none font-normal"
               ref={(ref) => {
                 if (ref) {
                   (ref as any)._dateInput = ref;
@@ -186,7 +186,7 @@ function DebouncedInput({
               }}
               className="pr-1"
             >
-              <Calendar className="w-4 h-4 text-gray-500 cursor-pointer" />
+              <Calendar className="w-4 h-4 text-gray-500 cursor-pointer font-normal" />
             </button>
           </>
         ) : (
@@ -196,13 +196,13 @@ function DebouncedInput({
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder={getPlaceholder()}
-            className="h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm"
+            className="h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm font-normal"
           />
         )}
         
         {value && (
           <button onClick={() => setValue("")}>
-            <X className="w-5 h-5 text-gray-400 pr-1 cursor-pointer" />
+            <X className="w-5 h-5 text-gray-400 pr-1 cursor-pointer font-normal" />
           </button>
         )}
       </div>

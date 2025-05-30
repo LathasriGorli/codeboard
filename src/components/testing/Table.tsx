@@ -1,9 +1,10 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { EllipsisVertical, Eye } from "lucide-react";
+import { EllipsisVertical, Eye, Trash2 } from "lucide-react";
 import { DataTable } from "../Card/DoctorTable";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 import data from './dummy_doctor_data.json';
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 export type Project = {
     id: number;
@@ -17,39 +18,6 @@ export type Project = {
 };
 
 export const columns: ColumnDef<Project>[] = [
-  {
-  id: "select",
-    header: ({ table }) => (
-      <div className="flex items-center justify-start">
-        {table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected() ? (
-          <button
-            className="h-4.5 w-4.5 flex items-center justify-center text-gray-600 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-600"
-            onClick={() => table.toggleAllPageRowsSelected(false)}
-            aria-label="Deselect all"
-          >
-            <span className="text-base font-bold">-</span>
-          </button>
-        ) : (
-          <Checkbox
-            className="text-left border-1 border-solid border-(--an-table-checkbox-border-color) shadow-none"
-            checked={table.getIsAllPageRowsSelected()}
-            onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-            aria-label="Select all"
-          />
-        )}
-      </div>
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        className="text-left border-1 border-solid border-(--an-table-checkbox-border-color) shadow-none"
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
   {
     accessorFn: (row: any) => row.serial,
     id: "serial",
@@ -129,7 +97,7 @@ export const columns: ColumnDef<Project>[] = [
       const status = row.getValue("status") as boolean;  
       return (
         <Button
-          className={`rounded-xl font-normal p-3 h-5 bg-white
+          className={`rounded-xl font-normal p-2 h-5 bg-white text-xs
             ${status === true ? "bg-(--an-table-active-background) text-(--an-table-active-text-color) hover:bg-(--an-table-active-background)" : "bg-(--an-table-inactive-background) text-(--an-table-inactive-text-color) hover:bg-(--an-table-inactive-background)"}`}
         >
           {status === true ? 'Active' : (status === false ? 'Inactive' : '')}
@@ -160,7 +128,22 @@ export const columns: ColumnDef<Project>[] = [
     header: () => <div>Actions</div>,
     cell: () => (
       <div className="flex gap-3 items-center">
-        <Eye className="w-4 h-4" />
+        <Tooltip>
+          <TooltipTrigger asChild>
+          <Eye className="w-4 h-3" />
+          </TooltipTrigger>
+          <TooltipContent side="top" align="center">
+            <div className=" text-white">view</div>
+          </TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+          <Trash2 className="w-4 h-3" />
+          </TooltipTrigger>
+          <TooltipContent side="top" align="center">
+            <div className=" text-white">delete</div>
+          </TooltipContent>
+        </Tooltip>
         <EllipsisVertical className="w-4 h-4" />
       </div>
     ),
