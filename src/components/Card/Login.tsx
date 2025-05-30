@@ -18,9 +18,10 @@ type Props = {
   email: string;
   otp: string;
   message: string;
+  loginEmail: string;
 };
 
-export function Login({ image, email, otp, message }: Props) {
+export function Login({ image, email, otp, message, loginEmail }: Props) {
   const [showOtp, setShowOtp] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(30);
   const [otpValue, setOtpValue] = useState("");
@@ -43,6 +44,19 @@ export function Login({ image, email, otp, message }: Props) {
     setSecondsLeft(30);
   };
 
+  function maskEmail(email: string): string {
+    const [username, domain] = email.split("@");
+    if (!username || !domain) return email;
+  
+    const prefix = username.slice(0, 2);
+    const suffix = username.slice(-2);
+    const maskedLength = Math.max(username.length - 4, 1); 
+    const masked = "*".repeat(maskedLength);
+  
+    return `${prefix}${masked}${suffix}@${domain}`;
+  }
+  
+  
   const EmailCard = (
     <Card className="w-[400px] rounded-none shadow-none bg-transparent border-none relative z-10">
       <CardHeader className="gap-4">
@@ -102,9 +116,9 @@ export function Login({ image, email, otp, message }: Props) {
           </p>
         </CardTitle>
         <CardDescription className="text-[#6A7185] font-(family-name:--an-otp-font-family) text-xs font-normal text-center">
-          Enter the OTP sent to your email <br /> ends with{" "}
+          Enter the OTP sent to your email ends <br /> with{" "}
           <span className="text-(--an-otp-text-color) inline-flex items-center">
-            user@gmail.com
+            {maskEmail(loginEmail)}
             <Button
               variant="outline"
               className="border-none shadow-none w-0 h-0 cursor-pointer"

@@ -11,7 +11,7 @@ export function Logins({ id }: {id: string}) {
   
   return (
   <>
-    <Login image={error.image} email={error.email} otp={error.otp} message={error.message}/>
+    <Login image={error.image} email={error.email} otp={error.otp} message={error.message} loginEmail="lathasrigorli03@gmail.com"/>
   </>
   )
 }
