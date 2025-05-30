@@ -85,7 +85,7 @@ export const Pagination = ({ table, paginationDetails }: DynamicPaginationProps)
             table.setPageIndex(newPageIndex);
           }}
         >
-          <SelectTrigger className="px-2 text-xs bg-[#E6E6E6] rounded focus-visible:ring-0 focus-visible:ring-offset-0">
+          <SelectTrigger className="px-2 !h-6 text-xs bg-[#E6E6E6] rounded focus-visible:ring-0 focus-visible:ring-offset-0">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
