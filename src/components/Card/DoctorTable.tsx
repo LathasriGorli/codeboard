@@ -72,8 +72,8 @@ export function DataTable({
     autoResetPageIndex: false,
   });
   return (
-    <div className="w-full bg-(--an-table-background) p-2 rounded-lg">
-      <ShowFilter onclick={() => setShowFilters(!showFilters)} />
+    <div className="w-full bg-(--an-table-background) p-1 rounded-lg">
+      {/* <ShowFilter onclick={() => setShowFilters(!showFilters)} /> */}
       <div className="overflow-hidden rounded-lg">
         <Table className="border-separate border-spacing-y-0.5">
           <ScrollArea className="rounded-lg" style={{ height: height }}>
@@ -193,7 +193,7 @@ export function DataTable({
         </Table>
       </div>
       {paginationDetails && (
-        <div className="bg-transparent mt-2">
+        <div className="bg-transparent p-2">
           <Pagination paginationDetails={paginationDetails} table={table} />
         </div>
       )}
