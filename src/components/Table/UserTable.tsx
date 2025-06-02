@@ -1,14 +1,12 @@
+import { useLocation } from "@tanstack/react-router";
 import {
-  ColumnDef,
-  VisibilityState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  useReactTable,
+  useReactTable
 } from "@tanstack/react-table";
-import { Button } from "../ui/button";
 import {
   Table,
   TableBody,
@@ -17,8 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { useLocation } from "@tanstack/react-router";
-import Pagination from "./Pagination";
+import { Pagination } from "./Pagination";
 
 export type Project = {
   imgUrl: string;
@@ -120,13 +117,11 @@ export function UserTable({
           )}
         </TableBody>
       </Table>
-      <div className="bg-transparent mt-2">
-          <Pagination
-            paginationDetails={paginationDetails}
-            capturePageNum={capturePageNum}
-            captureRowPerItems={captureRowPerItems}
-          />
+      {paginationDetails && (
+        <div className="bg-transparent p-2">
+          <Pagination paginationDetails={paginationDetails} table={table} />
         </div>
+      )}
     </div>
   );
 }

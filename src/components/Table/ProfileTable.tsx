@@ -14,8 +14,8 @@ import {
     TableHeader,
     TableRow,
   } from "../ui/table";
-import Pagination from "./Pagination";
 import { useLocation } from "@tanstack/react-router";
+import { Pagination } from "./Pagination";
   
   export function ProfileTable({ 
     data, 
@@ -106,13 +106,11 @@ import { useLocation } from "@tanstack/react-router";
             )}
           </TableBody>
         </Table>
-        <div className="bg-transparent mt-2">
-          <Pagination
-            paginationDetails={paginationDetails}
-            capturePageNum={capturePageNum}
-            captureRowPerItems={captureRowPerItems}
-          />
+        {paginationDetails && (
+        <div className="bg-transparent p-2">
+          <Pagination paginationDetails={paginationDetails} table={table} />
         </div>
+      )}
       </div>
     );
   }

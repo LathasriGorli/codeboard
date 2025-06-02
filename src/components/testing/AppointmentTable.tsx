@@ -139,7 +139,7 @@ export const columns: ColumnDef<AppointmentTable>[] = [
       const type = row.getValue("speciality") as string;
       return (
         <div
-          className="rounded-full border-1 p-1 font-normal text-[#4F81BD] bg-(--an-appoint-table-row-specality-bg) border-(--an-appoint-table-row-specality-border) w-fit"
+          className="rounded-full border-1 px-2 font-normal text-[#4F81BD] bg-(--an-appoint-table-row-specality-bg) border-(--an-appoint-table-row-specality-border) w-fit"
         >
           {row.getValue("speciality")}
         </div>

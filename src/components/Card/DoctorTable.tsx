@@ -23,8 +23,8 @@ import { Filter } from "./Filter";
 import { Pagination } from "../Table/Pagination";
 
 type DataTableProps = {
-  data: any[];
-  columns: any[];
+  data?: any[];
+  columns?: any[];
   paginationDetails?: {
     page: number;
     limit: number;
@@ -39,7 +39,7 @@ export function DataTable({
   data,
   columns,
   paginationDetails,
-  height,
+  height = "37.5rem",
   removeSortingForColumnIds = [],
 }: DataTableProps) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -47,7 +47,7 @@ export function DataTable({
 
   const table = useReactTable({
     data: data || [],
-    columns: columns,
+    columns: columns || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
@@ -73,7 +73,7 @@ export function DataTable({
   });
   return (
     <div className="w-full bg-(--an-table-background) p-1 rounded-lg">
-      {/* <ShowFilter onclick={() => setShowFilters(!showFilters)} /> */}
+      <ShowFilter onclick={() => setShowFilters(!showFilters)} />
       <div className="overflow-hidden rounded-lg">
         <Table className="border-separate border-spacing-y-0.5">
           <ScrollArea className="rounded-lg" style={{ height: height }}>
@@ -88,7 +88,7 @@ export function DataTable({
                       <TableHead
                         key={header.id}
                         colSpan={header.colSpan}
-                        className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-sm font-medium bg-white"
+                        className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-sm font-medium bg-white p-1"
                       >
                         <div
                           className={
@@ -151,7 +151,7 @@ export function DataTable({
                     {row.getVisibleCells().map((cell, cellIndex) => (
                       <TableCell
                         key={cell.id}
-                        className={`font-(family-name:--an-table-font-family) ${
+                        className={`font-(family-name:--an-table-font-family) p-1 ${
                           index === 0 && cellIndex === 0 ? "rounded-tl-lg" : ""
                         } ${
                           index === 0 &&
@@ -181,7 +181,7 @@ export function DataTable({
               ) : (
                 <TableRow>
                   <TableCell
-                    colSpan={columns.length}
+                    colSpan={columns?.length}
                     className="h-24 text-center"
                   >
                     No results.

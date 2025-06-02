@@ -211,7 +211,7 @@ export function Locations() {
         columns={columns}
         paginationDetails={paginationDetails}
         removeSortingForColumnIds={["select", "serial","actions"]}
-        height = "37.5rem"
+        height = ""
       />
     </>
   );
