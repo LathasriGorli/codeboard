@@ -15,6 +15,7 @@ const appointScreenData = [
     icon: <MotherIcon />,
     title: "Patient",
     subtitle: "General Practitioner",
+    subtitle2: 7013170520,
   },
   {
     icon: <Calendar />,
@@ -33,6 +34,8 @@ const appointScreenData = [
     subtitle: "General Practitioner",
   },
 ]
+
+const heading = {title:'Teleconsultation', icon:<ProgressIcon />, subtitle:'In Progress'}
 
 const symptoms = [
   {title: 'Tremor'},
@@ -56,13 +59,13 @@ export function AppointmentScreen() {
       <BackButton onclick={() => {}}/>
     <Card className="max-w-[1100px] w-full flex rounded-xl bg-(--an-appoint-screen-background) shadow-none border-none">
       <CardHeader className="flex justify-between items-center">
-        <CardTitle className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-xl font-medium">
-          Teleconsultation
+        <CardTitle className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-base font-medium">
+          {heading.title}
         </CardTitle>
         <CardDescription className="flex gap-2">
-          <ProgressIcon />
-          <p className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-base font-normal">
-            In Progress
+          {heading.icon}
+          <p className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-sm font-normal">
+            {heading.subtitle}
           </p>
         </CardDescription>
       </CardHeader>
@@ -71,18 +74,18 @@ export function AppointmentScreen() {
         <div className="flex justify-between">
           {appointScreenData.map((item, index) => (
             <div key={index} className="flex gap-3 items-center">
-              <div className="border-1 border-(--an-appoint-screen-icon-border-color) bg-(--an-appoint-screen-icon-bg-color) rounded-full flex items-center justify-center w-[45px] h-[45px]">
+              <div className="border-1 border-(--an-appoint-screen-icon-border-color) bg-(--an-appoint-screen-icon-bg-color) rounded-full flex items-center justify-center w-[40px] h-[40px]">
                 {item.icon}
               </div>
               <div className="flex flex-col">
                 <p className="text-(--an-appoint-screen-icon-title-color) font-(family-name:--an-appoint-screen-font-family) text-sm font-normal">
                   {item.title}
                 </p>
-                <p className="text-(--an-appoint-screen-icon-subtitle-color) font-(family-name:--an-appoint-screen-font-family) text-base font-normal">
+                <p className="text-(--an-appoint-screen-icon-subtitle-color) font-(family-name:--an-appoint-screen-font-family) text-xs font-normal">
                   {item.subtitle}
                 </p>
                 {item.subtitle2 && (
-                  <p className="text-(--an-appoint-screen-icon-subtitle-color) font-(family-name:--an-appoint-screen-font-family) text-base font-normal">
+                  <p className="text-(--an-appoint-screen-icon-subtitle-color) font-(family-name:--an-appoint-screen-font-family) text-xs font-normal">
                     {item.subtitle2}
                   </p>
                 )}
@@ -91,18 +94,18 @@ export function AppointmentScreen() {
           ))}
         </div>
         <div className="flex flex-col gap-3">
-            <p className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-base font-medium">Symptoms</p>
+            <p className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-sm font-medium">Symptoms</p>
             <div className="flex gap-2">
             {symptoms.map((item, index) => (
-                <div key={index} className="flex px-2 py-1 rounded-xs bg-(--an-appoint-screen-symptom-bg-color) text-(--an-appoint-screen-icon-subtitle-color) overflow-ellipsis overflow-hidden font-(family-name:--an-appoint-screen-font-family) text-sm font-normal">
+                <div key={index} className="flex px-2 py-1 rounded-xs bg-(--an-appoint-screen-symptom-bg-color) text-(--an-appoint-screen-icon-subtitle-color) overflow-ellipsis overflow-hidden font-(family-name:--an-appoint-screen-font-family) text-xs font-normal">
                 {item.title}
                 </div>
             ))}
             </div>
         </div>
         <div className="flex flex-col gap-3">
-            <p className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-base font-medium">Description</p>
-            <p className="text-(--an-appoint-screen-desc-color) font-(family-name:--an-appoint-screen-font-family) text-base font-medium">{description}</p>
+            <p className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-sm font-medium">Description</p>
+            <p className="text-(--an-appoint-screen-desc-color) font-(family-name:--an-appoint-screen-font-family) text-sm font-medium">{description}</p>
         </div>
         </div>
       </CardContent>

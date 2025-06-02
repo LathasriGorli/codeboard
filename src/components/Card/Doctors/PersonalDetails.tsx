@@ -23,7 +23,7 @@ interface FormFieldProps {
   placeholder?: string;
   type?: string;
   value?: string | boolean;
-  onChange?: ((value: string | boolean) => void | undefined) | undefined;
+  onChange?: ((value: string | boolean) => void) | undefined;
 }
 
 const FormField = ({
