@@ -310,9 +310,17 @@
     --an-appoint-table-row-specality-border: rgba(79, 129, 189, 0.30);
 }
 
-@theme personal-details{
-  --an-personal-details-font-family: 'Urbanist', 'Sans-Serif';
-}
+@theme PersonalDetails {
+  --an-font-family: "Urbanist", "Sans-Serif";
+  --an-personalDetails-title-color: #005669;
+  --an-personalDetails-profile-color: #828282;
+  --an-personalDetails-form-color: #585858;
+  --an-personalDetails-profile-font: 0.75rem;
+  --an-personalDetails-font-size: 0.875rem;
+  --an-personalDetails-font-weight: 500;
+  --an-personalDetails-next-color: rgba(0, 86, 105, 0.5);
+  --an-personalDetails-next-text-color: #000;
+  }
 
 @layer base {
   * {

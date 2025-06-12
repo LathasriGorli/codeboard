@@ -1,9 +1,8 @@
-export function MotherIcon() {
+export function MotherIcon({className}: {className: string}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="27"
-      height="26"
+      className={className}
       viewBox="0 0 27 26"
       fill="none"
     >

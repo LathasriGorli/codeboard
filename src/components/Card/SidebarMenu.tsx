@@ -80,10 +80,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
           <AlmanaIcon className={"w-25 h-12"} />
         </SidebarHeader>
         <SidebarContent className="bg-white">
-          <SidebarGroup className="gap-1">
-              <SidebarGroupLabel className="text-(--an-menu-text-color) font-(family-name:--an-menu-font-family) text-xs font-normal p-0">
-                MAIN MENU
-              </SidebarGroupLabel>
+          <SidebarGroup className="gap-1 p-0">
               {items &&
                 items.length > 0 &&
                 items.map((item) => (

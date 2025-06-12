@@ -1,9 +1,8 @@
-export function Calendar() {
+export function Calendar({className}: {className: string}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="27"
-      height="28"
+      className={className}
       viewBox="0 0 27 28"
       fill="none"
     >
