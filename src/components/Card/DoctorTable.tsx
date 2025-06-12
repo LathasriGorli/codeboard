@@ -41,7 +41,7 @@ export function DataTable({
   data,
   columns,
   paginationDetails,
-  height = "37.5rem",
+  height = "39rem",
   removeSortingForColumnIds = [],
 }: DataTableProps) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -242,12 +242,12 @@ function SortNorm({
     <div className={`flex flex-col items-center ${className}`}>
       <span onClick={handleAscClick} className="cursor-pointer">
         <SortAsc
-          className={`w-2 h-2 ${isAsc ? "text-[#005669]" : "text-gray-400"}`}
+          className={`w-2 h-2 ${isAsc ? "text-[#005669]" : ""}`}
         />
       </span>
       <span onClick={handleDescClick} className="cursor-pointer -mt-0.5">
         <SortDesc
-          className={`w-2 h-2 ${isDesc ? "text-[#005669]" : "text-gray-400"}`}
+          className={`w-2 h-2 ${isDesc ? "text-[#005669]" : ""}`}
         />
       </span>
     </div>

@@ -133,7 +133,7 @@ export const columns: ColumnDef<Project>[] = [
           <Eye className="w-4 h-3" />
           </TooltipTrigger>
           <TooltipContent side="top" align="center">
-            <div className=" text-white">view</div>
+            <div className=" text-white">View</div>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
@@ -141,7 +141,7 @@ export const columns: ColumnDef<Project>[] = [
           <Trash2 className="w-4 h-3" />
           </TooltipTrigger>
           <TooltipContent side="top" align="center">
-            <div className=" text-white">delete</div>
+            <div className=" text-white">Delete</div>
           </TooltipContent>
         </Tooltip>
         <EllipsisVertical className="w-4 h-4" />
@@ -151,20 +151,13 @@ export const columns: ColumnDef<Project>[] = [
 ];
 
 export function Table() {
-  const paginationDetails = {
-    page: 1,
-    limit: 25,
-    total_pages: Math.ceil(data.length / 25),
-    total: data.length,
-  };
   return (
   <>
     <DataTable 
       data={data} 
       columns={columns} 
-      paginationDetails={ paginationDetails }
       removeSortingForColumnIds={["select", "serial","actions"]}
-      height="37.5rem"
+      height="calc(100vh - 135px)"
       />
   </>
   )

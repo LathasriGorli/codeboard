@@ -164,7 +164,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
           <Eye className="w-4 h-3" />
           </TooltipTrigger>
           <TooltipContent side="top" align="center">
-            <div className=" text-white">view</div>
+            <div className=" text-white">View</div>
           </TooltipContent>
         </Tooltip>
         <EllipsisVertical className="w-4 h-4" />

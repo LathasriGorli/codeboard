@@ -18,6 +18,10 @@ import { AppointmentScreen } from "./AppointmentScreen";
 import { PersonalDetails } from "./Doctors/PersonalDetails";
 import { Specialities } from "./Doctors/Specialities";
 import { DoctorsCards } from "./Doctors/DoctorsCards";
+import { NoLocation } from "../NoCards/NoLocation";
+import { NoAppointment } from "../NoCards/NoAppointment";
+import { NoDoctor } from "../NoCards/NoDoctor";
+import { NoSpecialization } from "../NoCards/NoSpecialization";
 
 type headings = {
   id: number;
@@ -104,14 +108,17 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                   </SidebarMenuItem>
                 ))}
           </SidebarGroup>
+          <div className="absolute -bottom-26 -left-12 w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-sidebar-footer-bg) to-(--an-sidebar-footer-bg) blur-xl rotate-[38.723deg] overflow-hidden"></div>
         </SidebarContent>
-        <div className="absolute -bottom-30 -left-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-sidebar-footer-bg) to-(--an-sidebar-footer-bg) blur-2xl rotate-35"></div>
       </Sidebar>
-      <div className="flex flex-col gap-4 w-full max-w-full overflow-hidden">
+      <div className="flex flex-col w-full max-w-full overflow-hidden">
         <Header name="John Doe" role="Frondend Developer" />
-        {/* <LocationName data={data} doctors={doctors} speciality={speciality} gallery={gallery}/> */}
-        {/* <AppointmentScreen /> */}
-        <DoctorsCards />
+        <div className="flex items-center justify-center h-full w-full">
+        <NoSpecialization />
+        <NoLocation />
+        <NoAppointment />
+        <NoDoctor />
+        </div>
       </div>
     </SidebarProvider>
   );

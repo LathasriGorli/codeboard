@@ -25,6 +25,7 @@ import { Route as TableProfileTableImport } from './routes/table/profile-table'
 import { Route as TableDataTableImport } from './routes/table/data-table'
 import { Route as TableCommitTableImport } from './routes/table/commit-table'
 import { Route as ProfileViewProfileImport } from './routes/profile/view-profile'
+import { Route as NocardsNoLocationImport } from './routes/nocards/no-location'
 import { Route as CardsIdImport } from './routes/cards/$id'
 import { Route as CardUsersCardImport } from './routes/card/users-card'
 import { Route as CardSidebarMenuImport } from './routes/card/sidebar-menu'
@@ -122,6 +123,12 @@ const TableCommitTableRoute = TableCommitTableImport.update({
 const ProfileViewProfileRoute = ProfileViewProfileImport.update({
   id: '/profile/view-profile',
   path: '/profile/view-profile',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const NocardsNoLocationRoute = NocardsNoLocationImport.update({
+  id: '/nocards/no-location',
+  path: '/nocards/no-location',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -286,6 +293,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CardsIdImport
       parentRoute: typeof rootRoute
     }
+    '/nocards/no-location': {
+      id: '/nocards/no-location'
+      path: '/nocards/no-location'
+      fullPath: '/nocards/no-location'
+      preLoaderRoute: typeof NocardsNoLocationImport
+      parentRoute: typeof rootRoute
+    }
     '/profile/view-profile': {
       id: '/profile/view-profile'
       path: '/profile/view-profile'
@@ -415,6 +429,7 @@ export interface FileRoutesByFullPath {
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
+  '/nocards/no-location': typeof NocardsNoLocationRoute
   '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/commit-table': typeof TableCommitTableRoute
   '/table/data-table': typeof TableDataTableRoute
@@ -445,6 +460,7 @@ export interface FileRoutesByTo {
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
+  '/nocards/no-location': typeof NocardsNoLocationRoute
   '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/commit-table': typeof TableCommitTableRoute
   '/table/data-table': typeof TableDataTableRoute
@@ -476,6 +492,7 @@ export interface FileRoutesById {
   '/card/sidebar-menu': typeof CardSidebarMenuRoute
   '/card/users-card': typeof CardUsersCardRoute
   '/cards/$id': typeof CardsIdRoute
+  '/nocards/no-location': typeof NocardsNoLocationRoute
   '/profile/view-profile': typeof ProfileViewProfileRoute
   '/table/commit-table': typeof TableCommitTableRoute
   '/table/data-table': typeof TableDataTableRoute
@@ -508,6 +525,7 @@ export interface FileRouteTypes {
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
+    | '/nocards/no-location'
     | '/profile/view-profile'
     | '/table/commit-table'
     | '/table/data-table'
@@ -537,6 +555,7 @@ export interface FileRouteTypes {
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
+    | '/nocards/no-location'
     | '/profile/view-profile'
     | '/table/commit-table'
     | '/table/data-table'
@@ -566,6 +585,7 @@ export interface FileRouteTypes {
     | '/card/sidebar-menu'
     | '/card/users-card'
     | '/cards/$id'
+    | '/nocards/no-location'
     | '/profile/view-profile'
     | '/table/commit-table'
     | '/table/data-table'
@@ -597,6 +617,7 @@ export interface RootRouteChildren {
   CardSidebarMenuRoute: typeof CardSidebarMenuRoute
   CardUsersCardRoute: typeof CardUsersCardRoute
   CardsIdRoute: typeof CardsIdRoute
+  NocardsNoLocationRoute: typeof NocardsNoLocationRoute
   ProfileViewProfileRoute: typeof ProfileViewProfileRoute
   TableCommitTableRoute: typeof TableCommitTableRoute
   TableDataTableRoute: typeof TableDataTableRoute
@@ -627,6 +648,7 @@ const rootRouteChildren: RootRouteChildren = {
   CardSidebarMenuRoute: CardSidebarMenuRoute,
   CardUsersCardRoute: CardUsersCardRoute,
   CardsIdRoute: CardsIdRoute,
+  NocardsNoLocationRoute: NocardsNoLocationRoute,
   ProfileViewProfileRoute: ProfileViewProfileRoute,
   TableCommitTableRoute: TableCommitTableRoute,
   TableDataTableRoute: TableDataTableRoute,
@@ -666,6 +688,7 @@ export const routeTree = rootRoute
         "/card/sidebar-menu",
         "/card/users-card",
         "/cards/$id",
+        "/nocards/no-location",
         "/profile/view-profile",
         "/table/commit-table",
         "/table/data-table",
@@ -716,6 +739,9 @@ export const routeTree = rootRoute
     },
     "/cards/$id": {
       "filePath": "cards/$id.tsx"
+    },
+    "/nocards/no-location": {
+      "filePath": "nocards/no-location.tsx"
     },
     "/profile/view-profile": {
       "filePath": "profile/view-profile.tsx"
