@@ -1,4 +1,4 @@
-import { FilterIcon } from "lucide-react";
+import { FilterIcon, ListFilter } from "lucide-react";
 import { Button } from "../ui/button";
 
 export function ShowFilter({onclick} : {onclick: () => void}) {
@@ -7,9 +7,9 @@ export function ShowFilter({onclick} : {onclick: () => void}) {
           variant="outline"
           size="sm"
           onClick={onclick}
-          className="flex items-center gap-2 hover:bg-white"
+          className="flex items-center gap-2 hover:bg-white text-[#4F4F4F] text-xs font-light font-[urbanist]"
         >
-          <FilterIcon className="w-4 h-4" />
+        <ListFilter />
           Filter
         </Button>
     )

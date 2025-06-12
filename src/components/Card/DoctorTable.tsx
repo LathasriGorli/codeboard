@@ -21,6 +21,8 @@ import { ScrollArea } from "../ui/scroll-area";
 import { ShowFilter } from "./ShowFilter";
 import { Filter } from "./Filter";
 import { Pagination } from "../Table/Pagination";
+import { SortAsc } from "../icons/SortAsc";
+import { SortDesc } from "../icons/SortDesc";
 
 type DataTableProps = {
   data?: any[];
@@ -106,14 +108,25 @@ export function DataTable({
                             header.column.columnDef.header,
                             header.getContext()
                           )}
-                          {!isSortingRemoved &&
+                          {/* {!isSortingRemoved &&
                             (header.column.getIsSorted() === "asc" ? (
-                              <ChevronUp className="w-4 h-4" />
+                              <SortAsc className="w-2.5 h-2.5 text-green-600" />
                             ) : header.column.getIsSorted() === "desc" ? (
-                              <ChevronDown className="w-4 h-4" />
+                              <SortDesc className="w-2.5 h-2.5 text-green-600" />
                             ) : (
-                              <ChevronsUpDown className="w-4 h-4" />
-                            ))}
+                              <SortNorm />
+                            ))} */}
+                          {!isSortingRemoved && (
+                            <SortNorm
+                              className="w-2.5 h-4"
+                              direction={
+                                header.column.getIsSorted() as
+                                  | "asc"
+                                  | "desc"
+                                  | false
+                              }
+                            />
+                          )}
                         </div>
                         {header.column.getCanFilter() ? (
                           <div
@@ -197,6 +210,23 @@ export function DataTable({
           <Pagination paginationDetails={paginationDetails} table={table} />
         </div>
       )}
+    </div>
+  );
+}
+function SortNorm({
+  direction,
+  className = "",
+}: {
+  direction: "asc" | "desc" | false;
+  className?: string;
+}) {
+  const isAsc = direction === "asc";
+  const isDesc = direction === "desc";
+
+  return (
+    <div className={`flex flex-col items-center ${className}`}>
+      <SortAsc className={`w-2.5 h-2.5 ${isAsc ? "text-[#005669]" : ""}`} />
+      <SortDesc className={`w-2.5 h-2.5 -mt-0.5 ${isDesc ? "text-[#005669]" : ""}`} />
     </div>
   );
 }
