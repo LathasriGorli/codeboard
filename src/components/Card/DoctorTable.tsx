@@ -118,14 +118,17 @@ export function DataTable({
                             ))} */}
                           {!isSortingRemoved && (
                             <SortNorm
-                              className="w-2.5 h-4"
-                              direction={
-                                header.column.getIsSorted() as
-                                  | "asc"
-                                  | "desc"
-                                  | false
+                            className="w-2.5 h-4"
+                            direction={header.column.getIsSorted() as "asc" | "desc" | false}
+                            onSortChange={(newDirection) => {
+                              header.column.clearSorting();
+                              if (newDirection === "asc") {
+                                header.column.toggleSorting(false);
+                              } else if (newDirection === "desc") {
+                                header.column.toggleSorting(true);
                               }
-                            />
+                            }}
+                          />
                           )}
                         </div>
                         {header.column.getCanFilter() ? (
@@ -216,17 +219,37 @@ export function DataTable({
 function SortNorm({
   direction,
   className = "",
+  onSortChange,
 }: {
   direction: "asc" | "desc" | false;
   className?: string;
+  onSortChange?: (newDirection: "asc" | "desc" | false) => void;
 }) {
   const isAsc = direction === "asc";
   const isDesc = direction === "desc";
 
+  const handleAscClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onSortChange?.(isAsc ? false : "asc");
+  };
+
+  const handleDescClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onSortChange?.(isDesc ? false : "desc" );
+  };
+
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <SortAsc className={`w-2.5 h-2.5 ${isAsc ? "text-[#005669]" : ""}`} />
-      <SortDesc className={`w-2.5 h-2.5 -mt-0.5 ${isDesc ? "text-[#005669]" : ""}`} />
+      <span onClick={handleAscClick} className="cursor-pointer">
+        <SortAsc
+          className={`w-2 h-2 ${isAsc ? "text-[#005669]" : "text-gray-400"}`}
+        />
+      </span>
+      <span onClick={handleDescClick} className="cursor-pointer -mt-0.5">
+        <SortDesc
+          className={`w-2 h-2 ${isDesc ? "text-[#005669]" : "text-gray-400"}`}
+        />
+      </span>
     </div>
   );
 }
