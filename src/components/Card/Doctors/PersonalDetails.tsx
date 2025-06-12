@@ -90,8 +90,8 @@ export function PersonalDetails() {
     };
 
   return (
-    <Card className="w-full flex flex-row items-start shadow-none rounded-lg border border-[#E1E1E1] font-(family-name:--an-personal-details-font-family) ">
-      <ScrollArea className="h-[600px]">
+    <Card className="w-full flex flex-row items-start shadow-none rounded-lg border border-[#E1E1E1] font-(family-name:--an-personal-details-font-family) p-0">
+      <ScrollArea className="h-[calc(100vh-160px)]">
         <div className="flex flex-col gap-4 w-[65%] p-3">
           <CardContent className="p-0">
             <form className="font-medium flex flex-col gap-4">
@@ -100,7 +100,7 @@ export function PersonalDetails() {
               </p>
               <div className="flex flex-col items-center justify-center rounded-md bg-[#EDEDED] w-25 h-25">
                 <DoctorProfile className="w-8 h-8" />
-                <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-profile-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight) pt-2">
+                <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-profile-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
                   Profile
                 </p>
                 <Button
