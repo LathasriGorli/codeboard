@@ -320,7 +320,22 @@
   --an-personalDetails-font-weight: 500;
   --an-personalDetails-next-color: rgba(0, 86, 105, 0.5);
   --an-personalDetails-next-text-color: #000;
-  }
+}
+
+@theme specialities{
+  --an-font-family: "Urbanist", "Sans-Serif";
+  --an-specialities-border-color: #E1E1E1;
+  --an-specialities-title-color: #005669;
+  --an-specialities-profile-color: #828282;
+  --an-specialities-text-size: 0.75rem;
+  --an-specialities-title-size: 0.875rem;
+  --an-specialities-font-weight: 500;
+  --an-specialities-checkbox-border-color: #E0E0E0;
+  --an-specialities-tabs-color: #020202;
+  --an-specialities-activetabs-bg: #DCECE1;
+  --an-specialities-activetabs-border: #005669;
+  --an-specialities-activetabs-color: #005669;
+}
 
 @layer base {
   * {

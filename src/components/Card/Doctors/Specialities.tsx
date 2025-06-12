@@ -108,35 +108,35 @@ export function Specialities() {
   const rightColumn = filteredSpecialities.slice(midPoint);
 
   return (
-    <div className="flex flex-col sm:flex-row items-start p-2 rounded-lg border border-[#E1E1E1] bg-white gap-4">
-      <div className="flex flex-col gap-4 w-full sm:w-64">
-        <p className="text-[#005669] text-sm font-medium">Hospitals</p>
-        <span className="text-[#828282] text-xs font-normal">
+    <div className="flex flex-col sm:flex-row items-start p-3 pb-6 rounded-lg border border-(--an-specialities-border-color) bg-white gap-4 font-(family-name:--an-font-family)">
+      <div className="flex flex-col gap-3 w-full sm:w-52">
+        <p className="text-(--an-specialities-title-color) text-(length:--an-specialities-title-size) font-(--an-specialities-font-weight)">Hospitals</p>
+        <span className="text-(--an-specialities-profile-color) text-(length:--an-specialities-text-size) font-normal">
           Please select the hospital they work in
         </span>
-        <Tabs value={selectedHospitals} onValueChange={setSelectedHospitals}>
-          <TabsList className="grid w-full grid-cols-1 gap-2">
+        <Tabs value={selectedHospitals} onValueChange={setSelectedHospitals} className="w-full mt-18">
+          <TabsList className="flex flex-col items-start w-full gap-2 bg-hidden shadow-none">
             {locations.map((location) => (
               <TabsTrigger
-                key={location.id}
-                value={location.id}
-                className="flex items-center gap-2"
-              >
-                <Avatar className="h-6 w-6">
-                  <AvatarImage src={location.img} />
-                  <AvatarFallback />
-                </Avatar>
-                <span>{location.name}</span>
-              </TabsTrigger>
+              key={location.id}
+              value={location.id}
+              className="w-full justify-start text-(--an-specialities-tabs-color) text-(length:--an-specialities-text-size) font-(--an-specialities-font-weight) data-[state=active]:text-(--an-specialities-activetabs-color) data-[state=active]:bg-(--an-specialities-activetabs-bg) data-[state=active]:border-(--an-specialities-activetabs-border) flex items-center gap-2 rounded"
+            >
+              <Avatar className="h-6 w-6 rounded">
+                <AvatarImage src={location.img} />
+                <AvatarFallback />
+              </Avatar>
+              <span>{location.name}</span>
+            </TabsTrigger> 
             ))}
           </TabsList>
         </Tabs>
       </div>
 
-      <div className="border-l border-gray-200 h-[600px] hidden sm:block"></div>
+      <div className="border-l border-(--an-specialities-checkbox-border-color) h-[102%] hidden sm:block"></div>
 
       <div className="flex flex-col gap-3 w-full sm:w-[68rem]">
-        <p className="text-[#005669] text-sm font-medium">Specialities</p>
+        <p className="text-(--an-specialities-title-color) text-(length:--an-specialities-title-size) font-(--an-specialities-font-weight)">Specialities</p>
         <div className="flex items-center border w-full sm:w-[28rem] h-7 pl-1 rounded-lg">
           <SearchIcon className="w-4 h-4" />
           <Input
@@ -149,7 +149,7 @@ export function Specialities() {
           />
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="flex gap-2 text-[#005669] space-y-2">
+          <div className="flex gap-2 text-(--an-specialities-title-color) space-y-2">
             <Checkbox
               id="all-specialities"
               checked={
@@ -162,9 +162,9 @@ export function Specialities() {
                   setSelectedSpecialities(new Set());
                 }
               }}
-              className="shadow-none border border-[#E0E0E0]"
+              className="shadow-none border border-(--an-specialities-checkbox-border-color)"
             />
-            <label htmlFor="all-specialities" className="text-xs font-normal">
+            <label htmlFor="all-specialities" className="text-(length:--an-specialities-text-size) font-normal">
               Select All
             </label>
           </div>
@@ -178,11 +178,11 @@ export function Specialities() {
                     onCheckedChange={(checked) =>
                       handleCheckboxChange(item, !!checked)
                     }
-                    className="shadow-none border border-[#E0E0E0]"
+                    className="shadow-none border border-(--an-specialities-checkbox-border-color)"
                   />
                   <label
                     htmlFor={`speciality-${item}`}
-                    className="text-xs font-normal"
+                    className="text-(length:--an-specialities-text-size) font-normal"
                   >
                     {item}
                   </label>
@@ -198,11 +198,11 @@ export function Specialities() {
                     onCheckedChange={(checked) =>
                       handleCheckboxChange(item, !!checked)
                     }
-                    className="shadow-none border border-[#E0E0E0]"
+                    className="shadow-none border border-(--an-specialities-checkbox-border-color)"
                   />
                   <label
                     htmlFor={`speciality-${item}`}
-                    className="text-xs font-normal"
+                    className="text-(length:--an-specialities-text-size) font-normal"
                   >
                     {item}
                   </label>
