@@ -9,32 +9,107 @@ import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
 const locations = [
   {
     id: "1",
-    img: "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9zcGl0YWx8ZW58MHx8MHx8&w=1000&q=80",
-    name: "General Practitioner",
+    img: "https://source.unsplash.com/random/100x100?hospital-1",
+    name: "Al Noor Hospital",
   },
   {
     id: "2",
-    img: "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9zcGl0YWx8ZW58MHx8MHx8&w=1000&q=80",
-    name: "Dammam",
+    img: "https://source.unsplash.com/random/100x100?hospital-2",
+    name: "King Fahad Medical City",
   },
   {
     id: "3",
-    img: "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9zcGl0YWx8ZW58MHx8MHx8&w=1000&q=80",
-    name: "Jubail",
+    img: "https://source.unsplash.com/random/100x100?hospital-3",
+    name: "Dammam Central Hospital",
   },
   {
     id: "4",
-    img: "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9zcGl0YWx8ZW58MHx8MHx8&w=1000&q=80",
+    img: "https://source.unsplash.com/random/100x100?hospital-4",
     name: "AMC Jubail",
   },
   {
     id: "5",
-    img: "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9zcGl0YWx8ZW58MHx8MHx8&w=1000&q=80",
-    name: "Hofuf",
+    img: "https://source.unsplash.com/random/100x100?hospital-5",
+    name: "Hofuf General",
+  },
+  {
+    id: "6",
+    img: "https://source.unsplash.com/random/100x100?hospital-6",
+    name: "Jeddah Specialty Hospital",
+  },
+  {
+    id: "7",
+    img: "https://source.unsplash.com/random/100x100?hospital-7",
+    name: "Riyadh Medical Center",
+  },
+  {
+    id: "8",
+    img: "https://source.unsplash.com/random/100x100?hospital-8",
+    name: "Eastern Province Hospital",
+  },
+  {
+    id: "9",
+    img: "https://source.unsplash.com/random/100x100?hospital-9",
+    name: "King Khalid Hospital",
+  },
+  {
+    id: "10",
+    img: "https://source.unsplash.com/random/100x100?hospital-10",
+    name: "Buraidah Healthcare",
+  },
+  {
+    id: "11",
+    img: "https://source.unsplash.com/random/100x100?hospital-11",
+    name: "Tabuk Central Hospital",
+  },
+  {
+    id: "12",
+    img: "https://source.unsplash.com/random/100x100?hospital-12",
+    name: "Makkah Clinic",
+  },
+  {
+    id: "13",
+    img: "https://source.unsplash.com/random/100x100?hospital-13",
+    name: "Taif Heart Center",
+  },
+  {
+    id: "14",
+    img: "https://source.unsplash.com/random/100x100?hospital-14",
+    name: "Najran Women's Hospital",
+  },
+  {
+    id: "15",
+    img: "https://source.unsplash.com/random/100x100?hospital-15",
+    name: "Hail Orthopedic Hospital",
+  },
+  {
+    id: "16",
+    img: "https://source.unsplash.com/random/100x100?hospital-16",
+    name: "Al Qassim Medical",
+  },
+  {
+    id: "17",
+    img: "https://source.unsplash.com/random/100x100?hospital-17",
+    name: "Jazan Pediatric Center",
+  },
+  {
+    id: "18",
+    img: "https://source.unsplash.com/random/100x100?hospital-18",
+    name: "Al Ahsa Medical City",
+  },
+  {
+    id: "19",
+    img: "https://source.unsplash.com/random/100x100?hospital-19",
+    name: "King Saud Hospital",
+  },
+  {
+    id: "20",
+    img: "https://source.unsplash.com/random/100x100?hospital-20",
+    name: "Medina Heart Institute",
   },
 ];
 
-const SpecialitiesData = [
+const specialitiesData = [
   "General Practitioner",
   "OB/GYN",
   "Dermatology",
@@ -82,7 +157,7 @@ export function Specialities() {
     new Set()
   );
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedHospitals, setSelectedHospitals] = useState(locations[0].id);
+  const [selectedHospitals, setSelectedHospitals] = useState(locations[0].id || "");
 
   const handleCheckboxChange = (speciality: string, checked: boolean) => {
     setSelectedSpecialities((prev) => {
@@ -100,7 +175,7 @@ export function Specialities() {
     e.preventDefault();
   };
 
-  const filteredSpecialities = SpecialitiesData.filter((item) =>
+  const filteredSpecialities = specialitiesData.filter((item) =>
     item.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -109,14 +184,15 @@ export function Specialities() {
   const rightColumn = filteredSpecialities.slice(midPoint);
 
   return (
-    <div className="flex flex-col sm:flex-row items-start p-3 pb-6 rounded-lg border border-(--an-specialities-border-color) bg-white gap-4 font-(family-name:--an-font-family) h-[calc(100vh-145px)]">
-      <div className="flex flex-col gap-3 w-full sm:w-52">
+    <div className="flex flex-col sm:flex-row items-start p-3 pb-6 rounded-lg border border-(--an-specialities-border-color) bg-white gap-4 font-(family-name:--an-font-family) h-[calc(100vh-145px)] overflow-hidden">
+      <div className="flex flex-col gap-3 w-full sm:w-50">
         <p className="text-(--an-specialities-title-color) text-(length:--an-specialities-title-size) font-(--an-specialities-font-weight)">Hospitals</p>
         <span className="text-(--an-specialities-profile-color) text-(length:--an-specialities-text-size) font-normal">
           Please select the hospital they work in
         </span>
-        <Tabs value={selectedHospitals} onValueChange={setSelectedHospitals} className="w-full mt-18">
-          <TabsList className="flex flex-col items-start w-full gap-2 bg-hidden shadow-none">
+        <ScrollArea className="h-[calc(100vh-250px)] pr-1">
+        <Tabs value={selectedHospitals} onValueChange={setSelectedHospitals} className="w-full mt-[180%]">
+          <TabsList className="flex flex-col items-start w-full gap-2 bg-transparent shadow-none">
             {locations.map((location) => (
               <TabsTrigger
               key={location.id}
@@ -132,6 +208,7 @@ export function Specialities() {
             ))}
           </TabsList>
         </Tabs>
+        </ScrollArea>
       </div>
 
       <div className="border-l border-(--an-specialities-checkbox-border-color) h-[102%] hidden sm:block"></div>
@@ -149,7 +226,7 @@ export function Specialities() {
             aria-label="Search specialities"
           />
         </div>
-        <ScrollArea className="h-[calc(100vh-290px)]">
+        <ScrollArea className="h-[calc(100vh-250px)]">
         <form onSubmit={handleSubmit}>
           <div className="flex gap-2 text-(--an-specialities-title-color) space-y-2">
             <Checkbox
