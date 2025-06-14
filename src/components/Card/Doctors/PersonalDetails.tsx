@@ -65,6 +65,24 @@ const FormField = ({
     )}
   </div>
 );
+
+const errors = {
+  english_name : '',
+  arabic_name : '',
+  address : '',
+  qualification : '',
+  experience : '',
+  type : '',
+  bio : '',
+  email : '',
+  mobile: '',
+  res_mobile : '',
+  work_mobile : '',
+  lang_spoken : '',
+  youtube_link : '',
+  research_pub : ''
+}
+
 export function PersonalDetails() {
   const [isChecked, setIsChecked] = useState(false);
   const [formData, setFormData] = useState({
@@ -101,8 +119,8 @@ export function PersonalDetails() {
   };
 
   return (
-    <Card className="w-full flex flex-row items-start shadow-none rounded-lg border border-[#E1E1E1] font-(family-name:--an-personal-details-font-family) p-0 h-[calc(100vh-145px)]">
-      <CardContent className="p-3 flex flex-col gap-4">
+    <Card className="w-full flex flex-row items-start shadow-none rounded-lg border border-[#E1E1E1] font-(family-name:--an-personal-details-font-family) p-0">
+      <CardContent className="p-3 flex flex-col gap-3">
         <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) font-(--an-personalDetails-font-weight)">
           Personal Details
         </p>
@@ -112,7 +130,7 @@ export function PersonalDetails() {
             <img
               src={profileImageUrl}
               alt="Profile Preview"
-              className="w-25 h-25 rounded-full object-cover"
+              className="w-25 h-25 rounded object-cover"
             />
             <button
               className="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity"
@@ -145,6 +163,7 @@ export function PersonalDetails() {
           />
         </div>
         <div className="flex gap-4 text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
+          <div>
           <FormField
             id="englishName"
             label="English Name"
@@ -152,13 +171,18 @@ export function PersonalDetails() {
             value={formData.englishName}
             onChange={handleInputChange("englishName")}
           />
+          <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.english_name}</p>
+          </div>
+          <div>
           <FormField
             id="arabicName"
-            label="Last Name"
+            label="Arabic Name"
             placeholder="Enter arabic name"
             value={formData.arabicName}
             onChange={handleInputChange("arabicName")}
           />
+          <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.arabic_name}</p>
+          </div>
         </div>
         <div className="flex flex-col font-(family-name:--an-font-family) text-(--an-personalDetails-form-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
           <Label
@@ -182,12 +206,14 @@ export function PersonalDetails() {
               }
             }}
           />
+          <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.address}</p>
         </div>
         <div className="flex flex-col gap-4">
           <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) font-(--an-personalDetails-font-weight)">
             Professional Details
           </p>
           <div className="flex gap-4 font-(family-name:--an-font-family) text-(--an-personalDetails-form-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
+            <div>
             <FormField
               id="qualification"
               label="Highest Qualification"
@@ -195,6 +221,9 @@ export function PersonalDetails() {
               value={formData.qualification}
               onChange={handleInputChange("qualification")}
             />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.qualification}</p>
+            </div>
+            <div>
             <FormField
               id="experience"
               label="Years of Experience"
@@ -202,6 +231,8 @@ export function PersonalDetails() {
               value={formData.experience}
               onChange={handleInputChange("experience")}
             />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.experience}</p>
+            </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-between w-144">
             <div className="flex flex-col gap-2">
@@ -226,6 +257,7 @@ export function PersonalDetails() {
             </div>
 
             {isChecked && (
+              <div className="flex flex-col">
               <div>
                 <Label
                   htmlFor="hod_type"
@@ -260,6 +292,8 @@ export function PersonalDetails() {
                   </SelectContent>
                 </Select>
               </div>
+              <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.type}</p>
+              </div>
             )}
           </div>
         </div>
@@ -285,6 +319,7 @@ export function PersonalDetails() {
               }
             }}
           />
+          <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.bio}</p>
         </div>
       </CardContent>
 
@@ -296,6 +331,7 @@ export function PersonalDetails() {
             Contact & Languages
           </p>
           <div className="flex gap-4">
+            <div>
             <FormField
               id="email"
               label="Email Address"
@@ -303,6 +339,9 @@ export function PersonalDetails() {
               value={formData.email}
               onChange={handleInputChange("email")}
             />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.email}</p>
+            </div>
+            <div>
             <FormField
               id="mobile"
               label="Mobile"
@@ -310,8 +349,11 @@ export function PersonalDetails() {
               value={formData.mobile}
               onChange={handleInputChange("mobile")}
             />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.mobile}</p>
+            </div>
           </div>
           <div className="flex gap-4">
+            <div>
             <FormField
               id="res_mobile"
               label="Residential Mobile"
@@ -319,6 +361,9 @@ export function PersonalDetails() {
               value={formData.resMobile}
               onChange={handleInputChange("resMobile")}
             />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.res_mobile}</p>
+            </div>
+            <div>
             <FormField
               id="work_mobile"
               label="Work Mobile"
@@ -326,6 +371,8 @@ export function PersonalDetails() {
               value={formData.workMobile}
               onChange={handleInputChange("workMobile")}
             />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.work_mobile}</p>
+            </div>
           </div>
           <div>
             <Label
@@ -378,6 +425,7 @@ export function PersonalDetails() {
                 </SelectItem>
               </SelectContent>
             </Select>
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.lang_spoken}</p>
           </div>
         </div>
         <div className="flex flex-col gap-4">
@@ -385,6 +433,7 @@ export function PersonalDetails() {
             Media and Outreach
           </p>
           <div className="flex gap-4">
+            <div>
             <FormField
               id="youtube_link"
               label="YouTube Link"
@@ -392,6 +441,9 @@ export function PersonalDetails() {
               value={formData.youtubeLink}
               onChange={handleInputChange("youtubeLink")}
             />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.youtube_link}</p>
+            </div>
+            <div>
             <FormField
               id="publications"
               label="Research Publications"
@@ -399,6 +451,8 @@ export function PersonalDetails() {
               value={formData.publications}
               onChange={handleInputChange("publications")}
             />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.research_pub}</p>
+            </div>
           </div>
         </div>
       </CardContent>
