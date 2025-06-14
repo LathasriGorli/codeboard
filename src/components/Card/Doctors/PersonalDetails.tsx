@@ -66,24 +66,24 @@ const FormField = ({
   </div>
 );
 
-const errors = {
-  english_name : '',
-  arabic_name : '',
-  address : '',
-  qualification : '',
-  experience : '',
-  type : '',
-  bio : '',
-  email : '',
-  mobile: '',
-  res_mobile : '',
-  work_mobile : '',
-  lang_spoken : '',
-  youtube_link : '',
-  research_pub : ''
+interface errors  {
+  doctor_en_name : 'string',
+  doctor_ar_name : 'string',
+  address : 'string',
+  education : 'string',
+  service_start_year : 'string',
+  hod_text : 'string',
+  bio : 'string',
+  email : 'string',
+  mobile_no: 'string',
+  res_phone : 'string',
+  work_phone : 'string',
+  spoken_languages : 'string',
+  youtube_link : 'string',
+  research_publications : 'string'
 }
 
-export function PersonalDetails() {
+export function PersonalDetails({errors} : {errors : errors}) {
   const [isChecked, setIsChecked] = useState(false);
   const [formData, setFormData] = useState({
     englishName: "",
@@ -171,7 +171,7 @@ export function PersonalDetails() {
             value={formData.englishName}
             onChange={handleInputChange("englishName")}
           />
-          <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.english_name}</p>
+          <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.doctor_en_name}</p>
           </div>
           <div>
           <FormField
@@ -181,7 +181,7 @@ export function PersonalDetails() {
             value={formData.arabicName}
             onChange={handleInputChange("arabicName")}
           />
-          <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.arabic_name}</p>
+          <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.doctor_ar_name}</p>
           </div>
         </div>
         <div className="flex flex-col font-(family-name:--an-font-family) text-(--an-personalDetails-form-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
@@ -221,7 +221,7 @@ export function PersonalDetails() {
               value={formData.qualification}
               onChange={handleInputChange("qualification")}
             />
-            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.qualification}</p>
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.education}</p>
             </div>
             <div>
             <FormField
@@ -231,7 +231,7 @@ export function PersonalDetails() {
               value={formData.experience}
               onChange={handleInputChange("experience")}
             />
-            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.experience}</p>
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.service_start_year}</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-between w-144">
@@ -292,7 +292,7 @@ export function PersonalDetails() {
                   </SelectContent>
                 </Select>
               </div>
-              <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.type}</p>
+              <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.hod_text}</p>
               </div>
             )}
           </div>
@@ -349,7 +349,7 @@ export function PersonalDetails() {
               value={formData.mobile}
               onChange={handleInputChange("mobile")}
             />
-            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.mobile}</p>
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.mobile_no}</p>
             </div>
           </div>
           <div className="flex gap-4">
@@ -361,7 +361,7 @@ export function PersonalDetails() {
               value={formData.resMobile}
               onChange={handleInputChange("resMobile")}
             />
-            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.res_mobile}</p>
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.res_phone}</p>
             </div>
             <div>
             <FormField
@@ -371,7 +371,7 @@ export function PersonalDetails() {
               value={formData.workMobile}
               onChange={handleInputChange("workMobile")}
             />
-            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.work_mobile}</p>
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.work_phone}</p>
             </div>
           </div>
           <div>
@@ -425,7 +425,7 @@ export function PersonalDetails() {
                 </SelectItem>
               </SelectContent>
             </Select>
-            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.lang_spoken}</p>
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.spoken_languages}</p>
           </div>
         </div>
         <div className="flex flex-col gap-4">
@@ -451,7 +451,7 @@ export function PersonalDetails() {
               value={formData.publications}
               onChange={handleInputChange("publications")}
             />
-            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.research_pub}</p>
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">{errors.research_publications}</p>
             </div>
           </div>
         </div>
