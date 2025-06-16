@@ -15,7 +15,7 @@ import { Textarea } from "../../ui/textarea";
 import { ChangeEvent, useRef, useState } from "react";
 
 const inputBaseClass =
-  "rounded-lg border border-[#D4D4D4] bg-white focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-[#a9a7a7] placeholder:text-xs shadow-none h-8 w-70 font-(family-name:--an-font-family)";
+  "rounded-lg border border-[#D4D4D4] bg-white focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-[#a9a7a7] placeholder:text-xs shadow-none h-8 w-75 font-(family-name:--an-font-family)";
 interface FormFieldProps {
   label: string;
   id: string;
@@ -23,6 +23,8 @@ interface FormFieldProps {
   type?: string;
   value?: string | boolean;
   onChange?: (value: string | boolean) => void;
+  style?: React.CSSProperties;
+  className?: string;
 }
 const FormField = ({
   label,
@@ -31,7 +33,8 @@ const FormField = ({
   type = "text",
   value,
   onChange,
-}: FormFieldProps) => (
+  className = "",
+}: FormFieldProps & { className?: string }) => (
   <div className="flex flex-col gap-1">
     <Label
       htmlFor={id}
@@ -59,7 +62,7 @@ const FormField = ({
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           onChange?.(e.target.value)
         }
-        className={inputBaseClass}
+        className={`${inputBaseClass} ${className}`}
         aria-label={label}
       />
     )}
@@ -69,6 +72,7 @@ const FormField = ({
 export interface errors {
   doctor_en_name: string | "";
   doctor_ar_name: string | "";
+  doctor_code: string | "";
   address: string | "";
   education: string | "";
   service_start_year: string | "";
@@ -88,6 +92,7 @@ export function PersonalDetails({ errors }: { errors: errors }) {
   const [formData, setFormData] = useState({
     englishName: "",
     arabicName: "",
+    doctor_code: "",
     address: "",
     qualification: "",
     experience: "",
@@ -119,19 +124,20 @@ export function PersonalDetails({ errors }: { errors: errors }) {
   };
 
   return (
-    <Card className="w-full flex flex-row items-start shadow-none rounded-lg border border-[#E1E1E1] font-(family-name:--an-personal-details-font-family) p-0">
-      <ScrollArea className="h-[calc(100vh-155px)] max-h-[calc(100vh-155px)]">
-        <CardContent className="p-2 flex flex-col gap-2">
+    <ScrollArea className="h-[calc(100vh-155px)] max-h-[calc(100vh-155px)]">
+      <Card className="w-full flex flex-col lg:flex-row items-start shadow-none rounded-lg border border-[#E1E1E1] font-(family-name:--an-personal-details-font-family) p-0 pb-6">
+        <CardContent className="flex flex-col gap-1 w-full lg:w-1/2 pt-2 pl-3">
           <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) font-(--an-personalDetails-font-weight)">
             Personal Details
           </p>
-          <div className="flex flex-col items-center justify-center rounded-md bg-[#EDEDED] w-25 h-25">
+          
+          <div className="flex flex-col items-center justify-center rounded-sm bg-[#EDEDED] w-18 h-18 sm:w-22 sm:h-22 mx-auto lg:mx-0">
             {profileImageUrl ? (
-              <div className="relative group w-25 h-25">
+              <div className="relative group w-18 h-18 sm:w-24 sm:h-24">
                 <img
                   src={profileImageUrl}
                   alt="Profile Preview"
-                  className="w-25 h-25 rounded object-cover"
+                  className="w-18 h-18 sm:w-24 sm:h-24 rounded object-cover"
                 />
                 <button
                   className="absolute inset-0 flex items-center justify-center bg-black/40 text-white text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity"
@@ -141,14 +147,14 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                 </button>
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center">
-                <DoctorProfile className="w-7 h-7" />
-                <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-profile-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
+              <div className="flex flex-col items-center justify-center gap-1">
+                <DoctorProfile className="w-6 h-6 sm:w-7 sm:h-7" />
+                <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-profile-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight) text-xs sm:text-xs">
                   Profile
                 </p>
                 <Button
                   variant="ghost"
-                  className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight) hover:bg-transparent hover:text-(--an-personalDetails-title-color) cursor-pointer"
+                  className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight) hover:bg-transparent hover:text-(--an-personalDetails-title-color) cursor-pointer text-xs sm:text-xs !h-1 mb-1"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   Upload
@@ -163,8 +169,9 @@ export function PersonalDetails({ errors }: { errors: errors }) {
               className="hidden"
             />
           </div>
-          <div className="flex gap-4 text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
-            <div>
+
+          <div className="flex flex-col sm:flex-row gap-4 text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
+            <div className="flex-1">
               <FormField
                 id="englishName"
                 label="English Name"
@@ -172,11 +179,11 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                 value={formData.englishName}
                 onChange={handleInputChange("englishName")}
               />
-              <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+              <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                 {errors.doctor_en_name}
               </p>
             </div>
-            <div>
+            <div className="flex-1">
               <FormField
                 id="arabicName"
                 label="Arabic Name"
@@ -184,11 +191,26 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                 value={formData.arabicName}
                 onChange={handleInputChange("arabicName")}
               />
-              <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+              <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                 {errors.doctor_ar_name}
               </p>
             </div>
           </div>
+
+          <div className="flex flex-col text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
+            <FormField
+              id="doctor_code"
+              label="Doctor Code"
+              placeholder="Enter doctor code"
+              value={formData.doctor_code}
+              onChange={handleInputChange("doctor_code")}
+              className="w-full"
+            />
+            <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
+              {errors.doctor_code}
+            </p>
+          </div>
+
           <div className="flex flex-col font-(family-name:--an-font-family) text-(--an-personalDetails-form-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight) gap-1">
             <Label
               htmlFor="address"
@@ -197,7 +219,7 @@ export function PersonalDetails({ errors }: { errors: errors }) {
               Address
             </Label>
             <Textarea
-              className={`${inputBaseClass} min-h-16 max-h-16 resize-none w-144 placeholder:font-normal`}
+              className={`${inputBaseClass} min-h-16 max-h-16 resize-none w-full placeholder:font-normal`}
               placeholder="Type your address here..."
               value={formData.address}
               onChange={(e) => handleInputChange("address")(e.target.value)}
@@ -215,12 +237,14 @@ export function PersonalDetails({ errors }: { errors: errors }) {
               {errors.address}
             </p>
           </div>
+
           <div className="flex flex-col gap-4">
             <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) font-(--an-personalDetails-font-weight)">
               Professional Details
             </p>
-            <div className="flex gap-4 font-(family-name:--an-font-family) text-(--an-personalDetails-form-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
-              <div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 font-(family-name:--an-font-family) text-(--an-personalDetails-form-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight)">
+              <div className="flex-1">
                 <FormField
                   id="qualification"
                   label="Highest Qualification"
@@ -228,11 +252,11 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                   value={formData.qualification}
                   onChange={handleInputChange("qualification")}
                 />
-                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                   {errors.education}
                 </p>
               </div>
-              <div>
+              <div className="flex-1">
                 <FormField
                   id="experience"
                   label="Years of Experience"
@@ -240,12 +264,13 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                   value={formData.experience}
                   onChange={handleInputChange("experience")}
                 />
-                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                   {errors.service_start_year}
                 </p>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-between w-144">
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-between w-full">
               <div className="flex flex-col gap-2">
                 <Label
                   htmlFor="hod"
@@ -268,7 +293,7 @@ export function PersonalDetails({ errors }: { errors: errors }) {
               </div>
 
               {isChecked && (
-                <div className="flex flex-col">
+                <div className="flex flex-col flex-1 sm:max-w-xs">
                   <div className="flex flex-col gap-1">
                     <Label
                       htmlFor="hod_type"
@@ -282,7 +307,7 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                     >
                       <SelectTrigger
                         id="hod_type"
-                        className={`${inputBaseClass} !h-8 text-xs`}
+                        className={`${inputBaseClass} !h-8 text-xs w-full`}
                         aria-label="HOD Type"
                       >
                         <SelectValue placeholder="Select" />
@@ -303,14 +328,15 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                       </SelectContent>
                     </Select>
                   </div>
-                  <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                  <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                     {errors.hod_text}
                   </p>
                 </div>
               )}
             </div>
           </div>
-          <div className="flex flex-col w-[100%] gap-1">
+
+          <div className="flex flex-col w-full gap-1">
             <Label
               htmlFor="bio"
               className="text-(--an-personalDetails-form-color) text-(length:--an-personalDetails-profile-font) font-(--an-personalDetails-font-weight) font-(family-name:--an-font-family)"
@@ -318,7 +344,7 @@ export function PersonalDetails({ errors }: { errors: errors }) {
               Professional Bio
             </Label>
             <Textarea
-              className={`${inputBaseClass} min-h-16 max-h-16 resize-none w-144 placeholder:font-normal`}
+              className={`${inputBaseClass} min-h-16 max-h-16 resize-none w-full placeholder:font-normal`}
               placeholder="Type your bio here..."
               value={formData.bio}
               onChange={(e) => handleInputChange("bio")(e.target.value)}
@@ -337,16 +363,20 @@ export function PersonalDetails({ errors }: { errors: errors }) {
             </p>
           </div>
         </CardContent>
-      </ScrollArea>
-        <div className="border-l border-[#E6E6E6] min-h-[95%] hidden sm:block mt-4"></div>
 
-        <CardContent className="p-3 flex flex-col gap-4">
+        <div className="hidden lg:block w-px bg-[#E6E6E6] self-stretch my-4"></div>
+        
+        {/* Horizontal divider for mobile/tablet */}
+        <div className="block lg:hidden w-full h-px bg-[#E6E6E6] mx-2"></div>
+
+        <CardContent className="flex flex-col gap-3 w-full lg:w-1/2 pt-2 pl-3">
           <div className="flex flex-col gap-4">
             <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) font-(--an-personalDetails-font-weight)">
               Contact & Languages
             </p>
-            <div className="flex gap-4">
-              <div>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex-1">
                 <FormField
                   id="email"
                   label="Email Address"
@@ -354,11 +384,11 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                   value={formData.email}
                   onChange={handleInputChange("email")}
                 />
-                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                   {errors.email}
                 </p>
               </div>
-              <div>
+              <div className="flex-1">
                 <FormField
                   id="mobile"
                   label="Mobile"
@@ -366,13 +396,14 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                   value={formData.mobile}
                   onChange={handleInputChange("mobile")}
                 />
-                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                   {errors.mobile_no}
                 </p>
               </div>
             </div>
-            <div className="flex gap-4">
-              <div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex-1">
                 <FormField
                   id="res_mobile"
                   label="Residential Mobile"
@@ -380,11 +411,11 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                   value={formData.resMobile}
                   onChange={handleInputChange("resMobile")}
                 />
-                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                   {errors.res_phone}
                 </p>
               </div>
-              <div>
+              <div className="flex-1">
                 <FormField
                   id="work_mobile"
                   label="Work Mobile"
@@ -392,11 +423,12 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                   value={formData.workMobile}
                   onChange={handleInputChange("workMobile")}
                 />
-                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                   {errors.work_phone}
                 </p>
               </div>
             </div>
+
             <div className="flex flex-col gap-1">
               <Label
                 htmlFor="languages"
@@ -410,7 +442,7 @@ export function PersonalDetails({ errors }: { errors: errors }) {
               >
                 <SelectTrigger
                   id="languages"
-                  className="w-144 h-9 rounded-lg border border-[#D4D4D4] bg-white focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-[#a9a7a7] text-xs shadow-none font-normal"
+                  className="w-full h-9 rounded-lg border border-[#D4D4D4] bg-white focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-[#a9a7a7] text-xs shadow-none font-normal"
                   aria-label="Languages Spoken"
                 >
                   <SelectValue placeholder="Select" />
@@ -453,12 +485,13 @@ export function PersonalDetails({ errors }: { errors: errors }) {
               </p>
             </div>
           </div>
+
           <div className="flex flex-col gap-4">
             <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) font-(--an-personalDetails-font-weight)">
               Media and Outreach
             </p>
-            <div className="flex gap-4">
-              <div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex-1">
                 <FormField
                   id="youtube_link"
                   label="YouTube Link"
@@ -466,11 +499,11 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                   value={formData.youtubeLink}
                   onChange={handleInputChange("youtubeLink")}
                 />
-                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                   {errors.youtube_link}
                 </p>
               </div>
-              <div>
+              <div className="flex-1">
                 <FormField
                   id="publications"
                   label="Research Publications"
@@ -478,13 +511,14 @@ export function PersonalDetails({ errors }: { errors: errors }) {
                   value={formData.publications}
                   onChange={handleInputChange("publications")}
                 />
-                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1">
+                <p className="text-red-500 text-[10px] font-(family-name:--an-font-family) pl-1 mt-1">
                   {errors.research_publications}
                 </p>
               </div>
             </div>
           </div>
         </CardContent>
-    </Card>
+      </Card>
+    </ScrollArea>
   );
 }

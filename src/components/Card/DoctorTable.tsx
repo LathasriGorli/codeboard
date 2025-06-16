@@ -74,8 +74,8 @@ export function DataTable({
     autoResetPageIndex: false,
   });
   return (
-    <div className="w-full bg-(--an-table-background) p-1 pb-2 rounded-lg">
-      <ShowFilter onclick={() => setShowFilters(!showFilters)} />
+    <div className="w-full bg-(--an-table-background) p-1.5 pt-0 rounded-lg">
+      {/* <ShowFilter onclick={() => setShowFilters(!showFilters)} /> */}
       <div className="overflow-hidden rounded-lg">
         <Table className="border-separate border-spacing-y-0.5">
           <ScrollArea className="rounded-lg" style={{ height: height }}>
@@ -108,14 +108,6 @@ export function DataTable({
                             header.column.columnDef.header,
                             header.getContext()
                           )}
-                          {/* {!isSortingRemoved &&
-                            (header.column.getIsSorted() === "asc" ? (
-                              <SortAsc className="w-2.5 h-2.5 text-green-600" />
-                            ) : header.column.getIsSorted() === "desc" ? (
-                              <SortDesc className="w-2.5 h-2.5 text-green-600" />
-                            ) : (
-                              <SortNorm />
-                            ))} */}
                           {!isSortingRemoved && (
                             <SortNorm
                             className="w-2.5 h-4"
@@ -153,7 +145,7 @@ export function DataTable({
                 table.getRowModel().rows.map((row, index) => (
                   <TableRow
                     key={row.id}
-                    className={`bg-(--an-table-row-background) ${
+                    className={`bg-(--an-table-row-background) px-10 ${
                       index === 0 &&
                       index === table.getRowModel().rows.length - 1
                         ? "rounded-lg"
@@ -239,15 +231,15 @@ function SortNorm({
   };
 
   return (
-    <div className={`flex flex-col items-center ${className}`}>
+    <div className={`flex flex-col items-center gap-1.25 p-1 ${className}`}>
       <span onClick={handleAscClick} className="cursor-pointer">
         <SortAsc
-          className={`w-2 h-2 ${isAsc ? "text-[#005669]" : ""}`}
+          className={`w-2 h-1 ${isAsc ? "text-[#005669]" : ""}`}
         />
       </span>
       <span onClick={handleDescClick} className="cursor-pointer -mt-0.5">
         <SortDesc
-          className={`w-2 h-2 ${isDesc ? "text-[#005669]" : ""}`}
+          className={`w-2 h-1 ${isDesc ? "text-[#005669]" : ""}`}
         />
       </span>
     </div>

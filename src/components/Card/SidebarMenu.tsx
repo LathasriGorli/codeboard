@@ -22,6 +22,7 @@ import { NoLocation } from "../NoCards/NoLocation";
 import { NoAppointment } from "../NoCards/NoAppointment";
 import { NoDoctor } from "../NoCards/NoDoctor";
 import { NoSpecialization } from "../NoCards/NoSpecialization";
+import { Table } from "../testing/Table";
 
 type headings = {
   id: number;
@@ -78,14 +79,14 @@ export function SidebarMenu({ items }: { items: headings[] }) {
   return (
     <SidebarProvider
       className="bg-[#EFF4EF]"
-      style={{ "--sidebar-width": "11.7rem", } as React.CSSProperties}
+      style={{ "--sidebar-width": "10.5rem", } as React.CSSProperties}
     >
-      <Sidebar className="flex flex-col h-screen w-[175px] p-1 itmes-start gap-10 rounded-md bg-(--an-menu-background) mt-1.5 ml-1.5 border-none">
+      <Sidebar className="flex flex-col h-screen w-[155px] p-1 itmes-start rounded-md bg-(--an-menu-background) mt-1.5 ml-1.5 border-none">
         <SidebarHeader className="bg-white">
-          <AlmanaIcon className={"w-25 h-12"} />
+          <AlmanaIcon className={"w-20 h-10"} />
         </SidebarHeader>
         <SidebarContent className="bg-white">
-          <SidebarGroup className="gap-1 p-0">
+          <SidebarGroup className="gap-1 p-0 mt-6">
               {items &&
                 items.length > 0 &&
                 items.map((item) => (
@@ -99,7 +100,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                       to={item.url}
                       className="flex justify-start items-center"
                     >
-                      <item.icon className="w-6 h-6" />
+                      <item.icon className="!w-3 !h-3" />
                       <p className="text-xs font-(family-name:--an-menu-font-family) font-normal">
                         {item.title}
                       </p>
@@ -108,10 +109,10 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                   </SidebarMenuItem>
                 ))}
           </SidebarGroup>
-          <div className="absolute -bottom-26 -left-12 w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-sidebar-footer-bg) to-(--an-sidebar-footer-bg) blur-xl rotate-[38.723deg] overflow-hidden"></div>
+          <div className="absolute bottom-1 -left-8 !w-48 !h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-sidebar-footer-bg) to-(--an-sidebar-footer-bg) blur-xl rotate-[38.723deg] overflow-hidden rounded-4xl"></div>
         </SidebarContent>
       </Sidebar>
-      <div className="flex flex-col w-full max-w-full overflow-hidden">
+      <div className="flex flex-col w-full max-w-full overflow-hidden mr-2">
         <Header name="John Doe" role="Frondend Developer" />
         {/* <div className="flex items-center justify-center h-full w-full">
         <NoSpecialization />
@@ -119,7 +120,10 @@ export function SidebarMenu({ items }: { items: headings[] }) {
         <NoAppointment />
         <NoDoctor />
         </div> */}
-        <DoctorsCards />
+        {/* <DoctorsCards /> */}
+        <div className="flex flex-col items-center justify-center h-full w-full">
+          <Table />
+          </div>
       </div>
     </SidebarProvider>
   );

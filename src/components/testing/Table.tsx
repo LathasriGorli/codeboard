@@ -21,13 +21,13 @@ export const columns: ColumnDef<Project>[] = [
   {
     accessorFn: (row: any) => row.serial,
     id: "serial",
-    header: () => <div>S No</div>,
+    header: () => <div className="pl-2">S No</div>,
     cell: ({ row, table }) => {
       const sortedRows = table.getSortedRowModel().rows;
       const globalIndex = sortedRows.findIndex((r: any) => r.id === row.id);
       const serialNumber = globalIndex + 1;
       return (
-        <span className="text-sm font-normal text-(--an-table-row-text-color)">
+        <span className="text-sm font-normal text-(--an-table-row-text-color) pl-2">
         {serialNumber.toString().padStart(2, "0")}
       </span>
       );
@@ -49,7 +49,7 @@ export const columns: ColumnDef<Project>[] = [
     header: () => <div className="w-full text-right">Arabic Title</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-(--an-table-row-text-color) text-right font-normal">
+        <div className="text-(--an-table-row-text-color) text-right font-normal w-80">
           {row.getValue("arabic_title")}
         </div>
       );
@@ -58,10 +58,10 @@ export const columns: ColumnDef<Project>[] = [
   },
   {
     accessorKey: "code",
-    header: () => <div>Code</div>,
+    header: () => <div className="pl-3">Code</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-(--an-table-row-text-color) font-normal">
+        <div className="text-(--an-table-row-text-color) font-normal w-10 pl-3">
           {row.getValue("code")}
         </div>
       );
@@ -77,7 +77,7 @@ export const columns: ColumnDef<Project>[] = [
     header: () => <div>Image</div>,
     cell: ({ row }) => {
       return (
-        <div className="flex gap-2 items-center w-40">
+        <div className="flex gap-2 items-center w-20">
           <img
             src={row.original.imgUrl}
             className="w-6 h-6 object-cover border"
@@ -97,7 +97,7 @@ export const columns: ColumnDef<Project>[] = [
       const status = row.getValue("status") as boolean;  
       return (
         <Button
-          className={`rounded-xl font-normal p-2 h-5 bg-white text-xs
+          className={`rounded-xl font-normal p-2 h-4 bg-white text-xs
             ${status === true ? "bg-(--an-table-active-background) text-(--an-table-active-text-color) hover:bg-(--an-table-active-background)" : "bg-(--an-table-inactive-background) text-(--an-table-inactive-text-color) hover:bg-(--an-table-inactive-background)"}`}
         >
           {status === true ? 'Active' : (status === false ? 'Inactive' : '')}

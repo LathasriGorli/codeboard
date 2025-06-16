@@ -30,6 +30,7 @@ interface TabbedOuterCardProps {
 const messages: errors = {
   doctor_en_name : '',
   doctor_ar_name : '',
+  doctor_code : '',
   address : '',
   education : '',
   service_start_year : '',
@@ -63,7 +64,7 @@ export function DoctorsCards({}: TabbedOuterCardProps) {
     <div className={`w-full mx-auto my-2 ${messages && Object.keys(messages).length > 0 ? "overflow-y-auto" : ""}`}>
       <div className="flex gap-2">
         <BackButton onclick={() => {}} />
-<div className="flex-1 bg-[#DEEEE4] px-3 pb-2 rounded-lg h-[calc(100vh-65px)] mr-2">
+          <div className="flex-1 bg-[#DEEEE4] px-3 pb-2 rounded-lg h-[calc(100vh-65px)] mr-2">
           <div className="mt-2 -ml-3 relative mb-2">
             <div className="flex items-center">
               <div className="w-1 h-9 bg-(--an-card-button-color) rounded-r-full mr-3"></div>
@@ -75,10 +76,10 @@ export function DoctorsCards({}: TabbedOuterCardProps) {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`pb-3 text-sm font-[urbanist]  text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) leading-(--an-personalDetails-font-height) font-(--an-personalDetails-font-weight) -mt-1 relative ${
+                  className={`flex pb-2 px-1 text-sm font-[urbanist]  text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) leading-(--an-personalDetails-font-height) font-(--an-personalDetails-font-weight) -mt-1 relative ${
                     activeTab === tab.id
-                      ? "text-[#005669] border-b-2 mb-1 border-[#000] "
-                      : "text-gray-500 hover:text-gray-700 "
+                      ? "text-[#005669] border-b-2 mb-1 border-[#005669] "
+                      : "text-[#4F4F4F] hover:[#4F4F4F]"
                   }`}
                 >
                   <span>{tab.name}</span>
@@ -107,3 +108,4 @@ export function DoctorsCards({}: TabbedOuterCardProps) {
     </div>
   );
 }
+
