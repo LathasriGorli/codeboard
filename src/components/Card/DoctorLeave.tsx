@@ -1,8 +1,9 @@
-import { Edit } from "lucide-react";
+import { Edit, Edit2, Edit2Icon } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { BackButton } from "./ArrowLeft";
+import { OTPEdit } from "../icons/OTPEdit";
 
 type DoctorLeaveProps = {
   imgUrl: string;
@@ -52,7 +53,7 @@ export function DoctorLeave() {
             </p>
           </div>
           <Button className="h-8 w-15 font-(family-name:--an-doctor-leave-font-family) rounded-sm bg-(--an-doctor-leave-edit-button-bg) text-(--an-doctor-leave-edit-text-color) text-sm font-medium hover:bg-(--an-doctor-leave-edit-button-bg) cursor-pointer">
-            <Edit className="text-(--an-doctor-leave-edit-text-color)" />
+            <OTPEdit className="text-(--an-doctor-leave-edit-text-color)" />
             Edit
           </Button>
         </CardHeader>

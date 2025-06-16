@@ -113,12 +113,13 @@ export function SidebarMenu({ items }: { items: headings[] }) {
       </Sidebar>
       <div className="flex flex-col w-full max-w-full overflow-hidden">
         <Header name="John Doe" role="Frondend Developer" />
-        <div className="flex items-center justify-center h-full w-full">
+        {/* <div className="flex items-center justify-center h-full w-full">
         <NoSpecialization />
         <NoLocation />
         <NoAppointment />
         <NoDoctor />
-        </div>
+        </div> */}
+        <DoctorsCards />
       </div>
     </SidebarProvider>
   );

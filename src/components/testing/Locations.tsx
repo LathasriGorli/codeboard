@@ -197,21 +197,13 @@ export const columns: ColumnDef<Person>[] = [
 
 
 export function Locations() {
-  
-  const paginationDetails = {
-    page: 1,
-    limit: 25,
-    total_pages: Math.ceil(defaultData.length / 25),
-    total: defaultData.length,
-  };
   return (
     <>
       <DataTable
         data={defaultData}
         columns={columns}
-        paginationDetails={paginationDetails}
         removeSortingForColumnIds={["select", "serial","actions"]}
-        height = ""
+        height = "calc(100vh - 135px)"
       />
     </>
   );

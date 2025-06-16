@@ -184,13 +184,13 @@ export function Specialities() {
   const rightColumn = filteredSpecialities.slice(midPoint);
 
   return (
-    <div className="flex flex-col sm:flex-row items-start p-3 pb-6 rounded-lg border border-(--an-specialities-border-color) bg-white gap-4 font-(family-name:--an-font-family) h-[calc(100vh-145px)] overflow-hidden">
+    <div className="flex flex-col sm:flex-row items-start p-3 pb-6 rounded-lg border border-(--an-specialities-border-color) bg-white gap-4 font-(family-name:--an-font-family) h-[calc(100vh-160px)] overflow-hidden">
       <div className="flex flex-col gap-3 w-full sm:w-50">
         <p className="text-(--an-specialities-title-color) text-(length:--an-specialities-title-size) font-(--an-specialities-font-weight)">Hospitals</p>
         <span className="text-(--an-specialities-profile-color) text-(length:--an-specialities-text-size) font-normal">
           Please select the hospital they work in
         </span>
-        <ScrollArea className="h-[calc(100vh-250px)] pr-1">
+        <ScrollArea className="h-[calc(100vh-270px)] pr-1">
         <Tabs value={selectedHospitals} onValueChange={setSelectedHospitals} className="w-full mt-[180%]">
           <TabsList className="flex flex-col items-start w-full gap-2 bg-transparent shadow-none">
             {locations.map((location) => (
@@ -226,7 +226,7 @@ export function Specialities() {
             aria-label="Search specialities"
           />
         </div>
-        <ScrollArea className="h-[calc(100vh-250px)]">
+        <ScrollArea className="h-[calc(100vh-270px)]">
         <form onSubmit={handleSubmit}>
           <div className="flex gap-2 text-(--an-specialities-title-color) space-y-2">
             <Checkbox

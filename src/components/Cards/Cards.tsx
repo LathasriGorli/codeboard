@@ -9,13 +9,13 @@ export function Cards() {
 
     switch (id) {
       case "table":
-        return <Table id={id}/>;
+        return <Table />;
       case "sidebar":
         return <Sidebar id={id} />;
       case "login":
         return <Logins id={id} />;
       case "leave-table":
-        return <DoctorLeaveTable id={id} />;
+        return <DoctorLeaveTable />;
       default:
         return <p>No component found for id {id}</p>;
     }

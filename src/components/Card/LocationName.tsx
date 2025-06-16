@@ -1,4 +1,4 @@
-import { ArrowLeft, Edit, GripVertical } from "lucide-react";
+import { Edit, GripVertical } from "lucide-react";
 import { Button } from "../ui/button";
 import {
   Card,

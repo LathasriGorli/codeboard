@@ -74,7 +74,7 @@ export function DataTable({
     autoResetPageIndex: false,
   });
   return (
-    <div className="w-full bg-(--an-table-background) p-1 rounded-lg">
+    <div className="w-full bg-(--an-table-background) p-1 pb-2 rounded-lg">
       <ShowFilter onclick={() => setShowFilters(!showFilters)} />
       <div className="overflow-hidden rounded-lg">
         <Table className="border-separate border-spacing-y-0.5">

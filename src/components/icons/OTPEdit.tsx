@@ -1,9 +1,8 @@
-export function OTPEdit() {
+export function OTPEdit({className}: {className: string}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="14"
-      height="16"
+      className={className}
       viewBox="0 0 18 19"
       fill="none"
     >
