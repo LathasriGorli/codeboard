@@ -23,6 +23,7 @@ import { Filter } from "./Filter";
 import { Pagination } from "../Table/Pagination";
 import { SortAsc } from "../icons/SortAsc";
 import { SortDesc } from "../icons/SortDesc";
+import AddNewButton from "./AddNew";
 
 type DataTableProps = {
   data?: any[];
@@ -74,9 +75,12 @@ export function DataTable({
     autoResetPageIndex: false,
   });
   return (
+    <div className="w-full">
+    <div className="flex items-center justify-end gap-2">
+    <ShowFilter onclick = {() => setShowFilters(!showFilters)} />
+    <AddNewButton />
+    </div>
     <div className="w-full bg-(--an-table-background) p-1.5 pt-0 rounded-lg">
-      {/* <ShowFilter onclick
-      ={() => setShowFilters(!showFilters)} /> */}
       <div className="overflow-hidden rounded-lg">
         <Table className="border-separate border-spacing-y-0.25">
           <ScrollArea className="rounded-lg" style={{ height: height }}>
@@ -91,7 +95,7 @@ export function DataTable({
                       <TableHead
                         key={header.id}
                         colSpan={header.colSpan}
-                        className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-sm font-medium bg-white p-1"
+                        className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-xs font-medium bg-white py-0 px-1"
                       >
                         <div
                           className={
@@ -126,13 +130,13 @@ export function DataTable({
                         </div>
                         {header.column.getCanFilter() ? (
                           <div
-                            className={`${showFilters ? "h-7" : "h-0"} overflow-hidden transition-all duration-300`}
+                            className={`${showFilters ? "h-7" : "h-0"} overflow-hidden transition-all duration-300 flex items-center`}
                           >
                             <Filter column={header.column} />
                           </div>
                         ) : (
                           <div
-                            className={`${showFilters ? "h-7" : "h-0"} transition-all duration-300`}
+                            className={`${showFilters ? "h-7" : "h-0"} transition-all duration-300 flex items-center`}
                           />
                         )}
                       </TableHead>
@@ -155,7 +159,7 @@ export function DataTable({
                           : index === table.getRowModel().rows.length - 1
                             ? "rounded-b-lg"
                             : ""
-                    }  text-xs font-normal`}
+                    }  text-[11px] font-normal`}
                   >
                     {row.getVisibleCells().map((cell, cellIndex) => (
                       <TableCell
@@ -206,6 +210,7 @@ export function DataTable({
           <Pagination paginationDetails={paginationDetails} table={table} />
         </div>
       )}
+    </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
-import { EllipsisVertical, Eye } from "lucide-react";
+import { EllipsisVertical, Eye, Scroll } from "lucide-react";
 import { Checkbox } from "~/components/ui/checkbox";
 import {
   fuzzyArrayFilter,
@@ -9,8 +9,9 @@ import {
 import { cn } from "~/lib/utils";
 import { DataTable } from "../Card/DoctorTable";
 import data from "./location.json";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { ViewIcon } from "../icons/Actions/view";
+import { ScrollArea } from "../ui/scroll-area";
 
 export interface Person {
   titleIcon: string;
@@ -29,15 +30,6 @@ export interface LocationsProps {
     total: number;
   };
 }
-
-const specialityColorMap: Record<string, string> = {
-  Cardiology: "bg-blue-200 text-blue-800",
-  Dermatology: "bg-purple-200 text-purple-800",
-  Psychiatry: "bg-red-200 text-red-800",
-  Neurology: "bg-green-200 text-green-800",
-  Pediatrics: "bg-orange-200 text-orange-800",
-  Oncology: "bg-sky-200 text-sky-800",
-};
 
 const defaultData: Person[] = data.map((item) => ({
   titleIcon:
@@ -107,34 +99,67 @@ export const columns: ColumnDef<Person>[] = [
       const allSpecialities = row.original.specialities;
       const displayed = allSpecialities.slice(0, 3);
       const remainingCount = allSpecialities.length - displayed.length;
-
+      
+      const colors = [
+        'bg-[rgba(255,114,94,0.20)] text-[#FF725E]',
+        'bg-[rgba(162,87,249,0.20)] text-[#A257F9]',
+        'bg-[rgba(79,129,189,0.20)] text-[#4F81BD]',
+        'bg-[rgba(165,36,61,0.20)] text-[#A5243D]',
+        'bg-[rgba(81,175,51,0.20)] text-[#51AF33]',
+      ];
+      
+      const getRandomColor = (specialty: string, index: number) => {
+        if (!specialty || typeof specialty !== 'string') {
+          return colors[index % colors.length];
+        }
+        const hash = specialty.split('').reduce((acc, char) => {
+          return char.charCodeAt(0) + ((acc << 5) - acc);
+        }, index);
+        return colors[Math.abs(hash) % colors.length];
+      };
+   
       return (
         <div className="flex flex-wrap gap-1">
           {displayed.map((s, i) => {
-            const colorClass =
-              specialityColorMap[s] || "bg-gray-200 text-gray-800";
             return (
               <span
                 key={i}
-                className={cn(
-                  `px-2 py-1 rounded-full ${colorClass}`,
-                  "font-normal"
-                )}
+                className={`inline-flex items-center px-2 py-1 rounded-full text-[11px] font-medium ${getRandomColor(s, i)}`}
               >
                 {s}
               </span>
             );
           })}
-
+          
           {remainingCount > 0 && (
             <Tooltip>
               <TooltipTrigger asChild>
-                <span className="bg-gray-400 text-[#494343] px-2 py-1 rounded-full border-1 border-[#E3E3E3] cursor-pointer">
+                <span className="bg-gray-400 text-[#494343] px-2 py-1 rounded-full border border-[#E3E3E3] cursor-pointer">
                   +{remainingCount}
                 </span>
               </TooltipTrigger>
-              <TooltipContent side="top" align="center" className="w-70 p-1 h-40 overflow-y-scroll">
-                {allSpecialities.slice(3).join(", ")}
+              <TooltipContent
+                side="top"
+                align="center"
+                className={`px-1 py-1 text-[11px] leading-relaxed bg-white overflow-y-auto
+        ${
+          allSpecialities.slice(3).length <= 3
+            ? "w-48 max-h-24"
+            : allSpecialities.slice(3).length <= 6
+              ? "w-64 max-h-32"
+              : "w-80 max-h-48"
+        }`}
+              >
+                <div className="flex flex-wrap gap-1">
+        {allSpecialities.slice(3).map((s, idx) => (
+          <span
+            key={idx}
+            className={`inline-flex items-center px-2 py-1 rounded-full text-[11px] font-medium ${getRandomColor(s, idx + 3)}`}
+          >
+            {s}
+          </span>
+        ))}
+      </div>
               </TooltipContent>
             </Tooltip>
           )}

@@ -13,9 +13,11 @@ import {
 } from "../../ui/select";
 import { Textarea } from "../../ui/textarea";
 import { ChangeEvent, useRef, useState } from "react";
+import { X } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover";
 
 const inputBaseClass =
-  "rounded-md border border-[#D4D4D4] bg-white focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-[#a9a7a7] placeholder:text-xs shadow-none h-8 w-full font-(family-name:--an-font-family)";
+  "rounded-md border border-[#D4D4D4] bg-white focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-[#a9a7a7] placeholder:text-xs shadow-none h-8 w-full font-(family-name:--an-font-family) placeholder:font-(family-name:--an-font-family)";
 interface FormFieldProps {
   label: string;
   id: string;
@@ -125,7 +127,7 @@ export function PersonalDetails({ errors }: { errors: errors }) {
 
   return (
     <ScrollArea className="h-[calc(100vh-140px)]">
-    <Card className="w-[calc(100%-1px)] flex flex-col lg:flex-row items-start shadow-none rounded-lg border border-[#E1E1E1] font-(family-name:--an-personal-details-font-family) p-0 pb-6 h-[calc(100vh-140px)]">
+    <Card className="w-[calc(100%-1px)] flex flex-col lg:flex-row items-start shadow-none rounded-lg border border-[#E1E1E1] font-(family-name:--an-personal-details-font-family) p-0 pb-6 min-h-[calc(100vh-140px)]">
       <CardContent className="flex flex-col gap-2 w-full lg:w-1/2 pt-2 pl-3">
         <p className="font-(family-name:--an-font-family) text-(--an-personalDetails-title-color) text-(length:--an-personalDetails-font-size) font-(--an-personalDetails-font-weight)">
           Personal Details
@@ -436,50 +438,7 @@ export function PersonalDetails({ errors }: { errors: errors }) {
             >
               Languages Spoken
             </Label>
-            <Select
-              value={formData.languages}
-              onValueChange={handleInputChange("languages")}
-            >
-              <SelectTrigger
-                id="languages"
-                className="w-full h-9 rounded-lg border border-[#D4D4D4] bg-white focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-[#a9a7a7] text-xs shadow-none font-normal"
-                aria-label="Languages Spoken"
-              >
-                <SelectValue placeholder="Select" />
-              </SelectTrigger>
-              <SelectContent position="popper">
-                <SelectItem
-                  value="english"
-                  className="text-xs font-(family-name:--an-font-family)"
-                >
-                  English
-                </SelectItem>
-                <SelectItem
-                  value="arabic"
-                  className="text-xs font-(family-name:--an-font-family)"
-                >
-                  Arabic
-                </SelectItem>
-                <SelectItem
-                  value="french"
-                  className="text-xs font-(family-name:--an-font-family)"
-                >
-                  French
-                </SelectItem>
-                <SelectItem
-                  value="hindi"
-                  className="text-xs font-(family-name:--an-font-family)"
-                >
-                  Hindi
-                </SelectItem>
-                <SelectItem
-                  value="tagalog"
-                  className="text-xs font-(family-name:--an-font-family)"
-                >
-                  Tagalog
-                </SelectItem>
-              </SelectContent>
-            </Select>
+            <MultiSelectLanguages />
             <p className="text-red-500 text-[0.688rem] font-(family-name:--an-font-family) pl-1">
               {errors.spoken_languages}
             </p>
@@ -522,3 +481,79 @@ export function PersonalDetails({ errors }: { errors: errors }) {
     </ScrollArea>
   );
 }
+
+const availableLanguages = [
+  { label: "English", value: "english" },
+  { label: "Arabic", value: "arabic" },
+  { label: "French", value: "french" },
+  { label: "Hindi", value: "hindi" },
+  { label: "Tagalog", value: "tagalog" },
+];
+
+export function MultiSelectLanguages() {
+  const [selected, setSelected] = useState<string[]>([]);
+  const [open, setOpen] = useState(false);
+
+  const toggleLanguage = (value: string) => {
+    setSelected((prev) =>
+      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+    );
+  };
+
+  const removeLanguage = (value: string) => {
+    setSelected((prev) => prev.filter((v) => v !== value));
+  };
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <div
+          className="min-h-[2.25rem] rounded-lg border border-[#D4D4D4] bg-white text-xs flex items-center flex-wrap gap-1 px-2 py-1 cursor-pointer"
+          onClick={() => setOpen(true)}
+        >
+          {selected.length === 0 ? (
+            <span className="text-[#a9a7a7] font-(family-name:--an-font-family)">Select</span>
+          ) : (
+            selected.map((value) => {
+              const label = availableLanguages.find((l) => l.value === value)?.label;
+              return (
+                <div
+                  key={value}
+                  className="flex items-center bg-[#f1f1f1] px-2 py-0.5 rounded-md text-xs gap-1"
+                >
+                  <span>{label}</span>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeLanguage(value);
+                    }}
+                  >
+                    <X className="w-3 h-3 text-gray-500 hover:text-gray-700" />
+                  </button>
+                </div>
+              );
+            })
+          )}
+        </div>
+      </PopoverTrigger>
+
+      <PopoverContent className="p-2 text-xs w-[calc(100vw-55rem)]">
+        <div className="flex flex-col gap-1">
+          {availableLanguages.map((lang) => (
+            <div
+              key={lang.value}
+              onClick={() => toggleLanguage(lang.value)}
+              className={`px-3 py-1 rounded-md cursor-pointer hover:bg-gray-100 font-(family-name:--an-font-family) ${
+                selected.includes(lang.value) ? "bg-gray-100 font-medium" : ""
+              }`}
+            >
+              {lang.label}
+            </div>
+          ))}
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+

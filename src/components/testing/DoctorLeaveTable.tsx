@@ -136,7 +136,7 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       header: () => <div>Reason (hover to view)</div>,
       cell: ({ row }) => {
         return (
-          <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) overflow-ellipsis overflow-hidden w-90 font-normal">
+          <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) overflow-ellipsis overflow-hidden w-60 font-normal">
             {row.getValue("reason")}
           </div>
         );

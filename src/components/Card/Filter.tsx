@@ -32,7 +32,7 @@ export function Filter({ column }: { column: Column<any, unknown> }) {
         <select
           onChange={(e) => column.setFilterValue(e.target.value || undefined)}
           value={String(columnFilterValue ?? "")}
-          className="border shadow rounded h-6 text-sm font-normal"
+          className="border shadow rounded !h-5 text-xs font-normal"
         >
           <option value="">All</option>
           {options.map((option) => (
@@ -161,15 +161,15 @@ function DebouncedInput({
               value={value}
               onChange={(e) => setValue(e.target.value)}
               placeholder={getPlaceholder()}
-              className={`h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm flex-1 font-normal ${
+              className={`h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-xs flex-1 font-normal placeholder:text-xs ${
                 hasDateError ? 'text-red-500' : ''
               }`}
             />
             <input
               type="date"
-              value={formatDateForInput(value)}
+              value={formatDateForInput(value)} 
               onChange={handleDateChange}
-              className="absolute opacity-0 pointer-events-none font-normal"
+              className="absolute opacity-0 pointer-events-none font-normal placeholder:text-xs text-xs"
               ref={(ref) => {
                 if (ref) {
                   (ref as any)._dateInput = ref;
@@ -196,7 +196,7 @@ function DebouncedInput({
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder={getPlaceholder()}
-            className="h-6 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-sm font-normal"
+            className="h-5 border-none focus-visible:ring-0 focus-visible:ring-offset-0 !text-xs font-normal placeholder:text-xs"
           />
         )}
         

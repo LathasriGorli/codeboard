@@ -6,7 +6,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 export function Header({name, role}: {name?:string; role?: string }){
     return(
-        <Card className="w-full h-[calc(100vh-43.75rem)] mt-1.5 flex rounded-md bg-(--an-header-background) shadow-none justify-center p-0 border-none">
+        <Card className="w-full h-[2.375rem] mt-1.5 flex rounded-lg bg-(--an-header-background) shadow-none justify-center p-0 border-none">
         <CardContent className="flex items-center gap-3 justify-end px-5">
           <BellIcon className="w-5 h-5"/>
           <div className="flex gap-2 items-center">

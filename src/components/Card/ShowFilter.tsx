@@ -7,7 +7,7 @@ export function ShowFilter({onclick} : {onclick: () => void}) {
           variant="outline"
           size="sm"
           onClick={onclick}
-          className="flex items-center gap-2 hover:bg-white text-[#4F4F4F] text-xs font-light font-[urbanist]"
+          className="flex items-center gap-2 hover:bg-white text-[#4F4F4F] text-xs font-light font-[urbanist] rounded-sm border"
         >
         <FilterIcon />
           Filter
