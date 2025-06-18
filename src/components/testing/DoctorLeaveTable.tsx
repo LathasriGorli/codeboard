@@ -7,6 +7,7 @@ import { ConfirmIcon } from "../icons/ConfirmIcon";
 import { DeniedIcon } from "../icons/DeniedIcon";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import data from './dummy_doctor_absence_data.json';
+import { ViewIcon } from "../icons/Actions/view";
 
 export type DoctorLeave = {
   id: number;
@@ -23,9 +24,9 @@ export type DoctorLeave = {
 export const columns: ColumnDef<DoctorLeave>[] = [
     {
       accessorKey: "title",
-      header: () => <div>Doctor Name</div>,
+      header: () => <div className="pl-2">Doctor Name</div>,
       cell: ({ row }) => (
-        <div className="flex gap-2 items-center w-40">
+        <div className="flex gap-2 items-center w-40 pl-2">
             <img
               src={row.original.imgUrl}
               className="w-6 h-6 object-cover border"
@@ -161,13 +162,20 @@ export const columns: ColumnDef<DoctorLeave>[] = [
         <div className="flex gap-3 items-center">
         <Tooltip>
           <TooltipTrigger asChild>
-          <Eye className="w-4 h-3" />
+          <ViewIcon className="w-3.5 h-3.5 cursor-pointer" />
           </TooltipTrigger>
           <TooltipContent side="top" align="center">
             <div className=" text-white">View</div>
           </TooltipContent>
         </Tooltip>
-        <EllipsisVertical className="w-4 h-4" />
+        <Tooltip>
+          <TooltipTrigger asChild>
+          <EllipsisVertical className="w-4 h-4 cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent side="top" align="center">
+            <div className=" text-white">More Options</div>
+          </TooltipContent>
+        </Tooltip>
       </div>
       ),
     },

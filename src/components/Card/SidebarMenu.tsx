@@ -1,28 +1,17 @@
+import { Link, useLocation } from "@tanstack/react-router";
+import { useState } from "react";
 import { AlmanaIcon } from "../icons/AlmanaIcon";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarProvider,
+  SidebarProvider
 } from "../ui/sidebar";
-import { useState } from "react";
 import { Header } from "./Header";
-import { LocationName } from "./LocationName";
-import { Link, useLocation } from "@tanstack/react-router";
-import { AppointmentScreen } from "./AppointmentScreen";
-import { PersonalDetails } from "./Doctors/PersonalDetails";
-import { Specialities } from "./Doctors/Specialities";
-import { DoctorsCards } from "./Doctors/DoctorsCards";
-import { NoLocation } from "../NoCards/NoLocation";
-import { NoAppointment } from "../NoCards/NoAppointment";
-import { NoDoctor } from "../NoCards/NoDoctor";
-import { NoSpecialization } from "../NoCards/NoSpecialization";
-import { Table } from "../testing/Table";
+import { DoctorLeave } from "./DoctorLeave";
 
 type headings = {
   id: number;
@@ -81,9 +70,9 @@ export function SidebarMenu({ items }: { items: headings[] }) {
       className="bg-[#EFF4EF]"
       style={{ "--sidebar-width": "10.5rem", } as React.CSSProperties}
     >
-      <Sidebar className="flex flex-col h-screen w-[155px] p-1 itmes-start rounded-md bg-(--an-menu-background) mt-1.5 ml-1.5 border-none">
-        <SidebarHeader className="bg-white">
-          <AlmanaIcon className={"w-20 h-10"} />
+      <Sidebar className="flex flex-col h-screen w-[150px] p-1 itmes-start rounded-sm bg-(--an-menu-background) mt-1.5 ml-1.5 border-none">
+        <SidebarHeader className="bg-white p-1">
+          <AlmanaIcon className={"w-18 h-10"} />
         </SidebarHeader>
         <SidebarContent className="bg-white">
           <SidebarGroup className="gap-1 p-0 mt-6">
@@ -101,7 +90,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
                       className="flex justify-start items-center"
                     >
                       <item.icon className="!w-3 !h-3" />
-                      <p className="text-xs font-(family-name:--an-menu-font-family) font-normal">
+                      <p className="text-[11px] font-(family-name:--an-menu-font-family) font-normal">
                         {item.title}
                       </p>
                     </Link>
@@ -120,10 +109,9 @@ export function SidebarMenu({ items }: { items: headings[] }) {
         <NoAppointment />
         <NoDoctor />
         </div> */}
-        {/* <DoctorsCards /> */}
-        <div className="flex flex-col items-center justify-center h-full w-full">
-          <Table />
-          </div>
+        <div className="flex flex-col items-center mt-5">
+          <DoctorLeave />
+        </div> 
       </div>
     </SidebarProvider>
   );

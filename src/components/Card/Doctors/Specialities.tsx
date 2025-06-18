@@ -1,6 +1,7 @@
 import { SearchIcon } from "lucide-react";
 import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Input } from "~/components/ui/input";
 import { ScrollArea } from "~/components/ui/scroll-area";
@@ -185,14 +186,14 @@ export function Specialities() {
 
   return (
     <div className="flex flex-col sm:flex-row items-start p-3 pb-6 rounded-lg border border-(--an-specialities-border-color) bg-white gap-4 font-(family-name:--an-font-family) h-[calc(100vh-160px)] overflow-hidden">
-      <div className="flex flex-col gap-3 w-full sm:w-50">
+      <div className="flex flex-col gap-3 w-[calc(100%-1px)] sm:w-50">
         <p className="text-(--an-specialities-title-color) text-(length:--an-specialities-title-size) font-(--an-specialities-font-weight)">Hospitals</p>
         <span className="text-(--an-specialities-profile-color) text-(length:--an-specialities-text-size) font-normal">
           Please select the hospital they work in
         </span>
         <ScrollArea className="h-[calc(100vh-270px)] pr-1">
-        <Tabs value={selectedHospitals} onValueChange={setSelectedHospitals} className="w-full mt-[180%]">
-          <TabsList className="flex flex-col items-start w-full gap-2 bg-transparent shadow-none">
+        <Tabs value={selectedHospitals} onValueChange={setSelectedHospitals} className="mt-[160%]">
+          <TabsList className="flex flex-col items-start w-full gap-1 bg-transparent shadow-none">
             {locations.map((location) => (
               <TabsTrigger
               key={location.id}
@@ -213,18 +214,24 @@ export function Specialities() {
 
       <div className="border-l border-(--an-specialities-checkbox-border-color) h-[102%] hidden sm:block"></div>
 
-     <div className="flex flex-col gap-3 w-full sm:w-[58rem]">
+     <div className="flex flex-col gap-3 sm:w-[62rem]">
         <p className="text-(--an-specialities-title-color) text-(length:--an-specialities-title-size) font-(--an-specialities-font-weight)">Specialities</p>
-        <div className="flex items-center border w-full sm:w-[28rem] h-7 pl-1 rounded-lg">
+        <div className="flex items-center justify-between">
+        <div className="flex items-center border w-full sm:w-[28rem] h-7 pl-2 rounded-lg">
           <SearchIcon className="w-4 h-4" />
           <Input
             type="search"
             placeholder="Search specialities..."
-            className="border-none h-7 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none"
+            className="border-none h-7 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none placeholder:text-xs"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             aria-label="Search specialities"
           />
+        </div>
+        <Button 
+        variant="default" 
+        onClick={() => {}}
+        className="bg-transparent border border-[#CECECE] text-[#7A7A7A] shadow-none sm:w-[4rem] h-7 text-xs font-(family-name:--an-font-family) hover:bg-transparent">Save</Button>
         </div>
         <ScrollArea className="h-[calc(100vh-270px)]">
         <form onSubmit={handleSubmit}>

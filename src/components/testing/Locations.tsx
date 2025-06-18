@@ -6,6 +6,7 @@ import { cn } from "~/lib/utils";
 import { DataTable } from "../Card/DoctorTable";
 import data from './location.json'
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { ViewIcon } from "../icons/Actions/view";
 
 export interface Person {
   titleIcon: string;
@@ -46,13 +47,13 @@ const defaultData: Person[] = data.map((item) => ({
 export const columns: ColumnDef<Person>[] = [
   {
     id: "serial",
-    header: () => <div className="text-start">S No</div>,
+    header: () => <div className="text-start pl-2">S No</div>,
     cell: ({ row, table }) => {
       const sortedRows = table.getSortedRowModel().rows;
       const globalIndex = sortedRows.findIndex((r: any) => r.id === row.id);
       const serialNumber = globalIndex + 1;
       return (
-        <span className="text-sm text-left font-normal text-(--an-table-row-text-color)">
+        <span className="text-sm text-left font-normal text-(--an-table-row-text-color) pl-2">
         {serialNumber.toString().padStart(2, "0")}
       </span>
       );
@@ -126,10 +127,8 @@ export const columns: ColumnDef<Person>[] = [
         +{remainingCount}
       </span>
     </TooltipTrigger>
-    <TooltipContent side="top" align="center">
-      <div className=" text-white">
-        {allSpecialities.slice(3).join(', ')}
-      </div>
+    <TooltipContent side="top" align="center" className="w-40 p-1">
+      {allSpecialities.slice(3).join(', ')}
     </TooltipContent>
   </Tooltip>
 )}
@@ -178,18 +177,25 @@ export const columns: ColumnDef<Person>[] = [
   },
   {
     id: "actions",
-    header: () => <div className="w-full text-center">Actions</div>,
+    header: () => <div>Actions</div>,
     cell: () => (
       <div className="flex gap-3 items-center">
         <Tooltip>
           <TooltipTrigger asChild>
-          <Eye className="w-4 h-3" />
+          <ViewIcon className="w-3.5 h-3.5 cursor-pointer" />
           </TooltipTrigger>
           <TooltipContent side="top" align="center">
             <div className=" text-white">View</div>
           </TooltipContent>
         </Tooltip>
-        <EllipsisVertical className="w-4 h-4" />
+        <Tooltip>
+          <TooltipTrigger asChild>
+          <EllipsisVertical className="w-4 h-4 cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent side="top" align="center">
+            <div className=" text-white">More Options</div>
+          </TooltipContent>
+        </Tooltip>
       </div>
     ),
   },

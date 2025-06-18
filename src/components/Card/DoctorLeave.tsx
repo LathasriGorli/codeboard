@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { BackButton } from "./ArrowLeft";
 import { OTPEdit } from "../icons/OTPEdit";
+import { EditIcon } from "../icons/EditIcon";
 
 type DoctorLeaveProps = {
   imgUrl: string;
@@ -35,31 +36,31 @@ export function DoctorLeave() {
   };
   const leaveType = LeaveData.leave_type;
   return (
-    <div className="flex gap-2 justify-center">
+    <div className="flex gap-2 justify-center mt-1">
       <BackButton onclick={() => {}} />
-      <Card className="max-w-[900px] w-full flex rounded-xl bg-[#fff] shadow-none border-none">
-        <CardHeader className="flex justify-between">
+      <Card className="!w-[calc(100vw-35rem)] flex rounded-xl bg-[#fff] shadow-none border-none py-3 gap-3">
+        <CardHeader className="flex justify-between px-4">
           <div className="flex gap-2 justify-center items-center">
             <img
               src={LeaveData.imgUrl}
               alt="profile"
-              className="rounded-full w-8 h-8"
+              className="rounded-full w-6 h-6"
             />
-            <p className="text-[#333] text-center font-(family-name:--an-doctor-leave-font-family) text-base font-normal">
+            <p className="text-[#333] text-center font-(family-name:--an-doctor-leave-font-family) text-sm font-normal">
               {LeaveData.doctor_name}{" "}
-              <span className="text-[#333] text-end font-(family-name:--an-doctor-leave-font-family) text-xs font-semibold">
+              <span className="text-[#333] text-end font-(family-name:--an-doctor-leave-font-family) text-[11px] font-semibold">
                 {LeaveData.doctor_qualification}
               </span>
             </p>
           </div>
-          <Button className="h-8 w-15 font-(family-name:--an-doctor-leave-font-family) rounded-sm bg-(--an-doctor-leave-edit-button-bg) text-(--an-doctor-leave-edit-text-color) text-sm font-medium hover:bg-(--an-doctor-leave-edit-button-bg) cursor-pointer">
-            <OTPEdit className="text-(--an-doctor-leave-edit-text-color)" />
+          <Button className="h-7 w-14 font-(family-name:--an-doctor-leave-font-family) rounded bg-(--an-doctor-leave-edit-button-bg) text-(--an-doctor-leave-edit-text-color) text-xs font-medium hover:bg-(--an-doctor-leave-edit-button-bg) cursor-pointer">
+            <EditIcon className="!w-3 !h-4" />
             Edit
           </Button>
         </CardHeader>
-        <CardContent className="flex flex-col gap-3 font-normal">
-          <div className="flex flex-col w-30 gap-2 text-sm">
-            <Label className="text-(--an-doctor-leave-label-color) font-(family-name:--an-doctor-leave-font-family)">
+        <CardContent className="flex flex-col gap-5 font-normal px-4">
+          <div className="flex flex-col w-30 gap-1 text-xs">
+            <Label className="text-(--an-doctor-leave-label-color) font-(family-name:--an-doctor-leave-font-family) text-xs">
               Leave Type
             </Label>
             <span
@@ -67,34 +68,34 @@ export function DoctorLeave() {
                 color: typeStyles[leaveType].color,
                 borderColor: typeStyles[leaveType].borderColor,
               }}
-              className="border rounded-md px-2 py-1 w-fit font-(family-name:--an-doctor-leave-font-family)"
+              className="border rounded p-1 w-fit font-(family-name:--an-doctor-leave-font-family) h-6"
             >
               {leaveType}
             </span>
           </div>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-15 text-xs">
             <div className="flex flex-col gap-1">
-              <Label className="text-(--an-doctor-leave-label-color) font-(family-name:--an-doctor-leave-font-family)">
+              <Label className="text-(--an-doctor-leave-label-color) font-(family-name:--an-doctor-leave-font-family) text-xs">
                 From
               </Label>
-              <p className="text-(--an-doctor-leave-text-color) font-(family-name:--an-doctor-leave-font-family)">
+              <p className="text-(--an-doctor-leave-text-color) font-(family-name:--an-doctor-leave-font-family) text-[13px]">
                 {LeaveData.from_date}
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <Label className="text-(--an-doctor-leave-label-color) font-(family-name:--an-doctor-leave-font-family)">
+              <Label className="text-(--an-doctor-leave-label-color) font-(family-name:--an-doctor-leave-font-family) text-xs">
                 To
               </Label>
-              <p className="text-(--an-doctor-leave-text-color) font-(family-name:--an-doctor-leave-font-family)">
+              <p className="text-(--an-doctor-leave-text-color) font-(family-name:--an-doctor-leave-font-family) text-[13px]">
                 {LeaveData.to_date}
               </p>
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <Label className="text-(--an-doctor-leave-label-color) font-(family-name:--an-doctor-leave-font-family) text-sm">
+            <Label className="text-(--an-doctor-leave-label-color) font-(family-name:--an-doctor-leave-font-family) text-xs">
               Description
             </Label>
-            <p className="text-(--an-doctor-leave-text-color) font-(family-name:--an-doctor-leave-font-family)">
+            <p className="text-(--an-doctor-leave-text-color) font-(family-name:--an-doctor-leave-font-family) text-sm">
               {LeaveData.description}
             </p>
           </div>

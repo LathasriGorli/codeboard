@@ -10,6 +10,7 @@ import {
 import { Label } from "../ui/label";
 import { cn } from "~/lib/utils";
 import { BackButton } from "./ArrowLeft";
+import { EditIcon } from "../icons/EditIcon";
 
 interface Data {
   status: boolean;
@@ -42,7 +43,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
   return (
     <div className="flex gap-2 w-full max-w-full">
       <BackButton onclick={() => {}} />
-      <Card className="w-full md:w-[48%] lg:w-[50%] flex flex-col rounded-xl bg-(--an-location-name-background) gap-[20px] border-none shadow-none">
+      <Card className="w-full md:w-[48%] lg:w-[50%] flex flex-col rounded-xl bg-(--an-location-name-background) gap-[20px] border-none shadow-none py-2">
         <CardHeader className="flex justify-between">
           <div className="flex flex-col items-start">
             <div className="flex gap-8 items-center">
@@ -63,8 +64,8 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
               عنوان التخصص
             </CardDescription>
           </div>
-          <Button className="font-(family-name:--an-location-name-font-family) rounded-sm bg-(--an-location-name-edit-button-bg) text-(--an-location-name-edit-text-color) text-sm font-medium hover:bg-(--an-location-name-edit-button-bg) cursor-pointer">
-            <Edit className="text-(--an-location-name-edit-text-color)" />
+          <Button className="h-7 w-16 font-(family-name:--an-location-name-font-family) rounded-sm bg-(--an-location-name-edit-button-bg) text-(--an-location-name-edit-text-color) text-sm font-medium hover:bg-(--an-location-name-edit-button-bg) cursor-pointer">
+            <EditIcon className="w-4 h-4"/>
             Edit
           </Button>
         </CardHeader>
@@ -162,8 +163,8 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
         <div className="w-[90%] ml-3 border-b border-black/10 focus:outline-none "></div>
         <CardContent className="px-3">
           {speciality.map((item, index) => (
-            <div key={index} className="flex gap-2 items-center rounded-lg border-1 border-(--an-location-name-gallery-border-color) bg-(--an-location-name-subcard-bg) p-1 mt-2">
-              <GripVertical className="text-[#C6C6C6]" />
+            <div key={index} className="flex gap-2 items-baselines-center rounded-sm border-1 border-(--an-location-name-gallery-border-color) bg-(--an-location-name-subcard-bg) p-1 mt-2">
+              <GripVertical className="text-[#C6C6C6] w-4 h-4" />
               <p className="text-(--an-location-name-subcard-text-color) font-(family-name:--an-location-name-font-family) text-xs font-medium">
                 {item.name}
               </p>
@@ -188,11 +189,11 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
           {doctors.map((item, index) => (
             <div
               key={index}
-              className="flex gap-2 items-center rounded-lg bg-(--an-location-name-subcard3-bg) p-1 mt-2 h-10"
+              className="flex gap-2 items-center rounded-lg bg-(--an-location-name-subcard3-bg) p-1 mt-2 h-8"
             >
               <img
                 src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"
-                className="w-6 h-6 rounded-full"
+                className="w-5 h-5 rounded-full"
               />
               <p className="text-(--an-location-name-subcard-text-color) font-(family-name:--an-location-name-font-family) text-xs font-medium">
                 {item.name}

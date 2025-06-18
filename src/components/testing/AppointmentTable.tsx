@@ -4,6 +4,7 @@ import { fuzzyArrayFilter, fuzzyStringFilter } from "~/http/services/utils";
 import { DataTable } from "../Card/DoctorTable";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import data from "./appointments_dummy_data.json";
+import { ViewIcon } from "../icons/Actions/view";
 
 export type AppointmentTable = {
   date: string;
@@ -34,9 +35,9 @@ const AppointData: AppointmentTable[] = data.map((item) => ({
 export const columns: ColumnDef<AppointmentTable>[] = [
   {
     accessorKey: "appointment_for",
-    header: () => <div>Appointment For</div>,
-    cell: ({ row }) => (
-      <div className="flex gap-2 items-center w-40">
+    header: () => <div className="pl-2">Appointment For</div>,
+    cell: ({ row }) => ( 
+      <div className="flex gap-2 items-center w-40 pl-2">
         <img
           src={row.original.imgUrl1}
           className="w-6 h-6 object-cover border"
@@ -221,13 +222,20 @@ export const columns: ColumnDef<AppointmentTable>[] = [
       <div className="flex gap-3 items-center">
         <Tooltip>
           <TooltipTrigger asChild>
-          <Eye className="w-4 h-3" />
+          <ViewIcon className="w-3.5 h-3.5 cursor-pointer" />
           </TooltipTrigger>
           <TooltipContent side="top" align="center">
             <div className=" text-white">View</div>
           </TooltipContent>
         </Tooltip>
-        <EllipsisVertical className="w-4 h-4" />
+        <Tooltip>
+          <TooltipTrigger asChild>
+          <EllipsisVertical className="w-4 h-4 cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent side="top" align="center">
+            <div className=" text-white">More Options</div>
+          </TooltipContent>
+        </Tooltip>
       </div>
     ),
   },

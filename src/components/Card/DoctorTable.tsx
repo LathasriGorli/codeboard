@@ -77,7 +77,7 @@ export function DataTable({
     <div className="w-full bg-(--an-table-background) p-1.5 pt-0 rounded-lg">
       {/* <ShowFilter onclick={() => setShowFilters(!showFilters)} /> */}
       <div className="overflow-hidden rounded-lg">
-        <Table className="border-separate border-spacing-y-0.5">
+        <Table className="border-separate border-spacing-y-0.25">
           <ScrollArea className="rounded-lg" style={{ height: height }}>
             <TableHeader className="sticky top-0 z-10">
               {table.getHeaderGroups().map((headerGroup) => (
@@ -145,7 +145,7 @@ export function DataTable({
                 table.getRowModel().rows.map((row, index) => (
                   <TableRow
                     key={row.id}
-                    className={`bg-(--an-table-row-background) px-10 ${
+                    className={`bg-(--an-table-row-background) ${
                       index === 0 &&
                       index === table.getRowModel().rows.length - 1
                         ? "rounded-lg"
