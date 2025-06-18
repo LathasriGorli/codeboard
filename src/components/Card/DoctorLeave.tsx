@@ -1,10 +1,8 @@
-import { Edit, Edit2, Edit2Icon } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import { Card, CardContent, CardHeader } from "~/components/ui/card";
+import { EditIcon } from "../icons/EditIcon";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { BackButton } from "./ArrowLeft";
-import { OTPEdit } from "../icons/OTPEdit";
-import { EditIcon } from "../icons/EditIcon";
 
 type DoctorLeaveProps = {
   imgUrl: string;

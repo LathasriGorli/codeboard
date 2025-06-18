@@ -199,8 +199,8 @@
   --an-header-title-text-color: #333;
   --an-header-role-text-color:#444C5E;
   --an-header-font-family: 'Urbanist', 'Sans-Serif';
-  --an-header-title-size: 0.883rem;
-  --an-header-role-size: 0.731rem;
+  --an-header-title-size: 0.688rem;
+  --an-header-role-size: 0.525rem;
 }
 
 @theme sidebar{

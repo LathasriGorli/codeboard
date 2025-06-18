@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
 import { AlmanaIcon } from "../icons/AlmanaIcon";
+import { Table } from "../testing/Table";
 import {
   Sidebar,
   SidebarContent,
@@ -11,7 +12,6 @@ import {
   SidebarProvider
 } from "../ui/sidebar";
 import { Header } from "./Header";
-import { DoctorLeave } from "./DoctorLeave";
 
 type headings = {
   id: number;
@@ -102,7 +102,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
         </SidebarContent>
       </Sidebar>
       <div className="flex flex-col w-full max-w-full overflow-hidden mr-2">
-        <Header name="John Doe" role="Frondend Developer" />
+        <Header name="User name" role="Role" />
         {/* <div className="flex items-center justify-center h-full w-full">
         <NoSpecialization />
         <NoLocation />
@@ -110,7 +110,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
         <NoDoctor />
         </div> */}
         <div className="flex flex-col items-center mt-5">
-          <DoctorLeave />
+          <Table />
         </div> 
       </div>
     </SidebarProvider>

@@ -75,7 +75,8 @@ export function DataTable({
   });
   return (
     <div className="w-full bg-(--an-table-background) p-1.5 pt-0 rounded-lg">
-      {/* <ShowFilter onclick={() => setShowFilters(!showFilters)} /> */}
+      {/* <ShowFilter onclick
+      ={() => setShowFilters(!showFilters)} /> */}
       <div className="overflow-hidden rounded-lg">
         <Table className="border-separate border-spacing-y-0.25">
           <ScrollArea className="rounded-lg" style={{ height: height }}>
@@ -231,7 +232,7 @@ function SortNorm({
   };
 
   return (
-    <div className={`flex flex-col items-center gap-1.25 p-1 ${className}`}>
+    <div className={`flex flex-col items-center gap-1 justify-center ${className}`}>
       <span onClick={handleAscClick} className="cursor-pointer">
         <SortAsc
           className={`w-2 h-1 ${isAsc ? "text-[#005669]" : ""}`}

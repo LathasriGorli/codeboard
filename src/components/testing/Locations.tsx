@@ -1,10 +1,14 @@
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { EllipsisVertical, Eye } from "lucide-react";
 import { Checkbox } from "~/components/ui/checkbox";
-import { fuzzyArrayFilter, fuzzySort, fuzzyStringFilter } from "~/http/services/utils";
+import {
+  fuzzyArrayFilter,
+  fuzzySort,
+  fuzzyStringFilter,
+} from "~/http/services/utils";
 import { cn } from "~/lib/utils";
 import { DataTable } from "../Card/DoctorTable";
-import data from './location.json'
+import data from "./location.json";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { ViewIcon } from "../icons/Actions/view";
 
@@ -15,7 +19,7 @@ export interface Person {
   specialities: string[];
   status: boolean;
   createdOn: string;
-}   
+}
 
 export interface LocationsProps {
   paginationDetails?: {
@@ -27,21 +31,24 @@ export interface LocationsProps {
 }
 
 const specialityColorMap: Record<string, string> = {
-  "Cardiology": "bg-blue-200 text-blue-800",
-  "Dermatology": "bg-purple-200 text-purple-800",
-  "Psychiatry": "bg-red-200 text-red-800",
-  "Neurology": "bg-green-200 text-green-800",
-  "Pediatrics": "bg-orange-200 text-orange-800",
-  "Oncology": "bg-sky-200 text-sky-800",
+  Cardiology: "bg-blue-200 text-blue-800",
+  Dermatology: "bg-purple-200 text-purple-800",
+  Psychiatry: "bg-red-200 text-red-800",
+  Neurology: "bg-green-200 text-green-800",
+  Pediatrics: "bg-orange-200 text-orange-800",
+  Oncology: "bg-sky-200 text-sky-800",
 };
 
 const defaultData: Person[] = data.map((item) => ({
-    titleIcon: 'https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80',
-    titleName: item.location.location_en_name,
-    arabicTitle: item.location.location_ar_name,
-    specialities: item.specializations.map((specialization) => specialization.specialization_en_name),
-    status: item.location.is_active,
-    createdOn: item.location.created_on,
+  titleIcon:
+    "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80",
+  titleName: item.location.location_en_name,
+  arabicTitle: item.location.location_ar_name,
+  specialities: item.specializations.map(
+    (specialization) => specialization.specialization_en_name
+  ),
+  status: item.location.is_active,
+  createdOn: item.location.created_on,
 }));
 
 export const columns: ColumnDef<Person>[] = [
@@ -54,8 +61,8 @@ export const columns: ColumnDef<Person>[] = [
       const serialNumber = globalIndex + 1;
       return (
         <span className="text-sm text-left font-normal text-(--an-table-row-text-color) pl-2">
-        {serialNumber.toString().padStart(2, "0")}
-      </span>
+          {serialNumber.toString().padStart(2, "0")}
+        </span>
       );
     },
     enableColumnFilter: false,
@@ -74,7 +81,7 @@ export const columns: ColumnDef<Person>[] = [
             alt="icon"
           />
         </span>
-        <span>{row.getValue('titleName')}</span>
+        <span>{row.getValue("titleName")}</span>
       </div>
     ),
     filterFn: fuzzyStringFilter,
@@ -100,11 +107,12 @@ export const columns: ColumnDef<Person>[] = [
       const allSpecialities = row.original.specialities;
       const displayed = allSpecialities.slice(0, 3);
       const remainingCount = allSpecialities.length - displayed.length;
-  
+
       return (
         <div className="flex flex-wrap gap-1">
           {displayed.map((s, i) => {
-            const colorClass = specialityColorMap[s] || "bg-gray-200 text-gray-800";
+            const colorClass =
+              specialityColorMap[s] || "bg-gray-200 text-gray-800";
             return (
               <span
                 key={i}
@@ -117,26 +125,24 @@ export const columns: ColumnDef<Person>[] = [
               </span>
             );
           })}
-  
-  {remainingCount > 0 && (
-  <Tooltip>
-    <TooltipTrigger asChild>
-      <span
-        className="bg-gray-400 text-[#494343] px-2 py-1 rounded-full border-1 border-[#E3E3E3] cursor-pointer"
-      >
-        +{remainingCount}
-      </span>
-    </TooltipTrigger>
-    <TooltipContent side="top" align="center" className="w-40 p-1">
-      {allSpecialities.slice(3).join(', ')}
-    </TooltipContent>
-  </Tooltip>
-)}
+
+          {remainingCount > 0 && (
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="bg-gray-400 text-[#494343] px-2 py-1 rounded-full border-1 border-[#E3E3E3] cursor-pointer">
+                  +{remainingCount}
+                </span>
+              </TooltipTrigger>
+              <TooltipContent side="top" align="center" className="w-70 p-1 h-40 overflow-y-scroll">
+                {allSpecialities.slice(3).join(", ")}
+              </TooltipContent>
+            </Tooltip>
+          )}
         </div>
       );
     },
     sortingFn: fuzzySort,
-    sortUndefined: 'last',
+    sortUndefined: "last",
     sortDescFirst: false,
   },
   {
@@ -145,15 +151,16 @@ export const columns: ColumnDef<Person>[] = [
     cell: ({ row }) => {
       const status = row.getValue("status") as boolean;
       return (
-          <div
-            className={cn(
-              "rounded-xl font-normal w-fit px-2 h-5 flex items-center justify-center text-xs",
-              status === true
-                ? "bg-(--an-table-active-background) text-(--an-table-active-text-color) hover:bg-(--an-table-active-background)" : "bg-(--an-table-inactive-background) text-(--an-table-inactive-text-color) hover:bg-(--an-table-inactive-background)"
-            )}
-          >
-            {status === true ? "Active" : status === false ? "Inactive" : ""}
-          </div>
+        <div
+          className={cn(
+            "rounded-xl font-normal w-fit px-2 h-5 flex items-center justify-center text-xs",
+            status === true
+              ? "bg-(--an-table-active-background) text-(--an-table-active-text-color) hover:bg-(--an-table-active-background)"
+              : "bg-(--an-table-inactive-background) text-(--an-table-inactive-text-color) hover:bg-(--an-table-inactive-background)"
+          )}
+        >
+          {status === true ? "Active" : status === false ? "Inactive" : ""}
+        </div>
       );
     },
     filterFn: (row, columnId, filterValue) => {
@@ -172,8 +179,8 @@ export const columns: ColumnDef<Person>[] = [
       options: [
         { value: "active", label: "Active" },
         { value: "inactive", label: "Inactive" },
-      ]
-    }
+      ],
+    },
   },
   {
     id: "actions",
@@ -182,7 +189,7 @@ export const columns: ColumnDef<Person>[] = [
       <div className="flex gap-3 items-center">
         <Tooltip>
           <TooltipTrigger asChild>
-          <ViewIcon className="w-3.5 h-3.5 cursor-pointer" />
+            <ViewIcon className="w-3.5 h-3.5 cursor-pointer" />
           </TooltipTrigger>
           <TooltipContent side="top" align="center">
             <div className=" text-white">View</div>
@@ -190,7 +197,7 @@ export const columns: ColumnDef<Person>[] = [
         </Tooltip>
         <Tooltip>
           <TooltipTrigger asChild>
-          <EllipsisVertical className="w-4 h-4 cursor-pointer" />
+            <EllipsisVertical className="w-4 h-4 cursor-pointer" />
           </TooltipTrigger>
           <TooltipContent side="top" align="center">
             <div className=" text-white">More Options</div>
@@ -201,15 +208,14 @@ export const columns: ColumnDef<Person>[] = [
   },
 ] as ColumnDef<Person>[];
 
-
 export function Locations() {
   return (
     <>
       <DataTable
         data={defaultData}
         columns={columns}
-        removeSortingForColumnIds={["select", "serial","actions"]}
-        height = "calc(100vh - 135px)"
+        removeSortingForColumnIds={["select", "serial", "actions"]}
+        height="calc(100vh - 135px)"
       />
     </>
   );
