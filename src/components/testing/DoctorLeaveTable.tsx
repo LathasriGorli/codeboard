@@ -8,6 +8,8 @@ import { DeniedIcon } from "../icons/DeniedIcon";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import data from './dummy_doctor_absence_data.json';
 import { ViewIcon } from "../icons/Actions/view";
+import { useEffect, useRef, useState } from "react";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 
 export type DoctorLeave = {
   id: number;
@@ -135,13 +137,40 @@ export const columns: ColumnDef<DoctorLeave>[] = [
       accessorKey: "reason",
       header: () => <div>Reason (hover to view)</div>,
       cell: ({ row }) => {
-        return (
-          <div className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) overflow-ellipsis overflow-hidden w-60 font-normal">
-            {row.getValue("reason")}
+        const textRef = useRef<HTMLDivElement | null>(null);
+        const [isOverflowed, setIsOverflowed] = useState(false);
+        const reason = row.getValue("reason") as string;
+    
+        useEffect(() => {
+          const el = textRef.current;
+          if (el) {
+            setIsOverflowed(el.scrollWidth > el.clientWidth);
+          }
+        }, [reason]);
+    
+        const content = (
+          <div
+            ref={textRef}
+            className="text-(--an-table-row-text-color) font-(family-name:--an-table-font-header-family) overflow-hidden text-ellipsis whitespace-nowrap w-60 font-normal"
+          >
+            {reason}
           </div>
         );
+    
+        return isOverflowed ? (
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              {content}
+            </HoverCardTrigger>
+            <HoverCardContent className="max-w-xs text-[0.688rem] text-muted-foreground px-2 py-1">
+              {reason}
+            </HoverCardContent>
+          </HoverCard>
+        ) : (
+          content
+        );
       },
-      enableColumnFilter:false,
+      enableColumnFilter: false,
     },
     {
       accessorKey: "affected_slots",

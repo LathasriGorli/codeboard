@@ -6,6 +6,8 @@ import data from './dummy_doctor_data.json';
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { ViewIcon } from "../icons/Actions/view";
 import { DeleteIcon } from "../icons/Actions/delete";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
+import { useEffect, useRef, useState } from "react";
 
 export type Project = {
     id: number;
@@ -77,16 +79,41 @@ export const columns: ColumnDef<Project>[] = [
     accessorKey: "img_title",
     header: () => <div>Image</div>,
     cell: ({ row }) => {
-      return (
+      const textRef = useRef<HTMLDivElement | null>(null);
+      const [isOverflowed, setIsOverflowed] = useState(false);
+      const title = row.getValue("img_title") as string;
+  
+      useEffect(() => {
+        const el = textRef.current;
+        if (el) {
+          setIsOverflowed(el.scrollWidth > el.clientWidth);
+        }
+      }, [title]);
+  
+      const content = (
         <div className="flex gap-2 items-center w-25">
           <img
             src={row.original.imgUrl}
-            className="w-6 h-6 object-cover border"
+            className="w-6 h-6 object-cover border shrink-0"
           />
-          <div className="text-(--an-table-row-text-color) font-normal">
-            {row.getValue("img_title")}
+          <div
+            ref={textRef}
+            className="text-(--an-table-row-text-color) font-normal overflow-hidden text-ellipsis whitespace-nowrap"
+          >
+            {title}
           </div>
         </div>
+      );
+  
+      return isOverflowed ? (
+        <HoverCard>
+          <HoverCardTrigger asChild>{content}</HoverCardTrigger>
+          <HoverCardContent className="max-w-xs text-[0.688rem] text-muted-foreground px-2 py-1 w-30">
+            {title}
+          </HoverCardContent>
+        </HoverCard>
+      ) : (
+        content
       );
     },
     enableColumnFilter: false,

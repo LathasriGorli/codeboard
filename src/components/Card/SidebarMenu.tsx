@@ -112,7 +112,7 @@ export function SidebarMenu({ items }: { items: headings[] }) {
         <NoDoctor />
         </div> */}
         <div className="flex flex-col items-center mt-2">
-          <DoctorLeaveTable />
+          <Table />
         </div> 
       </div>
     </SidebarProvider>
