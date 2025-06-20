@@ -239,7 +239,8 @@
   --an-otp-resend-color: #00B5AD;
   --an-otp-text-size: 1.8rem;
   --an-otp-description-color: #4F4F4F;
-  --an-otp-input-border-color: #D4D4D4;
+  --an-otp-input-border-color: #00B5AD;
+  --an-otp-border-color: #D4D4D4;
   --an-otp-input-background: #F3F8FF;
   --an-otp-verify-background: #005669;
   --an-otp-verify-text-color: #fff;

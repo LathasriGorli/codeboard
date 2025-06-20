@@ -14,6 +14,8 @@ import {
 import { Header } from "./Header";
 import { DoctorsCards } from "./Doctors/DoctorsCards";
 import { DoctorLeaveTable } from "../testing/DoctorLeaveTable";
+import { LocationName } from "./LocationName";
+import { Locations } from "../testing/Locations";
 
 type headings = {
   id: number;
@@ -44,6 +46,18 @@ const speciality = [
 ];
 
 const doctors = [
+  { name: "Fatima SI Jaber" },
+  { name: "Asmaa Mohamed" },
+  { name: "Sheikha AI kaabi" },
+  { name: "Maryam AI Tunaiji" },
+  { name: "Fatima Mohamed" },
+  { name: "Fatima Mohamed" },
+  { name: "Fatima SI Jaber" },
+  { name: "Asmaa Mohamed" },
+  { name: "Sheikha AI kaabi" },
+  { name: "Maryam AI Tunaiji" },
+  { name: "Fatima Mohamed" },
+  { name: "Fatima Mohamed" },
   { name: "Fatima SI Jaber" },
   { name: "Asmaa Mohamed" },
   { name: "Sheikha AI kaabi" },
@@ -112,7 +126,8 @@ export function SidebarMenu({ items }: { items: headings[] }) {
         <NoDoctor />
         </div> */}
         <div className="flex flex-col items-center mt-2">
-          <Table />
+          {/* <LocationName data={data} doctors={doctors} speciality={speciality} gallery={gallery} /> */}
+          <Locations />
         </div> 
       </div>
     </SidebarProvider>

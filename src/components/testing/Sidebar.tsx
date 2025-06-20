@@ -50,7 +50,7 @@ const details ={
     name: "User Name",
     role: "Frontend Developer",
 }
-export function Sidebar({ id }: {id: string}){
+export function Sidebar(){
     return(
         <div>
             <SidebarMenu items={items}/>

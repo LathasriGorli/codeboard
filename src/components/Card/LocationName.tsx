@@ -11,6 +11,7 @@ import { Label } from "../ui/label";
 import { cn } from "~/lib/utils";
 import { BackButton } from "./ArrowLeft";
 import { EditIcon } from "../icons/EditIcon";
+import { ScrollArea } from "../ui/scroll-area";
 
 interface Data {
   status: boolean;
@@ -38,12 +39,16 @@ interface LocationNameProps {
   gallery: GalleryItem[];
 }
 
-
-export function LocationName({ data, doctors, speciality, gallery }: LocationNameProps) {
+export function LocationName({
+  data,
+  doctors,
+  speciality,
+  gallery,
+}: LocationNameProps) {
   return (
     <div className="flex gap-2 w-full max-w-full">
       <BackButton onclick={() => {}} />
-      <Card className="w-full md:w-[48%] lg:w-[50%] flex flex-col rounded-xl bg-(--an-location-name-background) gap-[20px] border-none shadow-none py-2">
+      <Card className="w-full md:w-[48%] lg:w-[50%] flex flex-col rounded-xl bg-(--an-location-name-background) gap-[20px] border-none shadow-none py-2 h-[calc(100vh-240px)] overflow-y-auto">
         <CardHeader className="flex justify-between">
           <div className="flex flex-col items-start">
             <div className="flex gap-8 items-center">
@@ -51,35 +56,32 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
                 Location Name
               </CardTitle>
               <div
-            className={cn(
-              "rounded-xl font-normal text-xs w-fit px-2 flex items-center justify-center font-(family-name:--an-location-name-font-family)",
-              data.status === true
-                ? "bg-(--an-location-active-background) text-(--an-location-active-text-color) hover:bg-(--an-location-active-background)" : "bg-(--an-location-inactive-background) text-(--an-location-inactive-text-color) hover:bg-(--an-location-inactive-background)"
-            )}
-          >
-            {data.status === true ? "Active" : data.status === false ? "Inactive" : ""}
-          </div>
+                className={cn(
+                  "rounded-xl font-normal text-xs w-fit px-2 flex items-center justify-center font-(family-name:--an-location-name-font-family)",
+                  data.status === true
+                    ? "bg-(--an-location-active-background) text-(--an-location-active-text-color) hover:bg-(--an-location-active-background)"
+                    : "bg-(--an-location-inactive-background) text-(--an-location-inactive-text-color) hover:bg-(--an-location-inactive-background)"
+                )}
+              >
+                {data.status === true
+                  ? "Active"
+                  : data.status === false
+                    ? "Inactive"
+                    : ""}
+              </div>
             </div>
             <CardDescription className="text-(--an-location-name-edit-text-color) text-center text-sm font-normal font-(family-name:--an-location-name-font-family)">
               عنوان التخصص
             </CardDescription>
           </div>
           <Button className="h-7 w-16 font-(family-name:--an-location-name-font-family) rounded-sm bg-(--an-location-name-edit-button-bg) text-(--an-location-name-edit-text-color) text-sm font-medium hover:bg-(--an-location-name-edit-button-bg) cursor-pointer">
-            <EditIcon className="w-4 h-4"/>
+            <EditIcon className="w-4 h-4" />
             Edit
           </Button>
         </CardHeader>
         <CardContent>
           <form>
             <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col gap-1">
-                <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
-                  Created On
-                </Label>
-                <p className="text-(--an-location-name-title) font-(family-name:--an-location-name-font-family) text-sm font-normal">
-                  {data.created_on}
-                </p>
-              </div>
               <div className="flex gap-8">
                 <div className="flex flex-col gap-1">
                   <Label className="w-(--an-location-name-label-width) text-(--an-location-name-label-color) font-(family-name:--an-location-name-font-family) text-xs font-normal">
@@ -148,7 +150,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
           </form>
         </CardContent>
       </Card>
-      <Card className="flex w-full md:w-[48%] lg:w-[20%] flex-col rounded-xl bg-(--an-location-name-background) gap-2 border-1 border-(--an-location-name-border) py-3 shadow-none">
+      <Card className="flex w-full md:w-[48%] lg:w-[20%] flex-col rounded-xl bg-(--an-location-name-background) gap-2 border-1 border-(--an-location-name-border) py-3 shadow-none h-[calc(100vh-240px)] overflow-y-auto">
         <CardHeader className="px-3">
           <CardTitle className="flex gap-2">
             <img
@@ -163,7 +165,10 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
         <div className="w-[90%] ml-3 border-b border-black/10 focus:outline-none "></div>
         <CardContent className="px-3">
           {speciality.map((item, index) => (
-            <div key={index} className="flex gap-2 items-baselines-center rounded-sm border-1 border-(--an-location-name-gallery-border-color) bg-(--an-location-name-subcard-bg) p-1 mt-2">
+            <div
+              key={index}
+              className="flex gap-2 items-baselines-center rounded-sm border-1 border-(--an-location-name-gallery-border-color) bg-(--an-location-name-subcard-bg) p-1 mt-2"
+            >
               <GripVertical className="text-[#C6C6C6] w-4 h-4" />
               <p className="text-(--an-location-name-subcard-text-color) font-(family-name:--an-location-name-font-family) text-xs font-medium">
                 {item.name}
@@ -172,7 +177,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
           ))}
         </CardContent>
       </Card>
-      <Card className="flex w-full md:w-[48%] lg:w-[30%] flex-col rounded-xl bg-(--an-location-name-background) gap-2 border-1 border-(--an-location-name-border) py-3 shadow-none">
+      <Card className="flex w-full md:w-[48%] lg:w-[30%] flex-col rounded-xl bg-(--an-location-name-background) gap-2 border-1 border-(--an-location-name-border) py-3 shadow-none h-[calc(100vh-240px)] overflow-y-auto ">
         <CardHeader className="px-3">
           <CardTitle className="flex gap-2 ">
             <img
@@ -184,8 +189,9 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
             </p>
           </CardTitle>
         </CardHeader>
-        <div className="w-[90%] ml-3 border-b border-black/10 focus:outline-none "></div>
+        <div className="w-[90%] ml-3 border-b border-black/10 focus:outline-none"></div>
         <CardContent className="px-3">
+          <ScrollArea className="h-[calc(100vh-320px)]">
           {doctors.map((item, index) => (
             <div
               key={index}
@@ -200,6 +206,7 @@ export function LocationName({ data, doctors, speciality, gallery }: LocationNam
               </p>
             </div>
           ))}
+          </ScrollArea>
         </CardContent>
       </Card>
     </div>

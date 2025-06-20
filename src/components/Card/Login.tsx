@@ -12,19 +12,28 @@ import {
 } from "../ui/card";
 import { Input } from "../ui/input";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "../ui/input-otp";
+import { UserType } from "./SignIn/UserType";
 
 type Props = {
   image: string;
   email: string;
   otp: string;
   message: string;
-  loginEmail: string;
+  loginEmail?: string;
 };
 
-export function Login({ image, email, otp, message, loginEmail }: Props) {
+export function Login({
+  image,
+  email,
+  otp,
+  message,
+  loginEmail = "",
+}: Props) {
   const [showOtp, setShowOtp] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(30);
   const [otpValue, setOtpValue] = useState("");
+  const [activeOtpIndex, setActiveOtpIndex] = useState(0);
+  const [otpKey, setOtpKey] = useState(0);
 
   useEffect(() => {
     if (showOtp && secondsLeft > 0) {
@@ -35,6 +44,14 @@ export function Login({ image, email, otp, message, loginEmail }: Props) {
     }
   }, [showOtp, secondsLeft]);
 
+  useEffect(() => {
+    if (showOtp) {
+      setOtpValue("");
+      setActiveOtpIndex(0);
+      setOtpKey((prevKey) => prevKey + 1);
+    }
+  }, [showOtp]);
+
   const handleContinue = () => {
     setShowOtp(true);
     setSecondsLeft(30);
@@ -44,19 +61,23 @@ export function Login({ image, email, otp, message, loginEmail }: Props) {
     setSecondsLeft(30);
   };
 
+  const handleVerify = () => {
+    if (otpValue.length === 4) {
+      window.location.href = "/testing/appointment-table";
+    }
+  };
+
   function maskEmail(email: string): string {
+    if (!email) return "";
     const [username, domain] = email.split("@");
     if (!username || !domain) return email;
-  
     const prefix = username.slice(0, 2);
     const suffix = username.slice(-2);
-    const maskedLength = Math.max(username.length - 4, 1); 
+    const maskedLength = Math.max(username.length - 4, 1);
     const masked = "*".repeat(maskedLength);
-  
     return `${prefix}${masked}${suffix}@${domain}`;
   }
-  
-  
+
   const EmailCard = (
     <Card className="w-[400px] rounded-none shadow-none bg-transparent border-none relative z-10">
       <CardHeader className="gap-4">
@@ -80,6 +101,12 @@ export function Login({ image, email, otp, message, loginEmail }: Props) {
             <Input
               id="email"
               placeholder="Email"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  handleContinue();
+                }
+              }}
               className="rounded-lg border border-(--an-login-input-border-color) bg-(--an-login-input-background) placeholder:text-(--an-login-text-color) text-sm font-normal font-(family-name:--an-login-font-family) h-11 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none"
             />
             {email && (
@@ -123,22 +150,39 @@ export function Login({ image, email, otp, message, loginEmail }: Props) {
               variant="outline"
               className="border-none shadow-none w-0 h-0 cursor-pointer"
               onClick={() => {
-                setShowOtp(false) , 
-                setOtpValue("")
+                setShowOtp(false), setOtpValue(""), setActiveOtpIndex(0);
               }}
             >
-              <OTPEdit />
+              <OTPEdit className=""/>
             </Button>
           </span>
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center gap-3 pl-6">
-        <InputOTP maxLength={4} value={otpValue} onChange={(val) => setOtpValue(val)}>
+        <InputOTP
+          key={otpKey}
+          maxLength={4}
+          value={otpValue}
+          onChange={(val) => {
+            setOtpValue(val);
+            setActiveOtpIndex(val.length < 4 ? val.length : 3);
+          }}
+          autoFocus
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && otpValue.length === 4) {
+              handleVerify();
+            }
+          }}
+        >
           {[0, 1, 2, 3].map((i) => (
             <InputOTPGroup key={i}>
               <InputOTPSlot
                 index={i}
-                className="bg-(--an-otp-input-background) w-13 h-13 rounded border border-(--an-otp-input-border-color) mr-5"
+                className={`bg-(--an-otp-input-background) w-13 h-13 rounded border mr-5 ${
+                  activeOtpIndex === i
+                    ? "border-(--an-otp-input-border-color) ring-1 ring-(--an-otp-input-border-color)"
+                    : "border-(--an-otp-border-color)"
+                }`}
               />
             </InputOTPGroup>
           ))}
@@ -165,6 +209,7 @@ export function Login({ image, email, otp, message, loginEmail }: Props) {
       <CardFooter className="flex items-center justify-center">
         <Button
           variant="outline"
+          onClick={handleVerify}
           className="rounded-lg bg-(--an-otp-verify-background) text-(--an-otp-verify-text-color) text-sm font-normal font-(family-name:--an-otp-font-family) w-85 h-11 hover:bg-(--an-otp-verify-background) hover:text-(--an-otp-verify-text-color) cursor-pointer"
         >
           Verify
@@ -180,6 +225,7 @@ export function Login({ image, email, otp, message, loginEmail }: Props) {
         <div className="flex justify-center relative">
           <div className={showOtp ? "hidden" : "block"}>{EmailCard}</div>
           <div className={showOtp ? "block" : "hidden"}>{OTPCard}</div>
+          {/* <UserType /> */}
         </div>
         <div className="absolute -bottom-10 -left-1 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 bg-gradient-to-tr from-(--an-otp-footer-bg) to-(--an-otp-footer-bg) blur-2xl rotate-[37.723deg]" />
       </div>

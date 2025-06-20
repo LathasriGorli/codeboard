@@ -1,6 +1,5 @@
-import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
-import { EllipsisVertical, Eye, Scroll } from "lucide-react";
-import { Checkbox } from "~/components/ui/checkbox";
+import { ColumnDef } from "@tanstack/react-table";
+import { EllipsisVertical } from "lucide-react";
 import {
   fuzzyArrayFilter,
   fuzzySort,
@@ -8,10 +7,9 @@ import {
 } from "~/http/services/utils";
 import { cn } from "~/lib/utils";
 import { DataTable } from "../Card/DoctorTable";
-import data from "./location.json";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 import { ViewIcon } from "../icons/Actions/view";
-import { ScrollArea } from "../ui/scroll-area";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import data from "./location.json";
 
 export interface Person {
   titleIcon: string;
@@ -52,7 +50,7 @@ export const columns: ColumnDef<Person>[] = [
       const globalIndex = sortedRows.findIndex((r: any) => r.id === row.id);
       const serialNumber = globalIndex + 1;
       return (
-        <span className="text-sm text-left font-normal text-(--an-table-row-text-color) pl-2">
+        <span className="text-xs text-left font-normal text-(--an-table-row-text-color) pl-2">
           {serialNumber.toString().padStart(2, "0")}
         </span>
       );
@@ -240,7 +238,7 @@ export function Locations() {
         data={defaultData}
         columns={columns}
         removeSortingForColumnIds={["select", "serial", "actions"]}
-        height="calc(100vh - 135px)"
+        height="calc(100vh-135px)"
       />
     </>
   );

@@ -60,8 +60,8 @@ export function AppointmentScreen({ onClick }: Props) {
   return (
     <div className="flex gap-2 justify-center">
       <BackButton onclick={() => {}} />
-      <Card className="max-w-[920px] w-full flex rounded-md bg-(--an-appoint-screen-background) shadow-none border-none py-3 px-0">
-        <CardHeader className="flex justify-between items-center">
+      <Card className="w-[calc(100vw-35rem)] h-auto flex rounded-md bg-(--an-appoint-screen-background) shadow-none border-none py-3 px-0">
+        <CardHeader className="flex justify-between items-center px-4">
           <CardTitle className="text-(--an-appoint-screen-header-text-color) font-(family-name:--an-appoint-screen-font-family) text-xl font-normal">
             {heading.title}
           </CardTitle>
@@ -72,9 +72,9 @@ export function AppointmentScreen({ onClick }: Props) {
             </p>
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="px-4">
           <div className="flex flex-col gap-4">
-            <div className="flex justify-between">
+            <div className="grid grid-cols-4">
               {appointScreenData.map((item, index) => (
                 <div key={index} className="flex gap-3 items-center">
                   <div className="border-1 border-(--an-appoint-screen-icon-border-color) bg-(--an-appoint-screen-icon-bg-color) rounded-full flex items-center justify-center w-[35px] h-[35px]">

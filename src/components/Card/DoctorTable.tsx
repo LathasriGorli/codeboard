@@ -7,8 +7,11 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronDown, ChevronsUpDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { cn } from "~/lib/utils";
+import { Pagination } from "../Table/Pagination";
+import { SortAsc } from "../icons/SortAsc";
+import { SortDesc } from "../icons/SortDesc";
 import {
   Table,
   TableBody,
@@ -17,13 +20,9 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { ScrollArea } from "../ui/scroll-area";
-import { ShowFilter } from "./ShowFilter";
-import { Filter } from "./Filter";
-import { Pagination } from "../Table/Pagination";
-import { SortAsc } from "../icons/SortAsc";
-import { SortDesc } from "../icons/SortDesc";
 import AddNewButton from "./AddNew";
+import { Filter } from "./Filter";
+import { ShowFilter } from "./ShowFilter";
 
 type DataTableProps = {
   data?: any[];
@@ -69,22 +68,25 @@ export function DataTable({
       columnFilters,
     },
     onColumnFiltersChange: setColumnFilters,
-    debugTable: true,
-    debugHeaders: true,
-    debugColumns: false,
     autoResetPageIndex: false,
   });
+  
   return (
     <div className="w-full">
-    <div className="flex items-center justify-end gap-2">
+    <div className="flex items-center justify-end gap-2 mb-4">
     <ShowFilter onclick = {() => setShowFilters(!showFilters)} />
     <AddNewButton />
     </div>
-    <div className="w-full bg-(--an-table-background) p-1.5 pt-0 rounded-lg">
-      <div className="overflow-hidden rounded-lg">
-        <Table className="border-separate border-spacing-y-0.25">
-          <ScrollArea className="rounded-lg" style={{ height: height }}>
-            <TableHeader className="sticky top-0 z-10">
+    <div className="w-full bg-(--an-table-background) p-1.5 pt-0 rounded-lg relative">
+    <div className="absolute top-[0px] left-0 right-0 w-[95%] mx-auto h-[2px] bg-white rounded-full z-[9999]"></div>
+
+      <div  className={cn(
+    "overflow-auto rounded-lg w-full",
+    `[&_>div]:h-[${height}]`
+  )}
+      >
+        <Table className="border-separate border-spacing-y-0.25 w-full">
+            <TableHeader className="sticky top-[1px] z-10">
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>
                   {headerGroup.headers.map((header) => {
@@ -95,7 +97,7 @@ export function DataTable({
                       <TableHead
                         key={header.id}
                         colSpan={header.colSpan}
-                        className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-xs font-medium bg-white py-0 px-1"
+                        className="text-(--an-table-body-text-color) font-(family-name:--an-table-font-family) text-[13px] font-medium bg-white py-0 px-1"
                       >
                         <div
                           className={
@@ -202,7 +204,6 @@ export function DataTable({
                 </TableRow>
               )}
             </TableBody>
-          </ScrollArea>
         </Table>
       </div>
       {paginationDetails && (
@@ -211,9 +212,10 @@ export function DataTable({
         </div>
       )}
     </div>
-    </div>
+  </div>
   );
-}
+};
+
 function SortNorm({
   direction,
   className = "",

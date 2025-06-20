@@ -224,7 +224,7 @@ export function DoctorLeaveTable() {
       columns={columns} 
       paginationDetails={ paginationDetails }
       removeSortingForColumnIds={["actions"]}
-      height="36rem"
+      height="calc(100vh-105px)"
     />
   </>
   )

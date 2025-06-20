@@ -194,7 +194,7 @@ export function Table() {
       data={data} 
       columns={columns} 
       removeSortingForColumnIds={["select", "serial","actions"]}
-      height="calc(100vh - 135px)"
+      height="calc(100vh-135px)"
       />
   </>
   )
